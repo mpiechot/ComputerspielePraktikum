@@ -34,6 +34,6 @@
 * Viereckigen Raum erstellen <font color="red">(0%)</font>
 * Gegenstand im Raum <font color="red">(0%)</font>
 * Steuerung um Gravitation zu ändern <font color="red">(0%)</font>
-
+* Unityprojekt mit Git einrichten <font color="red">(0%)</font>
 
 (<font color="lightgreen">**✓**</font>)

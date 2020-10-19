@@ -30,10 +30,10 @@
 ## Termine
 
 ### Freitag, 23.10.2020 16Uhr
-* https://catlikecoding.com/unity/tutorials/movement/complex-gravity/ lesen (<font color="red">(0%)</font>)
-* Viereckigen Raum erstellen (<font color="red">(0%)</font>)
-* Gegenstand im Raum (<font color="red">(0%)</font>)
-* Steuerung um Gravitation zu ändern (<font color="red">(0%)</font>)
+* https://catlikecoding.com/unity/tutorials/movement/complex-gravity/ lesen <font color="red">(0%)</font>
+* Viereckigen Raum erstellen <font color="red">(0%)</font>
+* Gegenstand im Raum <font color="red">(0%)</font>
+* Steuerung um Gravitation zu ändern <font color="red">(0%)</font>
 
 
 (<font color="lightgreen">**✓**</font>)

@@ -17,6 +17,7 @@
 - Tutorials
 - Schaden anhand von collission.magnitude.
 - (brennbare) Flüssigkeiten?
+- unterschiedliche Gravitationen
 
 ## Prototyp
 

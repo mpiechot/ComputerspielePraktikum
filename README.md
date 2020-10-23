@@ -28,13 +28,19 @@
 - Test mit Ausgang um zu sehen, ob man in den nächsten Raum kommt.
 - Leben verlieren je nach Aufprallstärke
 
+## Links
+https://catlikecoding.com/unity/tutorials/movement/complex-gravity/
+
 ## Termine
 
 ### Freitag, 23.10.2020 16Uhr
-* https://catlikecoding.com/unity/tutorials/movement/complex-gravity/ lesen <font color="red">(0%)</font>
-* Viereckigen Raum erstellen <font color="red">(0%)</font>
-* Gegenstand im Raum <font color="red">(0%)</font>
-* Steuerung um Gravitation zu ändern <font color="red">(0%)</font>
-* Unityprojekt mit Git einrichten <font color="red">(0%)</font>
+* Viereckigen Raum erstellen (<font color="lightgreen">**✓**</font>)
+* Gegenstand im Raum (<font color="lightgreen">**✓**</font>)
+* Ragdoll in den Raum setzen (<font color="lightgreen">**✓**</font>)
+* Steuerung um Gravitation zu ändern (<font color="lightgreen">**✓**</font>)
+* Unityprojekt mit Git einrichten (<font color="lightgreen">**✓**</font>)
 
-(<font color="lightgreen">**✓**</font>)
+### Freitag, 30.10.2020 16Uhr
+* Camera Controller Third Person <font color="red">(0%)</font>
+* Ausgang des Raums einbauen und testen <font color="red">(0%)</font>
+* Farben als Material erstellen und den Wänden zuweisen <font color="red">(0%)</font>

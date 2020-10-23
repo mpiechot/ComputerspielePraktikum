@@ -13,9 +13,435 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 3
-  lastUpdatedAtString: 2020-10-23T16:48:26.916+02:00
+  lastUpdatedAtString: 2020-10-23T16:50:25.599+02:00
   initializedAtString: 2020-10-23T16:47:35.598+02:00
   log:
+  - commitID: 2e4302680aa018c8cc26eaa6d4dcd7e5b87580f9
+    mergeA: 
+    mergeB: 
+    authorName: mpiechot
+    authorEmail: marco.piechotta@gmail.com
+    commitEmail: marco.piechotta@gmail.com
+    commitName: mpiechot
+    summary: Projectsetup Teil 4
+    description: 
+    timeString: 2020-10-23T16:50:24.000+02:00
+    commitTimeString: 2020-10-23T16:50:24.000+02:00
+    changes:
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub.meta
+      projectPath: Assets\Plugins\GitHub.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor.meta
+      projectPath: Assets\Plugins\GitHub\Editor.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\AsyncBridge.Net35.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ExtensionLoader.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.45.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Api.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Logging.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.45.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.Unity.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\GitHub.UnityShim.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\Mono.Posix.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      projectPath: Assets\Plugins\GitHub\Editor\QuickGuide.pdf.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\ReadOnlyCollectionsInterfaces.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\System.Threading.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      projectPath: Assets\Plugins\GitHub\Editor\UnityAPIWrapper.cs.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      projectPath: Assets\Plugins\GitHub\Editor\big-logo@2x.png.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\credits.txt
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\credits.txt
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\credits.txt.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\credits.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\credits.txt.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\eula.txt
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\eula.txt
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\eula.txt.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\eula.txt.meta
+      projectPath: Assets\Plugins\GitHub\Editor\eula.txt.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\libsfw.bundle
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.bundle.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\libsfw.so
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\libsfw.so
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      projectPath: Assets\Plugins\GitHub\Editor\libsfw.so.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\sfw.net.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x64.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x64.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\pthreadVC2.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x64\sfw_x64.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x86.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x86.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\pthreadVC2.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      projectPath: Assets\Plugins\GitHub\Editor\x86\sfw_x86.dll.meta
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 870e7ea5ba29207ad1fd4359aaa4c6e2af66e5e9
+    mergeA: 
+    mergeB: 
+    authorName: mpiechot
+    authorEmail: marco.piechotta@gmail.com
+    commitEmail: marco.piechotta@gmail.com
+    commitName: mpiechot
+    summary: Projectsetup Teil 3
+    description: 
+    timeString: 2020-10-23T16:50:08.000+02:00
+    commitTimeString: 2020-10-23T16:50:08.000+02:00
+    changes:
+    - path: Olafs Room Adventures\Library\gfu\cache\branches.yaml
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Library\gfu\cache\branches.yaml
+      projectPath: Library\gfu\cache\branches.yaml
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Library\gfu\cache\gitstatusentries.yaml
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Library\gfu\cache\gitstatusentries.yaml
+      projectPath: Library\gfu\cache\gitstatusentries.yaml
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Library\gfu\cache\gittrackingstatus.yaml
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Library\gfu\cache\gittrackingstatus.yaml
+      projectPath: Library\gfu\cache\gittrackingstatus.yaml
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Library\gfu\cache\repoinfo.yaml
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Library\gfu\cache\repoinfo.yaml
+      projectPath: Library\gfu\cache\repoinfo.yaml
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Packages\manifest.json
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Packages\manifest.json
+      projectPath: Packages\manifest.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Packages\packages-lock.json
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Packages\packages-lock.json
+      projectPath: Packages\packages-lock.json
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+  - commitID: 07150769836ac2e2fda29c2a00bdc7ccdcf133bc
+    mergeA: 
+    mergeB: 
+    authorName: mpiechot
+    authorEmail: marco.piechotta@gmail.com
+    commitEmail: marco.piechotta@gmail.com
+    commitName: mpiechot
+    summary: Project Setup Teil2
+    description: 
+    timeString: 2020-10-23T16:49:49.000+02:00
+    commitTimeString: 2020-10-23T16:49:49.000+02:00
+    changes:
+    - path: Olafs Room Adventures\Library\gfu\cache\branches.yaml
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Library\gfu\cache\branches.yaml
+      projectPath: Library\gfu\cache\branches.yaml
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Library\gfu\cache\gitlocks.yaml
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Library\gfu\cache\gitlocks.yaml
+      projectPath: Library\gfu\cache\gitlocks.yaml
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Library\gfu\cache\gitlog.yaml
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Library\gfu\cache\gitlog.yaml
+      projectPath: Library\gfu\cache\gitlog.yaml
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\Library\gfu\cache\gittrackingstatus.yaml
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\Library\gfu\cache\gittrackingstatus.yaml
+      projectPath: Library\gfu\cache\gittrackingstatus.yaml
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\AudioManager.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\AudioManager.asset
+      projectPath: ProjectSettings\AudioManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\ClusterInputManager.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\ClusterInputManager.asset
+      projectPath: ProjectSettings\ClusterInputManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\DynamicsManager.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\DynamicsManager.asset
+      projectPath: ProjectSettings\DynamicsManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\EditorBuildSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\EditorBuildSettings.asset
+      projectPath: ProjectSettings\EditorBuildSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\EditorSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\EditorSettings.asset
+      projectPath: ProjectSettings\EditorSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\GraphicsSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\GraphicsSettings.asset
+      projectPath: ProjectSettings\GraphicsSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\InputManager.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\InputManager.asset
+      projectPath: ProjectSettings\InputManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\NavMeshAreas.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\NavMeshAreas.asset
+      projectPath: ProjectSettings\NavMeshAreas.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\PackageManagerSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\PackageManagerSettings.asset
+      projectPath: ProjectSettings\PackageManagerSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\Physics2DSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\Physics2DSettings.asset
+      projectPath: ProjectSettings\Physics2DSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\PresetManager.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\PresetManager.asset
+      projectPath: ProjectSettings\PresetManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\ProjectSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\ProjectSettings.asset
+      projectPath: ProjectSettings\ProjectSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\ProjectVersion.txt
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\ProjectVersion.txt
+      projectPath: ProjectSettings\ProjectVersion.txt
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\QualitySettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\QualitySettings.asset
+      projectPath: ProjectSettings\QualitySettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\TagManager.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\TagManager.asset
+      projectPath: ProjectSettings\TagManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\TimeManager.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\TimeManager.asset
+      projectPath: ProjectSettings\TimeManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\UnityConnectSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\UnityConnectSettings.asset
+      projectPath: ProjectSettings\UnityConnectSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\VFXManager.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\VFXManager.asset
+      projectPath: ProjectSettings\VFXManager.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\VersionControlSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\VersionControlSettings.asset
+      projectPath: ProjectSettings\VersionControlSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: Olafs Room Adventures\ProjectSettings\XRSettings.asset
+      fullPath: D:\GitHub\ComputerspielePraktikum\Olafs Room Adventures\ProjectSettings\XRSettings.asset
+      projectPath: ProjectSettings\XRSettings.asset
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
   - commitID: c2acd1fc4f3ee1b4b7298911437bc0592856d098
     mergeA: 
     mergeB: 

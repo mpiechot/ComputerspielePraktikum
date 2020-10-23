@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 61
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -530159753, guid: 68c7e4565cde54155bb78d8e935f1ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cacheType: 3
+  lastUpdatedAtString: 2020-10-23T16:39:28.019+02:00
+  initializedAtString: 2020-10-23T16:39:28.019+02:00
+  log:
+  - commitID: 9dff687b1a1b7bf28120ee4adc77516d81990a3f
+    mergeA: 
+    mergeB: 
+    authorName: mpiechot
+    authorEmail: marco.piechotta@gmail.com
+    commitEmail: marco.piechotta@gmail.com
+    commitName: mpiechot
+    summary: Update README.md
+    description: 
+    timeString: 2020-10-19T21:56:04.000+02:00
+    commitTimeString: 2020-10-19T21:56:04.000+02:00
+    changes:
+    - path: README.md
+      fullPath: D:\GitHub\ComputerspielePraktikum\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: f07c7fbb78f1a87dba0133797dd9dae82e729b95
+    mergeA: 
+    mergeB: 
+    authorName: mpiechot
+    authorEmail: marco.piechotta@gmail.com
+    commitEmail: marco.piechotta@gmail.com
+    commitName: mpiechot
+    summary: Update README.md
+    description: 
+    timeString: 2020-10-19T21:54:28.000+02:00
+    commitTimeString: 2020-10-19T21:54:28.000+02:00
+    changes:
+    - path: README.md
+      fullPath: D:\GitHub\ComputerspielePraktikum\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 5cc163cc7ce1cdba2a3c0bc854b18487424d68d3
+    mergeA: 
+    mergeB: 
+    authorName: mpiechot
+    authorEmail: marco.piechotta@gmail.com
+    commitEmail: marco.piechotta@gmail.com
+    commitName: mpiechot
+    summary: Update README.md
+    description: 
+    timeString: 2020-10-19T21:53:10.000+02:00
+    commitTimeString: 2020-10-19T21:53:10.000+02:00
+    changes:
+    - path: README.md
+      fullPath: D:\GitHub\ComputerspielePraktikum\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 3
+      workTreeStatus: 0
+  - commitID: 4fd634df6627ab553a05bf069f5b5793008202b4
+    mergeA: 
+    mergeB: 
+    authorName: mpiechot
+    authorEmail: marco.piechotta@student.uni-tuebingen.de
+    commitEmail: noreply@github.com
+    commitName: GitHub
+    summary: Initial commit
+    description: 
+    timeString: 2020-10-19T21:12:19.000+02:00
+    commitTimeString: 2020-10-19T21:12:19.000+02:00
+    changes:
+    - path: .gitignore
+      fullPath: D:\GitHub\ComputerspielePraktikum\.gitignore
+      projectPath: ..\.gitignore
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0
+    - path: README.md
+      fullPath: D:\GitHub\ComputerspielePraktikum\README.md
+      projectPath: ..\README.md
+      originalPath: 
+      indexStatus: 4
+      workTreeStatus: 0

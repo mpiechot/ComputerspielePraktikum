@@ -41,6 +41,11 @@ https://catlikecoding.com/unity/tutorials/movement/complex-gravity/
 * Unityprojekt mit Git einrichten (<font color="lightgreen">**✓**</font>)
 
 ### Freitag, 30.10.2020 16Uhr
-* Camera Controller Third Person <font color="red">(0%)</font>
-* Ausgang des Raums einbauen und testen <font color="red">(0%)</font>
-* Farben als Material erstellen und den Wänden zuweisen <font color="red">(0%)</font>
+* Camera Controller Third Person (<font color="lightgreen">**✓**</font>)
+* Ausgang des Raums einbauen und testen (<font color="lightgreen">**✓**</font>)
+* Farben als Material erstellen und den Wänden zuweisen (<font color="lightgreen">**✓**</font>)
+
+### Freitag, 06.11.2020 16Uhr
+* Wand Transparenz (<font color="red">0%</font>)
+* Playground erstellen und Maße festlegen (<font color="red">0%</font>)
+* Zweiter Raum mit Übergang (<font color="red">0%</font>)

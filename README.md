@@ -33,6 +33,8 @@ https://catlikecoding.com/unity/tutorials/movement/complex-gravity/
 
 ## Termine
 
+- 15.12. Abgabe Prototyp
+
 ### Freitag, 23.10.2020 16Uhr
 * Viereckigen Raum erstellen (<font color="lightgreen">**✓**</font>)
 * Gegenstand im Raum (<font color="lightgreen">**✓**</font>)
@@ -46,6 +48,10 @@ https://catlikecoding.com/unity/tutorials/movement/complex-gravity/
 * Farben als Material erstellen und den Wänden zuweisen (<font color="lightgreen">**✓**</font>)
 
 ### Freitag, 06.11.2020 16Uhr
-* Wand Transparenz (<font color="red">0%</font>)
+* Wand Transparenz (<font color="lightgreen">**✓**</font>)
+* Steuerung (<font color="lightgreen">**✓**</font>)
+
+### Freitag, 13.11.2020 16Uhr
 * Playground erstellen und Maße festlegen (<font color="red">0%</font>)
 * Zweiter Raum mit Übergang (<font color="red">0%</font>)
+* Außenlichter

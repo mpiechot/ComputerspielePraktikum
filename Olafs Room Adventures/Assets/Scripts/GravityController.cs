@@ -13,13 +13,6 @@ public class GravityController : MonoBehaviour
     public float gravityForce = .00000001f;
     public float maxMagnitude = 9.8f;
 
-    private enum Axis
-    {
-        X,
-        Y,
-        Z
-    }
-
     private void Start()
     {
         Physics.gravity = Vector3.zero;
@@ -50,6 +43,7 @@ public class GravityController : MonoBehaviour
         {
             ChangeGravity(new Vector3(0, 0, gravityForce));
         }
+
         if (!Input.GetKey(KeyCode.R) && !Input.GetKey(KeyCode.B))
         {
             ChangeGravityToZero(Axis.Y);
@@ -62,6 +56,7 @@ public class GravityController : MonoBehaviour
         {
             ChangeGravityToZero(Axis.Z);
         }
+
     }
     private void ChangeGravityToZero(Axis axis)
     {
@@ -79,13 +74,11 @@ public class GravityController : MonoBehaviour
         }
     }
     private void ChangeGravity(Vector3 gravity)
-    {
-        
+    {      
         Physics.gravity += gravity;
         if(Physics.gravity.magnitude > maxMagnitude)
         {
             Physics.gravity = (Physics.gravity / Physics.gravity.magnitude) * maxMagnitude;
         }
-        Debug.Log("actual gravity: " + Physics.gravity);
     }
 }

@@ -35,6 +35,18 @@ https://catlikecoding.com/unity/tutorials/movement/complex-gravity/
 
 - 15.12. Abgabe Prototyp
 
+## Eigene Scene erstellen
+1. SampleScene öffnen
+2. File -> Save As...
+
+## Hausaufgabe
+
+What is the motivation
+
+What is the gameplay
+
+- use sketches
+
 ### Freitag, 23.10.2020 16Uhr
 * Viereckigen Raum erstellen (<font color="lightgreen">**✓**</font>)
 * Gegenstand im Raum (<font color="lightgreen">**✓**</font>)
@@ -52,6 +64,14 @@ https://catlikecoding.com/unity/tutorials/movement/complex-gravity/
 * Steuerung (<font color="lightgreen">**✓**</font>)
 
 ### Freitag, 13.11.2020 16Uhr
+* Zweiter Raum mit Übergang (<font color="lightgreen">**✓**</font>)
+
+### Samstag, 21.11.2020 16Uhr
 * Playground erstellen und Maße festlegen (<font color="red">0%</font>)
-* Zweiter Raum mit Übergang (<font color="red">0%</font>)
-* Außenlichter
+* Außenlichter (<font color="red">0%</font>)
+* MarcoPlayground erstellen (<font color="lightgreen">**✓**</font>)
+* HaraldPlayground erstellen (<font color="red">0%</font>)
+* LeoniePlayground erstellen (<font color="red">0%</font>)
+* RenePlayground erstellen (<font color="red">0%</font>)
+* PhilippPlayground erstellen (<font color="red">0%</font>)
+* Nächste Hausaufgabe bearbeiten (<font color="red">0%</font>)

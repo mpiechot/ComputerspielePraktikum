@@ -71,7 +71,7 @@ What is the gameplay
 * Außenlichter (<font color="red">0%</font>)
 * MarcoPlayground erstellen (<font color="lightgreen">**✓**</font>)
 * HaraldPlayground erstellen (<font color="red">0%</font>)
-* LeoniePlayground erstellen (<font color="red">0%</font>)
+* LeoniePlayground erstellen (<font color="lightgreen">**✓**</font>)
 * RenePlayground erstellen (<font color="red">0%</font>)
 * PhilippPlayground erstellen (<font color="red">0%</font>)
 * Nächste Hausaufgabe bearbeiten (<font color="red">0%</font>)

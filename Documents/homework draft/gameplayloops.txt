@@ -4,8 +4,13 @@ Primary loop:
 
 Secondary loop:
 	-reach end of each stage
-	-collect all keys
+	-collect all keys/solve the riddle
 
 Tertiary loop:
 	-escape the maze(win all stages and get all keys)
 	-get highscore(best time for each level/all levels)
+	
+Motivation:
+	-story
+		(portal like) Olaf wakes up in maze, no memory of what happened and 			somehow unable to move and tries to escape
+		

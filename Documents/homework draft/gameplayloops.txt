@@ -1,0 +1,11 @@
+Primary loop:
+	-manipulate gravity to move things(objects dead and living)
+	-don't die
+
+Secondary loop:
+	-reach end of each stage
+	-collect all keys
+
+Tertiary loop:
+	-escape the maze(win all stages and get all keys)
+	-get highscore(best time for each level/all levels)

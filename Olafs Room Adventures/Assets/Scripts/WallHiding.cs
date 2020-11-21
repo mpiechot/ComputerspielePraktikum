@@ -24,16 +24,12 @@ public class WallHiding : MonoBehaviour
     void Update()
     {
         Color color = rend.material.color;
-        Debug.Log("CameraPos: " + GetAxisPosition(cam.transform));
-        Debug.Log("TransformPos: " + GetAxisPosition(transform));
         if(Vector3.Dot(normal,cam.transform.forward) > 0 && GetAxisPosition(cam.transform) > GetAxisPosition(transform))
         {
-            Debug.Log("Transparent");
             color.a = hideFactor;
         }
         else
         {
-            Debug.Log("Solid");
             color.a = 1f;
         }
         rend.material.color = color;

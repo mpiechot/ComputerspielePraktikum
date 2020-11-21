@@ -85,14 +85,16 @@ What is the gameplay
 * Zweiter Raum mit Übergang (<font color="lightgreen">**✓**</font>)
 
 ### Samstag, 21.11.2020 16Uhr
-* Playground erstellen und Maße festlegen (<font color="red">0%</font>)
-* Außenlichter (<font color="red">0%</font>)
 * MarcoPlayground erstellen (<font color="lightgreen">**✓**</font>)
-* HaraldPlayground erstellen (<font color="red">0%</font>)
-* LeoniePlayground erstellen (<font color="red">0%</font>)
+* HaraldPlayground erstellen (<font color="lightgreen">**✓**</font>)
+* LeoniePlayground erstellen (<font color="lightgreen">**✓**</font>)
 * RenePlayground erstellen (<font color="red">0%</font>)
-* PhilippPlayground erstellen (<font color="red">0%</font>)
-* Nächste Hausaufgabe bearbeiten (<font color="red">0%</font>)
+* PhilippPlayground erstellen (<font color="lightgreen">**✓**</font>)
+* Nächste Hausaufgabe bearbeiten (<font color="lightgreen">**✓**</font>)
 
-### Samstag 28.11.2020 16Uhr
-* ProBuilder ausprobieren
+### Freitag 27.11.2020 16Uhr
+* ProBuilder ausprobieren (<font color="red">0%</font>)
+* Außenlichter (<font color="red">0%</font>)
+* Playground erstellen und Maße festlegen (<font color="red">0%</font>)
+* Was man cool findet in Räumen (<font color="red">0%</font>)
+* Mögliche Hausaufgabe (<font color="red">0%</font>)

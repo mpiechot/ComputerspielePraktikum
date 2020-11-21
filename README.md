@@ -31,6 +31,16 @@
 ## Links
 https://catlikecoding.com/unity/tutorials/movement/complex-gravity/
 
+### Leveldesign
+
+https://www.youtube.com/watch?v=b4oqOdBCy3c
+https://www.youtube.com/watch?v=YtzIXCKr8Wo
+https://www.youtube.com/watch?v=2J9nAJP8tvI
+
+### Graphics
+
+https://www.youtube.com/watch?v=VJxrdrgbuTE
+
 ## Termine
 
 - 15.12. Abgabe Prototyp
@@ -38,6 +48,14 @@ https://catlikecoding.com/unity/tutorials/movement/complex-gravity/
 ## Eigene Scene erstellen
 1. SampleScene öffnen
 2. File -> Save As...
+
+## Verwendete Pakete
+
+- Universal RP
+- ProBuilder
+- ProGrids
+- PostProcessing
+
 
 ## Hausaufgabe
 
@@ -71,7 +89,10 @@ What is the gameplay
 * Außenlichter (<font color="red">0%</font>)
 * MarcoPlayground erstellen (<font color="lightgreen">**✓**</font>)
 * HaraldPlayground erstellen (<font color="red">0%</font>)
-* LeoniePlayground erstellen (<font color="lightgreen">**✓**</font>)
+* LeoniePlayground erstellen (<font color="red">0%</font>)
 * RenePlayground erstellen (<font color="red">0%</font>)
 * PhilippPlayground erstellen (<font color="red">0%</font>)
 * Nächste Hausaufgabe bearbeiten (<font color="red">0%</font>)
+
+### Samstag 28.11.2020 16Uhr
+* ProBuilder ausprobieren

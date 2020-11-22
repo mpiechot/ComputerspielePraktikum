@@ -24,13 +24,14 @@ public class Bumper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (bPlayerHit)
         {
 
             spring.transform.position = Vector3.Lerp(startPosition, endPosition, Time.deltaTime * speed);
             
             startPosition = spring.transform.position;
-            
+          
         }
     }
 
@@ -39,7 +40,8 @@ public class Bumper : MonoBehaviour
         if (collider.gameObject.tag == "Player")
             {
             bPlayerHit = true;
-          }
-        Debug.Log(collider.gameObject.name + " has triggered");
+            
+        }
+        
     }
 }

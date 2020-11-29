@@ -10,6 +10,7 @@ public class Bumper : MonoBehaviour
     private bool bPlayerHit = false;
     private Vector3 startPosition;
     private Vector3 endPosition;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,7 @@ public class Bumper : MonoBehaviour
         
         if (bPlayerHit)
         {
-
+            
             spring.transform.position = Vector3.Lerp(startPosition, endPosition, Time.deltaTime * speed);
             
             startPosition = spring.transform.position;
@@ -40,7 +41,8 @@ public class Bumper : MonoBehaviour
         if (collider.gameObject.tag == "Player")
             {
             bPlayerHit = true;
-            
+            //Make Player Freefloat after getting hit for 1 sec
+            FindObjectOfType<GravityController>().LockChangingOfGravity(1f);
         }
         
     }

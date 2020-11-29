@@ -13,12 +13,29 @@ public class GravityController : MonoBehaviour
     public float gravityForce = .00000001f;
     public float maxMagnitude = 9.8f;
 
+    private bool  bLockGravityDirection = false;
+    private float timeWhenLocked = 0f;
+    private float lockGravityDelay = 0f;
+
     private void Start()
     {
         Physics.gravity = Vector3.zero;
     }
     private void Update()
     {
+        //Skip Directional changes if Changing Gravity is locked and float in Air until Delay is over
+        if (bLockGravityDirection) 
+        {
+            if (Time.time - timeWhenLocked > lockGravityDelay)
+            {
+                bLockGravityDirection = false;
+            }
+            ChangeGravityToZero(Axis.X);
+            ChangeGravityToZero(Axis.Y);
+            ChangeGravityToZero(Axis.Z);
+            return; 
+        }
+
         if (Input.GetKey(KeyCode.B))
         {
             ChangeGravity(new Vector3(0, -gravityForce, 0));
@@ -79,6 +96,16 @@ public class GravityController : MonoBehaviour
         if(Physics.gravity.magnitude > maxMagnitude)
         {
             Physics.gravity = (Physics.gravity / Physics.gravity.magnitude) * maxMagnitude;
+        }
+    }
+
+    public void LockChangingOfGravity(float seconds)
+    {
+        if (!bLockGravityDirection)
+        {
+            bLockGravityDirection = true;
+            timeWhenLocked = Time.time;
+            lockGravityDelay = seconds;
         }
     }
 }

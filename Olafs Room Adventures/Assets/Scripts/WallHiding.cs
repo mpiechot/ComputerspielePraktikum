@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class WallHiding : MonoBehaviour
 {
-    public Camera cam;
     public Vector3 normal;
     public float hideFactor = 0.5f;
 
@@ -13,11 +12,13 @@ public class WallHiding : MonoBehaviour
     public Axis axis;
 
     private MeshRenderer rend;
+    private Camera cam;
 
     // Start is called before the first frame update
     void Start()
     {
         rend = GetComponent<MeshRenderer>();
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -27,6 +28,7 @@ public class WallHiding : MonoBehaviour
         if(Vector3.Dot(normal,cam.transform.forward) > 0 && GetAxisPosition(cam.transform) > GetAxisPosition(transform))
         {
             color.a = hideFactor;
+            
         }
         else
         {

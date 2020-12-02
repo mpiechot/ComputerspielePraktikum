@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RadioSoundManager : MonoBehaviour
 {
-    public AudioSource radioSongSource;
-    public AudioSource radioHitSoundSource;
+    private AudioSource radioSongSource;
+    private AudioSource radioHitSoundSource;
 
     public AudioClip radioSong;
     public AudioClip radioHitSound;

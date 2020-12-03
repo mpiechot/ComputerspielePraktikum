@@ -7,9 +7,10 @@ public class StartHotelLevel : MonoBehaviour
 {
     public Image blackSceen;
     public GameObject controllsUI;
+    
 
     private float alpha = 1f;
-   
+    private float startTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class StartHotelLevel : MonoBehaviour
         if (blackSceen == null) { Debug.LogError("BlackScreen not found"); }
         controllsUI.SetActive(false);
 
+        
         ;
     }
 
@@ -33,9 +35,8 @@ public class StartHotelLevel : MonoBehaviour
 
             if (Time.time > 3)
         {
-            
-            blackSceen.color = new Color(blackSceen.color.r, blackSceen.color.g, blackSceen.color.b, alpha);
-            alpha = Mathf.Lerp(alpha, 0, 0.2f * Time.deltaTime);
+            fadeIn();
+            playRadioLouder(10);
         }
 
         if (Time.time > 8)
@@ -44,11 +45,32 @@ public class StartHotelLevel : MonoBehaviour
             FindObjectOfType<Elevator>().stopSounds();
             FindObjectOfType<Elevator>().openDoor();
         }
-        if (Time.time > 12)
+
+        if (Time.time > 10)
         {
             controllsUI.SetActive(true);
             Destroy(gameObject);
         }
 
+    }
+
+    private void playRadioLouder(float lerpTime) 
+    {
+        if (startTime == 0)
+        {
+            startTime = Time.time;
+            FindObjectOfType<RadioSoundManager>().startPlaying();
+        }
+        float timeSinceStarted = Time.time - startTime;
+        float percentageComplete = timeSinceStarted / lerpTime;
+
+        FindObjectOfType<RadioSoundManager>().setVolume(Mathf.Lerp(0, 1, percentageComplete));
+        
+    }
+
+    private void fadeIn()
+    {
+        blackSceen.color = new Color(blackSceen.color.r, blackSceen.color.g, blackSceen.color.b, alpha);
+        alpha = Mathf.Lerp(alpha, 0, 0.2f * Time.deltaTime);
     }
 }

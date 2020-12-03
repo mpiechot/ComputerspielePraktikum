@@ -9,7 +9,8 @@ public class RadioSoundManager : MonoBehaviour
 
     public AudioClip radioSong;
     public AudioClip radioHitSound;
-    
+    public float startVolume = 0;
+    private bool bPlayOnRepeat = false;
 
     // Start is called before the first frame update
     void Start()
@@ -23,14 +24,16 @@ public class RadioSoundManager : MonoBehaviour
 
         radioHitSoundSource.clip = radioHitSound;
         radioHitSoundSource.playOnAwake = false;
+        radioSongSource.volume = startVolume;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!radioSongSource.isPlaying && radioSongSource != null)
+        if (bPlayOnRepeat && !radioSongSource.isPlaying && radioSongSource != null)
         {
-           radioSongSource.Play();
+            radioSongSource.Play();
         }
 
 
@@ -41,4 +44,13 @@ public class RadioSoundManager : MonoBehaviour
         radioHitSoundSource.Play();
     }
 
+    public void startPlaying() 
+    {
+        bPlayOnRepeat = true;
+    }
+
+    public void setVolume(float volume) 
+    {
+        radioSongSource.volume = volume;
+    }
 }

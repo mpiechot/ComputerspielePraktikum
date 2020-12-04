@@ -1607,27 +1607,27 @@ PrefabInstance:
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000015980067
+      value: 0.000000015980063
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.6219337e-10
+      value: -4.621932e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.007417827
+      value: -0.0074178292
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 2.7757502e-10
+      value: -0.0000000015964106
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.0590604e-12
+      value: -1.1842227e-11
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543629256596, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -3525,7 +3525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6305f030c67fee349ada963904413e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackScreen: {fileID: 0}
+  blackScreen: {fileID: 1047622337}
   steps: 10
 --- !u!65 &1527362566
 BoxCollider:

@@ -39,7 +39,7 @@ public class RadioSoundManager : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         radioHitSoundSource.Play();
     }

@@ -7,35 +7,39 @@ public class DetachBodyparts : MonoBehaviour
 
     public int lives;
 
+    public GameObject leftLeg;
+    public GameObject rightLeg;
+
     void Update()
     {
-        if (Input.GetKeyDown("space")) 
+        if (Input.GetKeyDown("space")) // simuliert vorläufig, dass Olaf durch irgendetwas Schaden nimmt
         {
-            test();
+            lives--;
         }
+
+        test();
     }
+
+
 
     private void test() 
     {
         switch (lives) 
         {
-            case 5:
-                Debug.Log("5 lives");
+            case 0:
+            Debug.Log("Game over");
                 break;
             case 4:
-                Debug.Log("4 lives");
+                Destroy(rightLeg.GetComponent<CharacterJoint>());
+                rightLeg.transform.parent = null;
                 break;
             case 3:
-                Debug.Log("3 lives");
                 break;
             case 2:
-                Debug.Log("2 lives");
                 break;
             case 1: 
-                Debug.Log("1 life");
                 break;
             default:
-                Debug.Log("0 lives");
                 break;
         }
     }

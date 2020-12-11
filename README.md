@@ -139,3 +139,10 @@ What is the gameplay
 * Außenlichter testen (<font color="red">0%</font>)
 * Level aus den Räumen zusammensetzen (<font color="red">0%</font>)
 * Mögliches UI überlegen (<font color="red">0%</font>)
+
+### Hausaufgabe
+* Sound Effekte für Olaf (Harald)
+* Konkretes Bild von Olaf: wie soll Olaf aussehen?
+
+### Freitag 18.12.2020 16Uhr
+* Player/Olaf Klasse mit Attributen (<font color="red">0%</font>)

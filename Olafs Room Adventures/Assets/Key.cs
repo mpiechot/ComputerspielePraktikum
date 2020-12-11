@@ -17,4 +17,11 @@ public class Key : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Impulse Mag: " + collision.impulse.magnitude);
+        Debug.Log("Relative Velocity: " + collision.relativeVelocity);
+        Debug.Log("mass: " + collision.rigidbody.mass);
+    }
 }

@@ -6,15 +6,13 @@ using UnityEngine.UI;
 
 public class NextRoomFade : MonoBehaviour
 {
-    public Image blackScreen;
-    public int steps = 10;
-
-    bool startFadeOut;
+    [SerializeField]
+    private GameManager gm;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        gm.FadeIn();
     }
 
     // Update is called once per frame
@@ -26,24 +24,13 @@ public class NextRoomFade : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            StartCoroutine("FadeToNextRoom");
+            StartCoroutine("NextScene");
         }
     }
-
-    private IEnumerator FadeToNextRoom()
+    IEnumerator NextScene()
     {
-        while(blackScreen == null)
-        {
-            yield return 0;
-        }
-        for(int i=0;i < steps; i++)
-        {
-            blackScreen.color = new Color(0,0,0,Mathf.Lerp(0, 1, 1.0f / steps));
-            yield return 0;
-        }
-
+        gm.FadeOut();
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(0);
-
-        yield return 0;
     }
 }

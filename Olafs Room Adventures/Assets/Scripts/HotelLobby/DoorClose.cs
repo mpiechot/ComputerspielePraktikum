@@ -16,6 +16,9 @@ public class DoorClose : MonoBehaviour
     private bool closeTheDoor;
     private bool doorClosed;
 
+    [SerializeField]
+    private FadeOutTemplate fadeOut;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -39,13 +39,18 @@ public class RadioSoundManager : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        radioHitSoundSource.Play();
+        if (collision.gameObject.tag == "Player" && radioHitSoundSource.isPlaying == false)
+        {
+            radioHitSoundSource.Play();
+        }
+        
     }
 
     public void startPlaying() 
     {
+
         bPlayOnRepeat = true;
     }
 

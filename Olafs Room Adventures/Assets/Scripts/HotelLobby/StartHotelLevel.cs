@@ -7,8 +7,9 @@ public class StartHotelLevel : MonoBehaviour
 {
     public Image blackSceen;
     public GameObject controllsUI;
-    
 
+    private bool faded = false;
+    private bool faded2 = false;
     private float alpha = 1f;
     private float startTime = 0f;
     // Start is called before the first frame update
@@ -30,25 +31,36 @@ public class StartHotelLevel : MonoBehaviour
     {
         if (Time.time > 1)
         {
+            if (faded == false)
+            {
+                FindObjectOfType<FadeOutTemplate>().FadeOut();
+                faded = true;
+            }
+            
             FindObjectOfType<Elevator>().playSounds();
         }
 
-            if (Time.time > 3)
+        if (Time.time > 3)
         {
-            fadeIn();
+            if (faded2 == false)
+            {
+                FindObjectOfType<FadeOutTemplate>().FadeIn();
+                faded2 = true;
+            }
+            
             playRadioLouder(10);
         }
 
         if (Time.time > 8)
         {
-            blackSceen.gameObject.SetActive(false);
+            FindObjectOfType<FadeOutTemplate>().FadeIn();
             FindObjectOfType<Elevator>().stopSounds();
             FindObjectOfType<Elevator>().openDoor();
         }
 
         if (Time.time > 10)
         {
-            controllsUI.SetActive(true);
+            
             Destroy(gameObject);
         }
 
@@ -68,9 +80,5 @@ public class StartHotelLevel : MonoBehaviour
         
     }
 
-    private void fadeIn()
-    {
-        blackSceen.color = new Color(blackSceen.color.r, blackSceen.color.g, blackSceen.color.b, alpha);
-        alpha = Mathf.Lerp(alpha, 0, 0.2f * Time.deltaTime);
-    }
+    
 }

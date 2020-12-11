@@ -36,13 +36,14 @@ public class Bumper : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collider.gameObject.tag == "Player")
+        Debug.Log("Hit by: " + collision);
+        if (collision.gameObject.tag == "Player")
             {
             bPlayerHit = true;
             //Make Player Freefloat after getting hit for 1 sec
-            FindObjectOfType<GravityController>().LockChangingOfGravity(1f);
+            StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(3f));
         }
         
     }

@@ -74,6 +74,16 @@ Einzelne Wände mit ProBuilder bauen. Nicht Cube + Flip Normals!
 
 ### Level 4: Gravitation, Schlüssel, Explosives Zeug, Switches
 
+## UI
+
+- Herzenanzeige für Olafs HP (Philipp)
+- Schlüssel als kleines Icon mit Zähler (Marco)
+- Kompass (Harald)
+- FadeOut Effekt für die nächste Szene (Rene)
+
+## Olafs Gesundheitssystem
+
+- Olaf verliert Körperteile (Leo)
 
 ### Folgende Level:
 
@@ -123,7 +133,7 @@ What is the gameplay
 * Was man cool findet in Räumen (<font color="lightgreen">**✓**</font>)
 
 ### Hausaufgabe
-* Einen fertigen Raum bauen (<font color="red">0%</font>)
+* Einen (fertigen) Raum bauen (<font color="red">0%</font>)
 
 ### Freitag 04.12.2020 16Uhr
 * Außenlichter testen (<font color="red">0%</font>)

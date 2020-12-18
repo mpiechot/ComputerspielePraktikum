@@ -145,4 +145,17 @@ What is the gameplay
 * Konkretes Bild von Olaf: wie soll Olaf aussehen?
 
 ### Freitag 18.12.2020 16Uhr
-* Player/Olaf Klasse mit Attributen (<font color="red">0%</font>)
+* Player/Olaf Klasse mit Attributen (<font color="lightgreen">**✓**</font>)
+
+### Hausaufgabe
+* zweiter Raum, Szenenübergang, zeug (Blender-Zeug) (Rene)
+* Startmenü + Pausemenü, Ragdoll-Model in Blender (Philipp)
+* Tutorial (Leo)
+* Raum fertigstellen mit Herausfordernden Rätzeln (Marco)
+* Spiel komplett fertigstellen (min. 42 Level) (Harald)
+
+### Productive Monday 28.12.2020 16Uhr
+* Wall Transparency von Harald
+* Character einbauen
+* Demo zusammenstellen
+* Story schreiben mit Tutorial 

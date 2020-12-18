@@ -158,4 +158,5 @@ What is the gameplay
 * Wall Transparency von Harald
 * Character einbauen
 * Demo zusammenstellen
-* Story schreiben mit Tutorial 
+* Story schreiben mit Tutorial
+* Neue Steuerung einbauen (Kompass)

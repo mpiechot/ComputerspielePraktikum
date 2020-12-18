@@ -21,8 +21,8 @@ public class PedestalManager : MonoBehaviour
         if (!levelFinished && activatedPedestals == numberOfPedestals) {
             Debug.Log("You made it - took you long enough.");
             levelFinished = true;
-            // Open door (todo: with some kind of animation)
-            Destroy(door);
+            Animator doorAnimator = door.GetComponent<Animator>();
+            doorAnimator.SetBool("pedestalsOccupied", true);
         }
     }
 }

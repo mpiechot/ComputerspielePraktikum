@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class GravityController : MonoBehaviour
 {
-    // Start is called before the first frame update
-
     [Range(0,100)]
     public float gravityForce = .00000001f;
     public float maxMagnitude = 9.8f;

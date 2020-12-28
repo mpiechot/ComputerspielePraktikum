@@ -62,28 +62,28 @@ public class WallTransparency : MonoBehaviour
         rend.material.color = color;
     }
 
-    public Vector3 lineIntersection(Vector3 planePoint, Vector3 planeNormal, Vector3 linePoint, Vector3 lineDirection) {
-        float t = dot(planeNormal,planePoint) - (dot(planeNormal,linePoint) / dot(planeNormal,lineDirection));
-        return linePoint + lineDirection * t;
-    }
+    // public Vector3 lineIntersection(Vector3 planePoint, Vector3 planeNormal, Vector3 linePoint, Vector3 lineDirection) {
+    //     float t = dot(planeNormal,planePoint) - (dot(planeNormal,linePoint) / dot(planeNormal,lineDirection));
+    //     return linePoint + lineDirection * t;
+    // }
 
     public float dot(Vector3 a, Vector3 b){
         return a.x * b.x + a.y * b.y + a.z * b.z;
     }
 
-    public bool isWallBetweenSight(Vector3 line_point0,Vector3 line_point1,Vector3 plane_point,Vector3 plane_normal,float epsilon){
-        Vector3 u = line_point1 - line_point0;
-        float d = dot(plane_normal,u);
+    // public bool isWallBetweenSight(Vector3 line_point0,Vector3 line_point1,Vector3 plane_point,Vector3 plane_normal,float epsilon){
+    //     Vector3 u = line_point1 - line_point0;
+    //     float d = dot(plane_normal,u);
 
-        if(Mathf.Abs(d) > epsilon){
-            Vector3 w = line_point0 - plane_point;
-            float fac = -dot(plane_normal,w)/d;
-            return fac > 0 && fac < 1;
-        }
-        else{
-            return false;
-        }
-    }
+    //     if(Mathf.Abs(d) > epsilon){
+    //         Vector3 w = line_point0 - plane_point;
+    //         float fac = -dot(plane_normal,w)/d;
+    //         return fac > 0 && fac < 1;
+    //     }
+    //     else{
+    //         return false;
+    //     }
+    // }
 
     public float distancePointToPlane(Vector3 point, Vector3 plane_point, Vector3 plane_normal){
         return dot(plane_normal,(point - plane_point));

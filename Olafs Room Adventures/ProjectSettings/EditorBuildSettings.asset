@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PrototypRoom1.unity
     guid: 84e7c49702bf37d4db14b844a0cb250d
+  - enabled: 1
+    path: Assets/Scenes/ReneTest/ReneTunnel.unity
+    guid: c58945580d1db6940822f82355d43032
+  - enabled: 1
+    path: Assets/Scenes/ReneTest/HotelLobby2.unity
+    guid: 8defbd72a87622a4ea60e7e4eb25769d
   m_configObjects: {}

@@ -34,5 +34,29 @@ public class CameraController : MonoBehaviour
             cinemachine.m_Orbits[1].m_Radius -= zoom_direction * zoom_speed;
             cinemachine.m_Orbits[2].m_Height += zoom_direction * zoom_speed;
         }
+
     }
+
+    public void shakeCamera(float amplitude,float duration){
+        StartCoroutine(startShake(amplitude,duration));
+    }
+
+    IEnumerator startShake(float amplitude,float duration){
+        cinemachine.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+        cinemachine.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+        cinemachine.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+        for(int i = 0; i < 10; i++){
+            yield return new WaitForSeconds(duration/10);
+            amplitude = amplitude - amplitude/10;
+            cinemachine.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+            cinemachine.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+            cinemachine.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = amplitude;
+        }
+        //yield return WaitForSeconds(duration/10);
+        cinemachine.GetRig(0).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+        cinemachine.GetRig(1).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+        cinemachine.GetRig(2).GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0;
+    }
+
+    
 }

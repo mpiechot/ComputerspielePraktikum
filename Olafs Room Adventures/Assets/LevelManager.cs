@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
 
         while (!scenesToLoad[scenesToLoad.Count - 1].isDone)
         {
-            Debug.Log("Loading Scene: " + scene.ToString());
+           
             yield return null;
         }
 
@@ -64,16 +64,17 @@ public class LevelManager : MonoBehaviour
 
         for (int i = 0; i < tunnelExitArray.Length; i++)
         {
-            Debug.Log("TunnelExitNumber:" + tunnelExitArray[i].GetComponent<TunnelExitScript>().tunnelNumber);
+            
             if (tunnelExitArray[i].GetComponent<TunnelExitScript>().tunnelNumber == currentTunnelNumber)
             {
                 player.transform.rotation = tunnelExitArray[i].transform.rotation;
                 gameObject.transform.rotation = tunnelExitArray[i].transform.rotation;
+                //GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = tunnelExitArray[i].transform.rotation;
 
                 player.transform.position = tunnelExitArray[i].transform.position;
-                gameObject.transform.position = tunnelExitArray[i].transform.position - new Vector3( 0, 0, 0);
+                gameObject.transform.position = tunnelExitArray[i].transform.position;
+                //GameObject.FindGameObjectWithTag("MainCamera").transform.position = tunnelExitArray[i].transform.position;
 
-                
             }
         }
 

@@ -25,40 +25,40 @@ public class GravityController : MonoBehaviour
             return; 
         }
 
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKey(KeyCode.Q))
         {
             ChangeGravity(new Vector3(0, -gravityForce, 0));
         }
-        if (Input.GetKey(KeyCode.R))
+        if (Input.GetKey(KeyCode.E))
         {
             ChangeGravity(new Vector3(0, gravityForce, 0));
         }
-        if (Input.GetKey(KeyCode.T))
+        if (Input.GetKey(KeyCode.A))
         {
             ChangeGravity(new Vector3(-gravityForce, 0, 0));
         }
-        if (Input.GetKey(KeyCode.Y))
+        if (Input.GetKey(KeyCode.D))
         {
             ChangeGravity(new Vector3(gravityForce, 0, 0));
         }
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKey(KeyCode.S))
         {
             ChangeGravity(new Vector3(0, 0, -gravityForce));
         }
-        if (Input.GetKey(KeyCode.G))
+        if (Input.GetKey(KeyCode.W))
         {
             ChangeGravity(new Vector3(0, 0, gravityForce));
         }
 
-        if (!Input.GetKey(KeyCode.R) && !Input.GetKey(KeyCode.B))
+        if (!Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.E))
         {
             ChangeGravityToZero(Axis.Y);
         }
-        if (!Input.GetKey(KeyCode.T) && !Input.GetKey(KeyCode.Y))
+        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
         {
             ChangeGravityToZero(Axis.X);
         }
-        if (!Input.GetKey(KeyCode.P) && !Input.GetKey(KeyCode.G))
+        if (!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.S))
         {
             ChangeGravityToZero(Axis.Z);
         }

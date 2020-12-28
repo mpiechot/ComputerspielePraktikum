@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 
 public class TunnelScript : MonoBehaviour
@@ -8,11 +9,15 @@ public class TunnelScript : MonoBehaviour
     private bool isLoaded;
     private bool shouldLoad;
 
+    
+
     public ScenesToLoad SceneToLoad;
     public int tunnelNumber;
     // Start is called before the first frame update
     void Start()
     {
+        
+
         if (SceneManager.sceneCount < 0)
         {
             for (int i = 0; i < SceneManager.sceneCount; ++i)

@@ -1,17 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.SceneManagement;
+
+
 
 public enum ScenesToLoad
 {
+
     ReneTunnel,
-    HotelLobby
+    HotelLobby2
 }
 
 public class LevelManager : MonoBehaviour
 {
-
+    
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
     public int currentTunnelNumber;
@@ -63,8 +67,13 @@ public class LevelManager : MonoBehaviour
             Debug.Log("TunnelExitNumber:" + tunnelExitArray[i].GetComponent<TunnelExitScript>().tunnelNumber);
             if (tunnelExitArray[i].GetComponent<TunnelExitScript>().tunnelNumber == currentTunnelNumber)
             {
+                player.transform.rotation = tunnelExitArray[i].transform.rotation;
+                gameObject.transform.rotation = tunnelExitArray[i].transform.rotation;
+
                 player.transform.position = tunnelExitArray[i].transform.position;
-                gameObject.transform.position = tunnelExitArray[i].transform.position - new Vector3(3,0,0);
+                gameObject.transform.position = tunnelExitArray[i].transform.position - new Vector3( 0, 0, 0);
+
+                
             }
         }
 

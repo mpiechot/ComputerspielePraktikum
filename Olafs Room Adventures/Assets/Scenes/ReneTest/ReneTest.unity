@@ -189,7 +189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22993738}
-  m_LocalRotation: {x: -0.0074152355, y: 0.026176233, z: 0.00019417479, w: 0.99962986}
+  m_LocalRotation: {x: -0.0074152346, y: 0.026176231, z: 0.00019417473, w: 0.99962986}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -439,7 +439,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32540
+  m_Name: pb_Mesh-49420
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -626,6 +626,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7198a7f88e820449c89248c7da766a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cinemachine: {fileID: 0}
+  cam: {fileID: 0}
+  head: {fileID: 0}
   currentTunnelNumber: 0
   player: {fileID: 0}
   tunnelExitArray: []
@@ -1200,7 +1203,7 @@ MonoBehaviour:
   m_UpdateMethod: 2
   m_BlendUpdateMethod: 1
   m_DefaultBlend:
-    m_Style: 1
+    m_Style: 0
     m_Time: 2
     m_CustomCurve:
       serializedVersion: 2
@@ -1230,7 +1233,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 311457831}
-  m_LocalRotation: {x: -0.04721107, y: 0.026147742, z: 0.0012362654, w: 0.99854195}
+  m_LocalRotation: {x: -0.047211085, y: 0.026147734, z: 0.0012362656, w: 0.99854183}
   m_LocalPosition: {x: -2.9943833, y: 13.171686, z: -38.9231}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1243,7 +1246,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32546
+  m_Name: pb_Mesh-49426
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1475,7 +1478,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32534
+  m_Name: pb_Mesh-49414
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2362,7 +2365,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32536
+  m_Name: pb_Mesh-49416
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2847,7 +2850,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32544
+  m_Name: pb_Mesh-49424
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3524,7 +3527,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318748649}
-  m_LocalRotation: {x: -0.047211073, y: 0.026147744, z: 0.0012362659, w: 0.9985419}
+  m_LocalRotation: {x: -0.04721108, y: 0.026147744, z: 0.0012362661, w: 0.9985419}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -3569,7 +3572,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32532
+  m_Name: pb_Mesh-49412
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4016,7 +4019,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32542
+  m_Name: pb_Mesh-49422
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5276,6 +5279,30 @@ Transform:
   m_Father: {fileID: 2038126973}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1794207887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8503814312718974211, guid: cd1439a7a79dcc642a77c0bf08442b6e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3624382694681160838}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1794207888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794207887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d7198a7f88e820449c89248c7da766a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cinemachine: {fileID: 1757061919}
+  cam: {fileID: 311457832}
+  head: {fileID: 579156377}
+  currentTunnelNumber: 0
+  player: {fileID: 0}
+  tunnelExitArray: []
 --- !u!1001 &1854604986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6368,7 +6395,12 @@ PrefabInstance:
         type: 3}
       propertyPath: cinemachine
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1757061919}
+    - target: {fileID: 3624382694180513992, guid: cd1439a7a79dcc642a77c0bf08442b6e,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 311457832}
     - target: {fileID: 3624382694180513995, guid: cd1439a7a79dcc642a77c0bf08442b6e,
         type: 3}
       propertyPath: tunnelNumber
@@ -6534,5 +6566,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3624382694180513992, guid: cd1439a7a79dcc642a77c0bf08442b6e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cd1439a7a79dcc642a77c0bf08442b6e, type: 3}

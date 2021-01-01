@@ -53,7 +53,7 @@ public class TunnelScript : MonoBehaviour
     {
         if (!isLoaded)
         {
-            LevelManager.instance.LoadScene(SceneToLoad, tunnelNumber);
+            TunnelLevelManager.instance.LoadScene(SceneToLoad, tunnelNumber);
             isLoaded = true;
         }
     }

@@ -13,15 +13,17 @@ public enum ScenesToLoad
     HotelLobby2
 }
 
-public class LevelManager : MonoBehaviour
+public class TunnelLevelManager : MonoBehaviour
 {
+
     public CinemachineFreeLook cinemachine;
     public Camera cam;
+    public Transform head;
 
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
     public int currentTunnelNumber;
-    public static LevelManager instance = null;
+    public static TunnelLevelManager instance = null;
 
     public GameObject player;
     public GameObject[] tunnelExitArray;
@@ -64,28 +66,35 @@ public class LevelManager : MonoBehaviour
         }
 
         tunnelExitArray = GameObject.FindGameObjectsWithTag("TunnelExit");
+        
+
+        
 
         for (int i = 0; i < tunnelExitArray.Length; i++)
         {
             
             if (tunnelExitArray[i].GetComponent<TunnelExitScript>().tunnelNumber == currentTunnelNumber)
             {
+                //place tunnel on exit with right number
                 
-
                 player.transform.rotation = tunnelExitArray[i].transform.rotation;
                 gameObject.transform.rotation = tunnelExitArray[i].transform.rotation;
-                //GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = tunnelExitArray[i].transform.rotation;
+                
                 Transform oldTransform = player.transform;
                 player.transform.position = tunnelExitArray[i].transform.position;
                 gameObject.transform.position = tunnelExitArray[i].transform.position;
-                //GameObject.FindGameObjectWithTag("MainCamera").transform.position = tunnelExitArray[i].transform.position;
-                //cinemachine.ForceCameraPosition(player.transform.position , player.transform.rotation);
-                
-                cam.transform.rotation = tunnelExitArray[i].transform.rotation ;
-                cinemachine.ForceCameraPosition(player.transform.position, tunnelExitArray[i].transform.rotation);
 
+                
+                
+                //rotate camera same as tunnel
+                cinemachine.ForceCameraPosition(player.transform.position, tunnelExitArray[i].transform.rotation);
+                
+
+
+                
             }
         }
+        
 
     }
 

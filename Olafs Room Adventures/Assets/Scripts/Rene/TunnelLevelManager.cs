@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.SceneManagement;
-
+using Cinemachine;
 
 
 public enum ScenesToLoad
@@ -15,7 +15,9 @@ public enum ScenesToLoad
 
 public class LevelManager : MonoBehaviour
 {
-    
+    public CinemachineFreeLook cinemachine;
+    public Camera cam;
+
     List<AsyncOperation> scenesToLoad = new List<AsyncOperation>();
 
     public int currentTunnelNumber;
@@ -47,6 +49,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    
 
     IEnumerator LoadAsyncronously(ScenesToLoad scene)
     {
@@ -67,13 +70,19 @@ public class LevelManager : MonoBehaviour
             
             if (tunnelExitArray[i].GetComponent<TunnelExitScript>().tunnelNumber == currentTunnelNumber)
             {
+                
+
                 player.transform.rotation = tunnelExitArray[i].transform.rotation;
                 gameObject.transform.rotation = tunnelExitArray[i].transform.rotation;
                 //GameObject.FindGameObjectWithTag("MainCamera").transform.rotation = tunnelExitArray[i].transform.rotation;
-
+                Transform oldTransform = player.transform;
                 player.transform.position = tunnelExitArray[i].transform.position;
                 gameObject.transform.position = tunnelExitArray[i].transform.position;
                 //GameObject.FindGameObjectWithTag("MainCamera").transform.position = tunnelExitArray[i].transform.position;
+                //cinemachine.ForceCameraPosition(player.transform.position , player.transform.rotation);
+                
+                cam.transform.rotation = tunnelExitArray[i].transform.rotation ;
+                cinemachine.ForceCameraPosition(player.transform.position, tunnelExitArray[i].transform.rotation);
 
             }
         }

@@ -10,9 +10,16 @@ public class CameraController : MonoBehaviour
     public CinemachineFreeLook cinemachine;
     public float zoom_speed = 1;
 
+    public bool deactivated;
+
     // Update is called once per frame
     void Update()
     {
+
+        if (deactivated) {
+            return;
+        }
+        
         if (Input.GetMouseButton(1))
         {
             cinemachine.m_XAxis.m_InputAxisName = "Mouse X";

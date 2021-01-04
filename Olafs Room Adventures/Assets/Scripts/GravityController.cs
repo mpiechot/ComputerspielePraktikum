@@ -11,7 +11,7 @@ public class GravityController : MonoBehaviour
     public float gravityForce = .00000001f;
     public float maxMagnitude = 9.8f;
 
-    private bool  bFreeFloating = false;
+    public bool  bFreeFloating = false;
 
     private void Start()
     {
@@ -97,5 +97,12 @@ public class GravityController : MonoBehaviour
         ChangeGravityToZero(Axis.Z);
         yield return new WaitForSeconds(seconds);
         bFreeFloating = false;
+    }
+
+    public void DeactivateGravity() {
+        bFreeFloating = true;
+        ChangeGravityToZero(Axis.X);
+        ChangeGravityToZero(Axis.Y);
+        ChangeGravityToZero(Axis.Z);
     }
 }

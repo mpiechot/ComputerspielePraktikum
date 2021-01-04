@@ -46,4 +46,9 @@ public class Player : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Particle Collided!");
+    }
 }

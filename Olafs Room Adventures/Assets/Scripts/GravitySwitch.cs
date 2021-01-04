@@ -27,7 +27,6 @@ public class GravitySwitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Actual Gravity: " + Physics.gravity);
         if (NeedToSwitchStates())
         {
             state = !state;

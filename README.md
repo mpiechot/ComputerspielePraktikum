@@ -180,3 +180,14 @@ What is the gameplay
 * Demo zusammenstellen
 * Story schreiben mit Tutorial (<font color="lightgreen">**✓**</font>)
 * Neue Steuerung einbauen (Kompass) (<font color="lightgreen">**✓**</font>)
+
+### Hausaufgabe
+* Tutorial (Leo)
+* Checkpoint System (Marco)
+* Ganz neuer Raum (Harald)
+* Baum, Kamin, Socke blendern + zweiten Raum anfangen (Rene)
+* Ragdoll Olaf von Blender in Unity + abgeschrägte Kanten Olaf Modell (Philipp)
+
+### Samstag  09.01.2021 16Uhr
+* Olaf Modell austauschen
+* Levelstruktur

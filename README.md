@@ -44,6 +44,7 @@ https://www.youtube.com/watch?v=VJxrdrgbuTE
 ## Termine
 
 - 15.12. Abgabe Prototyp
+- 02.02. Zwischenstand
 
 ## Eigene Scene erstellen
 1. SampleScene öffnen
@@ -55,6 +56,25 @@ https://www.youtube.com/watch?v=VJxrdrgbuTE
 - ProBuilder
 - ProGrids
 - PostProcessing
+
+## Story
+
+- Olaf startet im Tutorial/ "wacht" im Tutorial auf
+- Stimme + Einblendung: "ich hab dich gefangen, du musst mich belustigen!" in böse
+- Stimme + Einblendung: "um hier raus zu kommen ...., weil ich so gnädig bin hast du hier ne tolle Fähigkeit!"
+- Stimme + Einblendung: "damit es nicht zu einfach ist, kannst du deinen Körper nicht bewegen. Dafür kannst du aber die Gravitation beeinflussen. Ist das nicht toll?"
+- Stimme + Einblendung erklärt Kompass + Steuerung
+
+- Stimme sagt in jedem Level min. einmal was
+  - Wenn neues Feature dazu kommt, wird dieses erklärt
+
+- Ende: Spieler trifft sein Gehirn im Traum.
+- Endboss: Gehirn. Sieg -> Olaf träumt weiter, Niederlage -> Aufwachen
+
+
+## Design
+
+
 
 ## Levels
 
@@ -152,11 +172,11 @@ What is the gameplay
 * Startmenü + Pausemenü, Ragdoll-Model in Blender (Philipp)
 * Tutorial (Leo)
 * Raum fertigstellen mit Herausfordernden Rätzeln (Marco)
-* Spiel komplett fertigstellen (min. 42 Level) (Harald)
+* Wall Transparency Bug, Spiel speichern (Harald)
 
 ### Productive Monday 28.12.2020 16Uhr
-* Wall Transparency von Harald
+* Wall Transparency von Harald (<font color="lightgreen">**✓**</font>)
 * Character einbauen
 * Demo zusammenstellen
-* Story schreiben mit Tutorial
-* Neue Steuerung einbauen (Kompass)
+* Story schreiben mit Tutorial (<font color="lightgreen">**✓**</font>)
+* Neue Steuerung einbauen (Kompass) (<font color="lightgreen">**✓**</font>)

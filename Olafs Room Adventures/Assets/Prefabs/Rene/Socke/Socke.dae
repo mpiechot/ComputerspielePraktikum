@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.90.0 commit date:2020-08-31, commit time:11:26, hash:0330d1af29c0</authoring_tool>
+    </contributor>
+    <created>2021-01-09T13:33:25</created>
+    <modified>2021-01-09T13:33:25</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="RedSockMaterial-effect">
+      <profile_COMMON>
+        <newparam sid="SockTexture_png-surface">
+          <surface type="2D">
+            <init_from>SockTexture_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="SockTexture_png-sampler">
+          <sampler2D>
+            <source>SockTexture_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="SockTexture_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="WhiteSockmaterial-effect">
+      <profile_COMMON>
+        <newparam sid="SockTexture_png-surface">
+          <surface type="2D">
+            <init_from>SockTexture_png</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="SockTexture_png-sampler">
+          <sampler2D>
+            <source>SockTexture_png-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <texture texture="SockTexture_png-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="SockTexture_png" name="SockTexture_png">
+      <init_from>SockTexture.png</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="RedSockMaterial-material" name="RedSockMaterial">
+      <instance_effect url="#RedSockMaterial-effect"/>
+    </material>
+    <material id="WhiteSockmaterial-material" name="WhiteSockmaterial">
+      <instance_effect url="#WhiteSockmaterial-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Plane-mesh" name="Plane">
+      <mesh>
+        <source id="Plane-mesh-positions">
+          <float_array id="Plane-mesh-positions-array" count="105">0.1106476 0.4163944 -0.0724321 2.5925 0.04200345 -0.0724321 0.06181406 0.6519024 -0.07243204 0.1635507 0.911896 -0.07243198 0.3331119 2.008391 -0.07243192 1.712209 2.046825 -0.07243192 2.831312 1.669269 -0.07243192 2.673055 0.5275576 -0.07243204 2.718271 0.2901721 -0.07243204 2.718271 0.2901721 -0.07243204 0.1106476 0.4163944 -0.0724321 0.04264748 -1.172158 -0.07243233 2.292158 -1.443455 -0.07243233 0.01624739 -1.963539 -0.1062004 1.820435 -3.603372 -0.1702228 3.241719 -3.695226 -0.07243257 3.670737 -2.560592 0.01987326 1.385182 0.3599997 -0.0724321 2.601084 0.03940856 0.02826154 0.06181406 0.6519023 0.08186256 0.1635507 0.911896 0.08186256 0.3331119 2.008391 0.08186268 1.712209 2.046825 0.08186268 2.831312 1.669269 0.08186262 2.673055 0.5275575 0.0818625 2.718271 0.2901721 0.0818625 0.1034464 0.4163943 0.03114199 1.385182 0.3599996 0.08186244 1.385182 0.3599996 0.0160678 0.04264748 -1.172158 0.01606756 2.292158 -1.443455 0.01606756 0.01624739 -1.963539 -0.01770043 1.820435 -3.603372 -0.08172279 3.241719 -3.695226 0.01606732 3.670737 -2.560592 0.1083732</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-positions-array" count="35" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane-mesh-normals">
+          <float_array id="Plane-mesh-normals-array" count="69">0 0 -1 -0.0021739 -0.01624196 0.9998658 0.9823387 0.1871117 0 -0.02785795 0.9996119 0 -0.04405534 -0.9990284 -0.001230895 0.3196712 0.9475286 0 -0.9882536 0.1528227 0 -0.982224 -0.1856979 -0.02742946 0.8999899 -0.4345259 -0.03471952 0.9905294 -0.1373012 0 -0.9312428 0.3643994 0 -0.2548541 -0.9669788 -0.001260995 -0.9994441 0.03334093 0 -0.02364385 -0.02551269 0.9993949 -0.9984718 0.04065543 -0.03743439 0.6295879 0.7769293 0 0.02373141 0.0239284 -0.999432 -0.6725969 -0.7400091 0 -0.06449347 -0.9979181 0 0.9785267 -0.2006554 -0.04714947 0.935369 -0.3536733 0 0.4117057 0.9113169 0 -0.8429443 -0.5380011 0</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-normals-array" count="23" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Plane-mesh-map-0">
+          <float_array id="Plane-mesh-map-0-array" count="224">0.9454751 0.4706736 0.8946421 0.482966 0.6742397 0.4832627 0.6376083 0.760805 0.6884949 0.9709902 0.8955782 0.9504095 0.9340749 0.9593499 0.9780529 0.940064 0.9587575 0.7282537 0.9863469 0.4874917 0.955547 0.4695679 0.9938858 0.4856193 0.9685901 0.7335707 0.9845697 0.9479941 0.9428951 0.969892 0.9035898 0.9608718 0.6917137 0.9825163 0.6396598 0.7674058 0.6774094 0.4824352 0.9034733 0.4821736 0.9340749 0.9593499 0.8955782 0.9504095 0.9035898 0.9608718 0.9428951 0.969892 0.6376083 0.760805 0.6742397 0.4832627 0.6774094 0.4824352 0.6396598 0.7674058 0.9863469 0.4874917 0.9587575 0.7282537 0.9685901 0.7335707 0.9938858 0.4856193 0.6884949 0.9709902 0.6376083 0.760805 0.6396598 0.7674058 0.6917137 0.9825163 0.6742397 0.4832627 0.8946421 0.482966 0.9034733 0.4821736 0.6774094 0.4824352 0.9454751 0.4706736 0.9863469 0.4874917 0.9938858 0.4856193 0.955547 0.4695679 0.9780529 0.940064 0.9340749 0.9593499 0.9428951 0.969892 0.9845697 0.9479941 0.8955782 0.9504095 0.6884949 0.9709902 0.6917137 0.9825163 0.9035898 0.9608718 0.8946421 0.482966 0.9454751 0.4706736 0.955547 0.4695679 0.9034733 0.4821736 0.9587575 0.7282537 0.9780529 0.940064 0.9845697 0.9479941 0.9685901 0.7335707 0.4296835 0.8209256 0.4296835 0.5253241 0.4626622 0.5267305 0.4626622 0.822332 0.115427 0.866351 0.1197531 0.475413 0.1197887 0.3288174 0.468347 0.08431535 0.7507477 0.0953623 0.8539667 0.2501121 0.450312 0.548218 0.4684041 0.8620029 0.3445566 0.8761745 0.528261 0.4725809 0.4196176 0.8260505 0.3999443 0.8200036 0.5051603 0.4655523 0.4275218 0.8705473 0.4275218 0.4134259 0.4502606 0.4146088 0.4502606 0.8717302 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.3734763 0.8301047 0.3734763 0.3921342 0.3893641 0.3925514 0.3893641 0.830522 0 0 0 0 0 0 0 0 0.4023267 0.8687148 0.3990226 0.4711288 0.4255441 0.4711294 0.4255441 0.868528 0.4428804 0.4009793 0.4428804 0.8465612 0.4105589 0.8490206 0.4105598 0.4034388 0.9643384 0.7312717 0.9034733 0.4821736 0.9685901 0.7335707 0.6774094 0.4824352 0.9643384 0.7312717 0.9685901 0.7335707</float_array>
+          <technique_common>
+            <accessor source="#Plane-mesh-map-0-array" count="112" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Plane-mesh-vertices">
+          <input semantic="POSITION" source="#Plane-mesh-positions"/>
+        </vertices>
+        <lines count="22">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <p>0 2 7 8 8 9 10 0 27 24 27 22 27 23 27 25 27 19 17 5 17 4 10 3 7 1 17 6 30 29 30 26 33 30 32 29 12 11 11 1 14 11 15 12</p>
+        </lines>
+        <polylist material="RedSockMaterial-material" count="11">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>4 4 4 9 4 4 9 4 4 4 4 </vcount>
+          <p>10 4 28 17 4 29 27 4 30 26 4 31 17 11 56 1 11 57 18 11 58 27 11 59 11 12 60 13 12 61 31 12 62 29 12 63 26 13 64 29 13 65 31 13 66 32 13 67 33 13 68 34 13 69 30 13 70 18 13 71 28 13 72 10 14 73 11 14 74 29 14 75 26 14 76 16 15 77 12 15 78 30 15 79 34 15 80 11 16 81 10 16 82 17 16 83 1 16 84 12 16 85 16 16 86 15 16 87 14 16 88 13 16 89 13 17 90 14 17 91 32 17 92 31 17 93 14 18 94 15 18 95 33 18 96 32 18 97 12 19 98 1 19 99 18 19 100 30 19 101 15 20 102 16 20 103 34 20 104 33 20 105</p>
+        </polylist>
+        <polylist material="WhiteSockmaterial-material" count="12">
+          <input semantic="VERTEX" source="#Plane-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Plane-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Plane-mesh-map-0" offset="2" set="0"/>
+          <vcount>10 10 4 4 4 4 4 4 4 4 3 3 </vcount>
+          <p>2 0 0 3 0 1 4 0 2 5 0 3 6 0 4 7 0 5 9 0 6 1 0 7 17 0 8 10 0 9 19 1 10 26 1 11 27 1 12 18 1 13 25 1 14 24 1 15 23 1 16 22 1 17 21 1 18 20 1 19 9 2 20 7 2 21 24 2 22 25 2 23 5 3 24 4 3 25 21 3 26 22 3 27 6 5 32 5 5 33 22 5 34 23 5 35 4 6 36 3 6 37 20 6 38 21 6 39 2 7 40 10 7 41 26 7 42 19 7 43 1 8 44 9 8 45 25 8 46 18 8 47 7 9 48 6 9 49 23 9 50 24 9 51 3 10 52 2 10 53 19 10 54 20 10 55 28 21 106 20 21 107 27 21 108 21 22 109 28 22 110 27 22 111</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Sock" name="Sock" type="NODE">
+        <matrix sid="transform">1 0 0 1.878042 0 -4.37114e-8 -1 2.98409e-7 0 1 -4.37114e-8 -2.220989 0 0 0 1</matrix>
+        <instance_geometry url="#Plane-mesh" name="Sock">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="RedSockMaterial-material" target="#RedSockMaterial-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+              <instance_material symbol="WhiteSockmaterial-material" target="#WhiteSockmaterial-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

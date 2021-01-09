@@ -74,26 +74,6 @@ https://www.youtube.com/watch?v=VJxrdrgbuTE
 
 ## Design
 
-
-
-## Levels
-
-### Raumaufbau
-
-Einzelne Wände mit ProBuilder bauen. Nicht Cube + Flip Normals!
-
-### Level 1: Gravitation (Tutorial)
-
-* **Raum 1:** leer, nur Olaf
-* **Raum 2:** 1 Objekt, Schadensanzeige erklären
-* **Raum 3:** mehrere Objekte, verschiedene Größen
-
-### Level 2: Gravitation, Schlüssel
-
-### Level 3: Gravitation, Schlüssel, Explosives Zeug
-
-### Level 4: Gravitation, Schlüssel, Explosives Zeug, Switches
-
 ## UI
 
 - Herzenanzeige für Olafs HP (Philipp)
@@ -188,6 +168,16 @@ What is the gameplay
 * Baum, Kamin, Socke blendern + zweiten Raum anfangen (Rene)
 * Ragdoll Olaf von Blender in Unity + abgeschrägte Kanten Olaf Modell (Philipp)
 
-### Samstag  09.01.2021 16Uhr
-* Olaf Modell austauschen
+### Samstag 09.01.2021 16Uhr
+* Olaf Modell austauschen (<font color="lightgreen">**✓**</font>)
 * Levelstruktur
+
+### Hausaufgabe
+* Tutorial: erster Raum (Leo)
+* Fenster + Dachgeschoss Raum für Level 2 (Marco)
+* Raum für Explosives Level (Level 4) (Harald)
+* Raum für Bumper Level (Level 3) (Rene)
+* Blendermodelle + optional: Raum für Level 6 (Licht+Dunkelheit) (Philipp)
+
+### Freitag 15.01.2021 16Uhr
+* Weekly Meeting Catch-up

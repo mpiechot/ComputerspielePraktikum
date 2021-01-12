@@ -64,6 +64,7 @@ public class RadioSoundManager : MonoBehaviour
 
     public bool playRadioLouder()
     {
+        
         if (startTime == 0)
         {
             startTime = Time.time;
@@ -75,8 +76,11 @@ public class RadioSoundManager : MonoBehaviour
 
         setVolume(Mathf.Lerp(0, 1, percentageComplete));
 
-        if (percentageComplete > 98) { return true; }
-        return false;
+        //true again when over 80% done
+        if (percentageComplete > 0.8f) { return true; }
+        //false when over 50% done.
+        if (percentageComplete > 0.5f) { return false; }
+        return true;
         
     }
 }

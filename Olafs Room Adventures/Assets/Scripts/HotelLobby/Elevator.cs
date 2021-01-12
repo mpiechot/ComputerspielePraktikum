@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public enum ElevatorType { 
     DoorClosedAtStart,
-    DoorOpenAtStart,
     MoveUp,
-    MoveDown
+    MoveDown,
+    MoveUpAndLoadAsync,
+    MoveDownAndLoadAsync
 }
 
 public class Elevator : MonoBehaviour
@@ -18,16 +19,17 @@ public class Elevator : MonoBehaviour
     public AudioClip bell;
     public AudioClip elevatorSound;
 
-    public float DoorSpeed = 0.5f;
+    private float DoorSpeed = 0.05f;
     public ElevatorType elevatorType;
-
+    public float distance = 1f;
+    public string SceneNameToLoad = "";
 
     private bool bDoorOpen;
     private GameObject Door;
     private GameObject[] leftRightDoor = new GameObject[2];
 
-    private Vector3[] startPositionDoors = new Vector3[2];
-    private Vector3[] endPositionDoors = new Vector3[2];
+    private Vector3[] DoorsClosedPosition = new Vector3[2];
+    private Vector3[] DoorsOpenPosition = new Vector3[2];
 
     private GameManager gameManager;
     private RadioSoundManager radio;
@@ -46,7 +48,7 @@ public class Elevator : MonoBehaviour
         leftRightDoor[1] = Door.transform.Find("RightDoor").gameObject;
 
         setUpDoorPositions();
-        StartCoroutine(openCloseDoor());
+        
 
         if (elevatorType == ElevatorType.DoorClosedAtStart)
         {
@@ -62,15 +64,12 @@ public class Elevator : MonoBehaviour
     void Update()
     {
         
-        if (!bellSoundSource.isPlaying && bell != null)
-        {
-            bellSoundSource.Play();
-        }
+        
 
                 
 
                 //door is open/Closed after it moved to end Position:
-        if (Mathf.Abs(endPositionDoors[0].x - leftRightDoor[0].transform.position.x) < 1.0f)
+        if (Mathf.Abs(DoorsOpenPosition[0].x - leftRightDoor[0].transform.position.x) < 1.0f)
             bDoorOpen = (elevatorType == ElevatorType.DoorClosedAtStart) ? true : false;
 
         
@@ -94,19 +93,20 @@ public class Elevator : MonoBehaviour
 
     private void setUpDoorPositions() 
     {
-        startPositionDoors[0] = leftRightDoor[0].transform.position;
-        startPositionDoors[1] = leftRightDoor[1].transform.position;
+        DoorsClosedPosition[0] = leftRightDoor[0].transform.position;
+        DoorsClosedPosition[1] = leftRightDoor[1].transform.position;
         
         if (elevatorType == ElevatorType.DoorClosedAtStart)
         {
-            endPositionDoors[0] = (leftRightDoor[0].transform.position - 6 * Vector3.right);
-            endPositionDoors[1] = (leftRightDoor[1].transform.position - 6 * Vector3.left);
+            DoorsOpenPosition[0] = (leftRightDoor[0].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.right);
+            DoorsOpenPosition[1] = (leftRightDoor[1].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.left);
             bDoorOpen = false;
+            
         }
         else
         {
-            endPositionDoors[0] = (leftRightDoor[0].transform.position + 6 * Vector3.right);
-            endPositionDoors[1] = (leftRightDoor[1].transform.position + 6 * Vector3.left);
+            DoorsOpenPosition[0] = (leftRightDoor[0].transform.position + leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.right);
+            DoorsOpenPosition[1] = (leftRightDoor[1].transform.position + leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.left);
             bDoorOpen = true;
         }
 
@@ -116,6 +116,11 @@ public class Elevator : MonoBehaviour
     {
         if(!elevatorSoundSource.isPlaying)
             elevatorSoundSource.Play();
+    }
+    public void playBellSound()
+    {
+        if (!bellSoundSource.isPlaying)
+            bellSoundSource.Play();
     }
 
     public void stopSounds()
@@ -130,33 +135,59 @@ public class Elevator : MonoBehaviour
 
         while(bDoorOpen == false)
         {
-            leftRightDoor[0].transform.position = Vector3.Lerp(startPositionDoors[0], endPositionDoors[0], Time.deltaTime * DoorSpeed);
-            startPositionDoors[0] = leftRightDoor[0].transform.position;
+            leftRightDoor[0].transform.position = Vector3.Lerp(DoorsClosedPosition[0], DoorsOpenPosition[0], Time.deltaTime * DoorSpeed);
+            DoorsClosedPosition[0] = leftRightDoor[0].transform.position;
 
-            leftRightDoor[1].transform.position = Vector3.Lerp(startPositionDoors[1], endPositionDoors[1], Time.deltaTime * DoorSpeed);
-            startPositionDoors[1] = leftRightDoor[1].transform.position;
+            leftRightDoor[1].transform.position = Vector3.Lerp(DoorsClosedPosition[1], DoorsOpenPosition[1], Time.deltaTime * DoorSpeed);
+            DoorsClosedPosition[1] = leftRightDoor[1].transform.position;
             yield return 0;
         }
-        Debug.Log("DoorOpen!");
+        
         
     }
 
 
     public IEnumerator BeginHotelLevel()
     {
+        playSounds();
         while (radio.playRadioLouder()) 
         {
             yield return 0;
         }
-        
+        gameManager.FadeIn();
+        blackScreen.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2);
+        playBellSound();
+        yield return new WaitForSeconds(1.0f);
+        StartCoroutine(openCloseDoor());
+        while (!radio.playRadioLouder())
+        {
+            yield return 0;
+        }
+
+
+
+    }
+
+    public IEnumerator MoveUp()
+    {
+        yield return 0;
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            StartCoroutine(BeginHotelLevel());
+        switch (elevatorType) 
+        { 
+            case ElevatorType.DoorClosedAtStart:
+                if (other.gameObject.tag == "Player")
+                {
+                    StartCoroutine(BeginHotelLevel());
+                }
+                break;
+
+
+
         }
     }
 

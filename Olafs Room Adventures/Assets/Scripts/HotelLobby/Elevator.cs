@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ElevatorType { 
     DoorClosedAtStart,
@@ -28,6 +29,10 @@ public class Elevator : MonoBehaviour
     private Vector3[] startPositionDoors = new Vector3[2];
     private Vector3[] endPositionDoors = new Vector3[2];
 
+    private GameManager gameManager;
+    private RadioSoundManager radio;
+    public Transform blackScreen;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +47,15 @@ public class Elevator : MonoBehaviour
 
         setUpDoorPositions();
         StartCoroutine(openCloseDoor());
+
+        if (elevatorType == ElevatorType.DoorClosedAtStart)
+        {
+            gameManager =  FindObjectOfType<GameManager>();
+            radio       =  FindObjectOfType<RadioSoundManager>();
+            blackScreen = transform.Find("BlackScreen");
+            blackScreen.gameObject.SetActive(true);
+        }
+
     }
 
     // Update is called once per frame
@@ -55,7 +69,7 @@ public class Elevator : MonoBehaviour
 
                 
 
-                //dorr open
+                //door is open/Closed after it moved to end Position:
         if (Mathf.Abs(endPositionDoors[0].x - leftRightDoor[0].transform.position.x) < 1.0f)
             bDoorOpen = (elevatorType == ElevatorType.DoorClosedAtStart) ? true : false;
 
@@ -124,7 +138,17 @@ public class Elevator : MonoBehaviour
             yield return 0;
         }
         Debug.Log("DoorOpen!");
-        FindObjectOfType<GameManager>().FadeIn();
+        
+    }
+
+
+    public IEnumerator BeginHotelLevel()
+    {
+        while (radio.playRadioLouder()) 
+        {
+            yield return 0;
+        }
+        
     }
 
 
@@ -132,7 +156,7 @@ public class Elevator : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-           
+            StartCoroutine(BeginHotelLevel());
         }
     }
 

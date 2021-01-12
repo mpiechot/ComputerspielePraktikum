@@ -10,7 +10,10 @@ public class RadioSoundManager : MonoBehaviour
     public AudioClip radioSong;
     public AudioClip radioHitSound;
     public float startVolume = 0;
+    private float startTime = 0f;
     private bool bPlayOnRepeat = false;
+    private float lerpTime = 10;
+    private float percentageComplete = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -57,5 +60,23 @@ public class RadioSoundManager : MonoBehaviour
     public void setVolume(float volume) 
     {
         radioSongSource.volume = volume;
+    }
+
+    public bool playRadioLouder()
+    {
+        if (startTime == 0)
+        {
+            startTime = Time.time;
+            startPlaying();
+        }
+        
+        float timeSinceStarted = Time.time - startTime;
+        float percentageComplete = timeSinceStarted / lerpTime;
+
+        setVolume(Mathf.Lerp(0, 1, percentageComplete));
+
+        if (percentageComplete > 98) { return true; }
+        return false;
+        
     }
 }

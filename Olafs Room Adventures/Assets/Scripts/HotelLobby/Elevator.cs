@@ -202,7 +202,7 @@ public class Elevator : MonoBehaviour
         leftRightDoor[0].transform.position = DoorsClosedPosition[0];
         leftRightDoor[1].transform.position = DoorsClosedPosition[1];
 
-        
+        playSounds();
 
         Vector3 StartPoint = transform.position;
         while (Mathf.Abs((StartPoint.y + distance)) - Mathf.Abs(transform.position.y) > 1f && !bTriggeredOnceBefore)
@@ -224,14 +224,17 @@ public class Elevator : MonoBehaviour
             
             yield return 0;
         }
-        
+        bTriggeredOnceBefore = true;
+        stopSounds();
+        playBellSound();
+        yield return new WaitForSeconds(1);
         //transform.position = MoveToPosition;
         //transform.Translate(MoveToPosition, Space.World);
         DoorsOpenPosition[0] = (leftRightDoor[0].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.right);
         DoorsOpenPosition[1] = (leftRightDoor[1].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.left);
 
         StartCoroutine(openDoor());
-        bTriggeredOnceBefore = true;
+        
     }
 
 

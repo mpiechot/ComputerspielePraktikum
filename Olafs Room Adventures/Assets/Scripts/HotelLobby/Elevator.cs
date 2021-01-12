@@ -111,6 +111,9 @@ public class Elevator : MonoBehaviour
             leftRightDoor[0].transform.position = DoorsOpenPosition[0];
             leftRightDoor[1].transform.position = DoorsOpenPosition[1];
             bDoorOpen = true;
+
+            DoorsClosedPosition[0].x += leftRightDoor[0].transform.localScale.x;
+            DoorsClosedPosition[1].x -= leftRightDoor[1].transform.localScale.x;
         }
 
     }
@@ -133,20 +136,41 @@ public class Elevator : MonoBehaviour
     }
 
 
-    public IEnumerator openCloseDoor()
+    public IEnumerator openDoor()
     {
+        
 
         while(bDoorOpen == false)
         {
-            leftRightDoor[0].transform.position = Vector3.Lerp(DoorsClosedPosition[0], DoorsOpenPosition[0], Time.deltaTime * DoorSpeed);
-            DoorsClosedPosition[0] = leftRightDoor[0].transform.position;
+            leftRightDoor[0].transform.position = Vector3.Lerp(leftRightDoor[0].transform.position, DoorsOpenPosition[0], Time.deltaTime * DoorSpeed);
+            
 
-            leftRightDoor[1].transform.position = Vector3.Lerp(DoorsClosedPosition[1], DoorsOpenPosition[1], Time.deltaTime * DoorSpeed);
-            DoorsClosedPosition[1] = leftRightDoor[1].transform.position;
+            leftRightDoor[1].transform.position = Vector3.Lerp(leftRightDoor[1].transform.position, DoorsOpenPosition[1], Time.deltaTime * DoorSpeed);
+            
             yield return 0;
         }
+
         
-        
+
+
+    }
+    public IEnumerator closeDoor()
+    {
+
+
+        while (bDoorOpen == true)
+        {
+            leftRightDoor[0].transform.position = Vector3.Lerp(leftRightDoor[0].transform.position, DoorsClosedPosition[0], Time.deltaTime * DoorSpeed);
+            
+
+            leftRightDoor[1].transform.position = Vector3.Lerp(leftRightDoor[1].transform.position, DoorsClosedPosition[1], Time.deltaTime * DoorSpeed);
+            
+            yield return 0;
+        }
+
+
+
+
     }
 
 
@@ -162,7 +186,7 @@ public class Elevator : MonoBehaviour
         yield return new WaitForSeconds(2);
         playBellSound();
         yield return new WaitForSeconds(1.0f);
-        StartCoroutine(openCloseDoor());
+        StartCoroutine(openDoor());
         while (!radio.playRadioLouder())
         {
             yield return 0;
@@ -174,25 +198,32 @@ public class Elevator : MonoBehaviour
 
     public IEnumerator MoveUp()
     {
+        openDoor();
+
+        transform.Translate(Vector3.up * Time.deltaTime, Space.World);
         yield return 0;
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        switch (elevatorType) 
-        { 
-            case ElevatorType.DoorClosedAtStart:
-                if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
+        {
+                switch (elevatorType)
                 {
-                    StartCoroutine(BeginHotelLevel());
-                }
-                break;
+                    case ElevatorType.DoorClosedAtStart:
+                        StartCoroutine(BeginHotelLevel());
+                    break;
 
+
+                    case ElevatorType.MoveUp:
+                    StartCoroutine(closeDoor());
+                    break;
+                }
 
 
         }
     }
 
-    public void openDoor() { }
+   
 }

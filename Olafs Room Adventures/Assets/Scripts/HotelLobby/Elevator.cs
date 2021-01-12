@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public enum ElevatorType { 
-    DoorClosedAtStart,
+    
     MoveUp,
     MoveDown,
     MoveUpAndLoadAsync,
-    MoveDownAndLoadAsync
+    MoveDownAndLoadAsync,
+    DoorClosedAtStart
 }
 
 public class Elevator : MonoBehaviour
@@ -70,9 +71,11 @@ public class Elevator : MonoBehaviour
 
                 //door is open/Closed after it moved to end Position:
         if (Mathf.Abs(DoorsOpenPosition[0].x - leftRightDoor[0].transform.position.x) < 1.0f)
-            bDoorOpen = (elevatorType == ElevatorType.DoorClosedAtStart) ? true : false;
+            bDoorOpen = true;
 
-        
+        if (Mathf.Abs(DoorsClosedPosition[0].x - leftRightDoor[0].transform.position.x) < 1.0f)
+            bDoorOpen = false;
+
 
     }
 
@@ -95,18 +98,18 @@ public class Elevator : MonoBehaviour
     {
         DoorsClosedPosition[0] = leftRightDoor[0].transform.position;
         DoorsClosedPosition[1] = leftRightDoor[1].transform.position;
-        
+
+        DoorsOpenPosition[0] = (leftRightDoor[0].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.right);
+        DoorsOpenPosition[1] = (leftRightDoor[1].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.left);
+
         if (elevatorType == ElevatorType.DoorClosedAtStart)
-        {
-            DoorsOpenPosition[0] = (leftRightDoor[0].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.right);
-            DoorsOpenPosition[1] = (leftRightDoor[1].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.left);
+        {    
             bDoorOpen = false;
-            
         }
         else
         {
-            DoorsOpenPosition[0] = (leftRightDoor[0].transform.position + leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.right);
-            DoorsOpenPosition[1] = (leftRightDoor[1].transform.position + leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.left);
+            leftRightDoor[0].transform.position = DoorsOpenPosition[0];
+            leftRightDoor[1].transform.position = DoorsOpenPosition[1];
             bDoorOpen = true;
         }
 

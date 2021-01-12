@@ -7,8 +7,6 @@ public enum ElevatorType {
     
     MoveUp,
     MoveDown,
-    MoveUpAndLoadAsync,
-    MoveDownAndLoadAsync,
     DoorClosedAtStart
 }
 
@@ -19,7 +17,7 @@ public class Elevator : MonoBehaviour
 
     public AudioClip bell;
     public AudioClip elevatorSound;
-
+    public GameObject olaf;
     private float DoorSpeed = 0.05f;
     public ElevatorType elevatorType;
     public float distance = 1f;
@@ -28,7 +26,7 @@ public class Elevator : MonoBehaviour
     private bool bDoorOpen;
     private GameObject Door;
     private GameObject[] leftRightDoor = new GameObject[2];
-
+    private bool bTriggeredOnceBefore = false;
     private Vector3[] DoorsClosedPosition = new Vector3[2];
     private Vector3[] DoorsOpenPosition = new Vector3[2];
 
@@ -196,7 +194,7 @@ public class Elevator : MonoBehaviour
 
     }
 
-    public IEnumerator MoveUp()
+    public IEnumerator MoveUpDown()
     {
         StartCoroutine( closeDoor());
         yield return new WaitForSeconds(4);
@@ -204,28 +202,44 @@ public class Elevator : MonoBehaviour
         leftRightDoor[0].transform.position = DoorsClosedPosition[0];
         leftRightDoor[1].transform.position = DoorsClosedPosition[1];
 
-        Vector3 MoveToPosition = transform.position + Vector3.up * distance;
+        
 
-        while (Mathf.Abs(transform.position.y -  distance) > 10f)
+        Vector3 StartPoint = transform.position;
+        while (Mathf.Abs((StartPoint.y + distance)) - Mathf.Abs(transform.position.y) > 1f && !bTriggeredOnceBefore)
         {
-            //transform.Translate(Vector3.up * Time.deltaTime, Space.World);
-            transform.position = Vector3.Lerp(transform.position, MoveToPosition + Vector3.up * 10, Time.deltaTime * speed);
-            Debug.Log("ahahahaha");
+
+            //transform.position = Vector3.Lerp(transform.position, MoveToPosition , Time.deltaTime * speed);
+            if (elevatorType == ElevatorType.MoveDown)
+            {
+                transform.position = transform.position + Vector3.down * Time.deltaTime;
+                olaf.transform.Translate(Vector3.down * Time.deltaTime, Space.World);
+            }
+            if (elevatorType == ElevatorType.MoveUp)
+            {
+
+                transform.position = transform.position + Vector3.up * Time.deltaTime;
+                olaf.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+            }
+            
+            
             yield return 0;
         }
-        Debug.Log("done");
-        transform.position = MoveToPosition;
-
+        
+        //transform.position = MoveToPosition;
+        //transform.Translate(MoveToPosition, Space.World);
         DoorsOpenPosition[0] = (leftRightDoor[0].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.right);
         DoorsOpenPosition[1] = (leftRightDoor[1].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.left);
+
         StartCoroutine(openDoor());
+        bTriggeredOnceBefore = true;
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !bTriggeredOnceBefore)
         {
+            //bTriggeredOnceBefore = true;
                 switch (elevatorType)
                 {
                     case ElevatorType.DoorClosedAtStart:
@@ -234,9 +248,13 @@ public class Elevator : MonoBehaviour
 
 
                     case ElevatorType.MoveUp:
-                    StartCoroutine(MoveUp());
+                    StartCoroutine(MoveUpDown());
                     break;
-                }
+
+                case ElevatorType.MoveDown:
+                    StartCoroutine(MoveUpDown());
+                    break;
+            }
 
 
         }

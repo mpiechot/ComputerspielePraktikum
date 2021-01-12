@@ -24,7 +24,7 @@ public class Elevator : MonoBehaviour
     public ElevatorType elevatorType;
     public float distance = 1f;
     public string SceneNameToLoad = "";
-
+    public float speed = 0.02f;
     private bool bDoorOpen;
     private GameObject Door;
     private GameObject[] leftRightDoor = new GameObject[2];
@@ -108,9 +108,9 @@ public class Elevator : MonoBehaviour
         }
         else
         {
-            leftRightDoor[0].transform.position = DoorsOpenPosition[0];
-            leftRightDoor[1].transform.position = DoorsOpenPosition[1];
-            bDoorOpen = true;
+           leftRightDoor[0].transform.position = DoorsOpenPosition[0];
+           leftRightDoor[1].transform.position = DoorsOpenPosition[1];
+           bDoorOpen = true;
 
             DoorsClosedPosition[0].x += leftRightDoor[0].transform.localScale.x;
             DoorsClosedPosition[1].x -= leftRightDoor[1].transform.localScale.x;
@@ -198,10 +198,27 @@ public class Elevator : MonoBehaviour
 
     public IEnumerator MoveUp()
     {
-        openDoor();
+        StartCoroutine( closeDoor());
+        yield return new WaitForSeconds(4);
 
-        transform.Translate(Vector3.up * Time.deltaTime, Space.World);
-        yield return 0;
+        leftRightDoor[0].transform.position = DoorsClosedPosition[0];
+        leftRightDoor[1].transform.position = DoorsClosedPosition[1];
+
+        Vector3 MoveToPosition = transform.position + Vector3.up * distance;
+
+        while (Mathf.Abs(transform.position.y -  distance) > 10f)
+        {
+            //transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+            transform.position = Vector3.Lerp(transform.position, MoveToPosition + Vector3.up * 10, Time.deltaTime * speed);
+            Debug.Log("ahahahaha");
+            yield return 0;
+        }
+        Debug.Log("done");
+        transform.position = MoveToPosition;
+
+        DoorsOpenPosition[0] = (leftRightDoor[0].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.right);
+        DoorsOpenPosition[1] = (leftRightDoor[1].transform.position - leftRightDoor[0].GetComponent<Renderer>().bounds.size.x * Vector3.left);
+        StartCoroutine(openDoor());
     }
 
 
@@ -217,7 +234,7 @@ public class Elevator : MonoBehaviour
 
 
                     case ElevatorType.MoveUp:
-                    StartCoroutine(closeDoor());
+                    StartCoroutine(MoveUp());
                     break;
                 }
 

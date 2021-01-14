@@ -23,7 +23,7 @@ public class RadioSoundManager : MonoBehaviour
 
         radioSongSource.clip = radioSong;
         radioSongSource.playOnAwake = false;
-        radioSongSource.dopplerLevel = 0;
+        radioSongSource.dopplerLevel = 0.5f;
 
         radioHitSoundSource.clip = radioHitSound;
         radioHitSoundSource.playOnAwake = false;
@@ -77,9 +77,9 @@ public class RadioSoundManager : MonoBehaviour
         setVolume(Mathf.Lerp(0, 1, percentageComplete));
 
         //true again when over 80% done
-        if (percentageComplete > 0.8f) { return true; }
+        if (percentageComplete > 0.6f) { return true; }
         //false when over 50% done.
-        if (percentageComplete > 0.5f) { return false; }
+        if (percentageComplete > 0.3f) { return false; }
         return true;
         
     }

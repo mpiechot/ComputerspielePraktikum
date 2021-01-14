@@ -100,15 +100,15 @@ public class ElevatorRefac : MonoBehaviour
     }
 
 
-    private void openCloseDoor()
+    public void openCloseDoor()
     {
 
 
 
         if (bDoorIsOpen == false)
         {
-            leftRightDoor[0].transform.localPosition = Vector3.Lerp(leftRightDoor[0].transform.localPosition, DoorsOpenPosition[0] + new Vector3(3,0,0) , Time.deltaTime * DoorSpeed);
-            leftRightDoor[1].transform.localPosition = Vector3.Lerp(leftRightDoor[1].transform.localPosition, DoorsOpenPosition[1] + new Vector3(3,0,0) , Time.deltaTime * DoorSpeed);
+            leftRightDoor[0].transform.localPosition = Vector3.Lerp(leftRightDoor[0].transform.localPosition, DoorsOpenPosition[0]   , Time.deltaTime * DoorSpeed);
+            leftRightDoor[1].transform.localPosition = Vector3.Lerp(leftRightDoor[1].transform.localPosition, DoorsOpenPosition[1]  , Time.deltaTime * DoorSpeed);
         }
         else
         {
@@ -173,11 +173,29 @@ public class ElevatorRefac : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !CR_running && elevatorType != ElevatorType.DoorClosed)
+
+        if (elevatorType != ElevatorType.DoorClosed)
         {
-            StartCoroutine(moveUpDown());
+            if (other.gameObject.tag == "Player" && !CR_running)
+            {
+                StartCoroutine(moveUpDown());
+            }
         }
 
+        if (elevatorType == ElevatorType.DoorClosed)
+        {
+            if (other.gameObject.tag == "Player" && !CR_running)
+            {
+                ElevatorReneStartCutscene Rene = GameObject.FindObjectOfType<ElevatorReneStartCutscene>();
+                if (Rene != null)
+                {
+                    StartCoroutine(Rene.BeginHotelLevel());
+                    CR_running = true;
+                }
+                
+            }
+        }
     }
 }
+
 

@@ -30,7 +30,8 @@ public class ElevatorReneStartCutscene : MonoBehaviour
     {
         if (openDoor)
         {
-            GameObject.FindObjectOfType<ElevatorRefac>().openCloseDoor();
+            ElevatorRefac Ele = (ElevatorRefac)transform.GetComponent(typeof(ElevatorRefac));
+            Ele.openCloseDoor();
         }
     }
 

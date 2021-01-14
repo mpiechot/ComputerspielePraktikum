@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bumper : MonoBehaviour
+public class Bumper2LongerReach : MonoBehaviour
 {
-    private float speed = 3f;
+    private float speed = 1f;
     [SerializeField]
     public float Delay = 0f;
     public GameObject olaf;
@@ -21,9 +21,9 @@ public class Bumper : MonoBehaviour
     {
         spring = transform.Find("Spring").gameObject;
         endPosition = spring.transform.position;
-        spring.transform.Translate(new Vector3(0, 0 , transform.localScale.z *  3) , Space.Self) ;
+        spring.transform.Translate(new Vector3(0, 0, transform.localScale.z * 6), Space.Self);
         startPosition = spring.transform.position;
-        
+
     }
 
     // Update is called once per frame
@@ -35,13 +35,13 @@ public class Bumper : MonoBehaviour
 
             spring.transform.position = Vector3.Lerp(startPosition, endPosition, lrpPrc);
             lrpPrc += Time.deltaTime * speed;
-            
+
             olaf.transform.Translate((endPosition - startPosition) * Time.deltaTime * 0.5f, Space.World);
 
         }
         else
         {
-           
+
             spring.transform.position = Vector3.Lerp(endPosition, startPosition, lrpPrc);
             lrpPrc += Time.deltaTime * speed;
         }
@@ -63,15 +63,15 @@ public class Bumper : MonoBehaviour
         CR_runnig = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        
+
         if (collision.gameObject.tag == "Player" && !CR_runnig)
         {
             StartCoroutine(bumpAfterDelay());
         }
-        
+
     }
 
-    
+
 }

@@ -167,7 +167,7 @@ public class ElevatorRefac : MonoBehaviour
             openCloseDoor();
             yield return 0;
         }
-        CR_running = false;
+        //CR_running = false;
 
     }
 

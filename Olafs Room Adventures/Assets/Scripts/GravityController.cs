@@ -99,8 +99,8 @@ public class GravityController : MonoBehaviour
         bFreeFloating = false;
     }
 
-    public void DeactivateGravity() {
-        bFreeFloating = true;
+    public void DeactivateGravity() 
+    {
         ChangeGravityToZero(Axis.X);
         ChangeGravityToZero(Axis.Y);
         ChangeGravityToZero(Axis.Z);

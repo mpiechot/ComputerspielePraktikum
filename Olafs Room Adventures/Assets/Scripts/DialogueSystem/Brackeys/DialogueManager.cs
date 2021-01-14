@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
     public GravityController gravityController;
     public CameraController CameraController;
 
+    public GameObject gameManager;
+
     private Queue<string> sentences; // Queue is a FIFO collection
 
     public float letterDelay;
@@ -25,6 +27,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue, float delay) 
     {
+        gameManager.GetComponent<GravityController>().enabled = false;
+
         animator.SetBool("isOpen", true);
         nameText.text = dialogue.name;
 
@@ -64,6 +68,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        gameManager.GetComponent<GravityController>().enabled = true;
         animator.SetBool("isOpen", false);
     }
 

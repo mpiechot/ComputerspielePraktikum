@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -9,10 +10,11 @@ public class DialogueTrigger : MonoBehaviour
 
     public float letterDelay;
 
+    public UnityEvent testevent;
+
     public void TriggerDialogue() 
     {
-        //FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-        dialogueManager.StartDialogue(dialogue, letterDelay); // brackeys meinte was von Singleton...?
+        dialogueManager.StartDialogue(dialogue, letterDelay);
     }
 
     void OnTriggerEnter(Collider other)

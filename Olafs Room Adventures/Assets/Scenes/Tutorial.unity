@@ -4224,8 +4224,8 @@ MonoBehaviour:
   dialogue:
     name: 
     sentences:
-    - "You actually made it, I'm impressed. I don't want to be cruel, so I will allow
-      you go as a reward. \nFarewell Olaf, it was nice while it lasted. :)\n"
+    - "You actually made it, I'm impressed. I will be nice and let you go as a reward.
+      \nFarewell Olaf...\n"
   dialogueManager: {fileID: 1005624310}
   letterDelay: 0.05
   testevent:
@@ -4891,8 +4891,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: -0.0009519542, y: 0.9979742, z: -0.061722405, w: -0.01539191}
-  m_LocalPosition: {x: 12.788056, y: 23.986238, z: -39.236088}
+  m_LocalRotation: {x: 0.010724403, y: 0.0000000023816047, z: -2.554276e-11, w: 0.9999425}
+  m_LocalPosition: {x: 12.859356, y: 24.954412, z: -62.13682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6693,7 +6693,7 @@ PrefabInstance:
     - target: {fileID: 7114291808822027839, guid: 3fcd39704f459a84397eadebf282fc4a,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8428410527103201132, guid: 3fcd39704f459a84397eadebf282fc4a,
         type: 3}
@@ -8355,17 +8355,17 @@ PrefabInstance:
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.028911073
+      value: 0.02891107
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 7.323095e-10
+      value: 0.0000000013583178
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.1180706e-11
+      value: -3.9286845e-11
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -8375,17 +8375,17 @@ PrefabInstance:
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0074177748
+      value: -0.007417779
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 7.3259526e-10
+      value: 0.000000001588895
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 5.4343747e-12
+      value: 1.1786397e-11
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543629256596, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -8470,17 +8470,17 @@ PrefabInstance:
     - target: {fileID: 6876013544298821832, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.010724403
+      value: 0.010724404
       objectReference: {fileID: 0}
     - target: {fileID: 6876013544298821832, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -7.325733e-10
+      value: 0.0000000021919804
       objectReference: {fileID: 0}
     - target: {fileID: 6876013544298821832, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 7.856863e-12
+      value: -2.3509035e-11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b9a6041bef03a64aa188aac0cdcfec9, type: 3}

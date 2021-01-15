@@ -7,7 +7,7 @@ public class WallTransparency : MonoBehaviour
 {
     public Vector3 normal;
     public float hideFactor = 0.5f;
-    public GameObject olaf_root;
+    public GameObject player_component;
     public GameObject cam;
 
     private MeshRenderer rend;
@@ -51,7 +51,7 @@ public class WallTransparency : MonoBehaviour
 
         Color color = rend.material.color;
         float d0 = distancePointToPlane(cam.transform.position,transform.position,normal);
-        float d1 = distancePointToPlane(olaf_root.transform.position,transform.position,normal);
+        float d1 = distancePointToPlane(player_component.transform.position,transform.position,normal);
 
         if(Mathf.Sign(d0) == Mathf.Sign(d1)){
             color.a = 1f;

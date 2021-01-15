@@ -9,6 +9,13 @@ public class Pengu : MonoBehaviour
 
     private Animator animator;
     string stateName = "PenguFeet";
+
+
+    
+    private AudioSource PenguSource;
+    public  AudioClip PenguSound;
+    public float Volume = 0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +25,12 @@ public class Pengu : MonoBehaviour
         ArmsAndFeet[1] = transform.Find("Arm2");
         ArmsAndFeet[2] = transform.Find("Feet1");
         ArmsAndFeet[3] = transform.Find("Feet1");
+
+        PenguSource = gameObject.AddComponent<AudioSource>();
+        PenguSource.clip = PenguSound;
+        PenguSource.playOnAwake = false;
+        PenguSource.dopplerLevel = 1;
+        PenguSource.volume = Volume;
     }
 
     // Update is called once per frame
@@ -30,7 +43,23 @@ public class Pengu : MonoBehaviour
 
         if (moveFeet)
         {
+            if (animator == null)
+            {
+                Debug.LogError("No Animator found on Pengu");
+                return;
+            }
             animator.Play(stateName);
+
+
+            if (PenguSource == null) 
+            {
+                Debug.LogError("No SoundSource on Pengu");
+                return; 
+            }
+            if ( !PenguSource.isPlaying)
+            {
+                PenguSource.Play();
+            }
         }
     }
 }

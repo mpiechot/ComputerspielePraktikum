@@ -180,4 +180,15 @@ What is the gameplay
 * Blendermodelle + optional: Raum für Level 6 (Licht+Dunkelheit) (Philipp)
 
 ### Freitag 15.01.2021 16Uhr
+* Weekly Meeting Catch-up (<font color="lightgreen">**✓**</font>)
+
+### Hausaufgabe
+* Tutorial: zweiter Raum + Sound Dialogsystem (Leo)
+* Explosive Component + Hintergrundmusik (SonicPi) (Marco)
+* Checkpoints + Raum mit Gegenständen füllen + Laden (Level 4) (Harald)
+* Aufzug fixen + Pinguin (Level 3) (Rene)
+* +/- 3 Räume für Level 6 (Licht+Dunkelheit) (Philipp)
+
+### Samstag 23.01.2021 16Uhr
 * Weekly Meeting Catch-up
+* Damagesystem

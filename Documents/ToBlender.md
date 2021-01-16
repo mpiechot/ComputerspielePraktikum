@@ -11,3 +11,5 @@ Das ist eine Liste an Objekten, für die noch ein 3D Modell in Blender erstellt 
 - LaserKanone
 - Kompass
 - Explosionsfass
+- Bücher
+- Bücherregal

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
-    [SerializeField]
     private Vector3 startPostion;
     [SerializeField]
     private Vector3 endPostion;
@@ -13,6 +12,11 @@ public class Laser : MonoBehaviour
 
     private bool endReached = false;
 
+
+    private void Start()
+    {
+        startPostion = transform.position;
+    }
     // Update is called once per frame
     void Update()
     {

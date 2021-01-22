@@ -14,7 +14,7 @@ public class SeeThroughSync : MonoBehaviour
     [SerializeField]
     private float offsetY = 2f;
 
-    public Material WallMaterial;
+    public List<Material> WallMaterials;
     public LayerMask Mask;
 
     private Camera cam;
@@ -25,40 +25,44 @@ public class SeeThroughSync : MonoBehaviour
     }
 
     void Update()
+    {      
+        WallMaterials.ForEach(mat => CheckMaterial(mat));       
+    }
+    private void CheckMaterial(Material mat)
     {
         var dir = cam.transform.position - transform.position;
         var ray = new Ray(transform.position, dir.normalized);
 
-        if(Physics.Raycast(ray, 3000, Mask))
+        if (Physics.Raycast(ray, 3000, Mask))
         {
             StopAllCoroutines();
-            StartCoroutine("StartHiding");
+            StartCoroutine("StartHiding",mat);
         }
         else
         {
             StopAllCoroutines();
-            StartCoroutine("StopHiding");
+            StartCoroutine("StopHiding", mat);
         }
 
         var view = cam.WorldToViewportPoint(transform.position);
-        view.y += offsetY;
-        WallMaterial.SetVector(PosID, view);
+        mat.SetVector(PosID, view);
     }
 
-    private IEnumerator StartHiding()
+    private IEnumerator StartHiding(Material mat)
     {
-        while(WallMaterial.GetFloat(SizeID) != size)
+        mat.SetFloat("_Distance", (transform.position - cam.transform.position).magnitude);
+        while(mat.GetFloat(SizeID) != size)
         {
-            Debug.Log("Hiding!");
-            WallMaterial.SetFloat(SizeID, Mathf.Lerp(WallMaterial.GetFloat(SizeID), size, stepSize));
+            Debug.Log("Hiding " + mat.name + "!");
+            mat.SetFloat(SizeID, Mathf.Lerp(mat.GetFloat(SizeID), size, stepSize));
             yield return 0;
         }
     }
-    private IEnumerator StopHiding()
+    private IEnumerator StopHiding(Material mat)
     {
-        while (WallMaterial.GetFloat(SizeID) != 0)
+        while (mat.GetFloat(SizeID) != 0)
         {
-            WallMaterial.SetFloat(SizeID, Mathf.Lerp(WallMaterial.GetFloat(SizeID), 0, stepSize));
+            mat.SetFloat(SizeID, Mathf.Lerp(mat.GetFloat(SizeID), 0, stepSize));
             yield return 0;
         }
     }

@@ -1,4 +1,5 @@
-﻿public enum Axis
+﻿[System.Serializable]
+public enum Axis
 {
     X,
     Y,

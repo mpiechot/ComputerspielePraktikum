@@ -143,21 +143,26 @@ public class ElevatorRefac : MonoBehaviour
         CR_running = true;
         while (bDoorIsOpen)
         {
+           // Debug.Log("Door Oopen!");
             openCloseDoor();
             yield return 0;
         }
+        //Debug.Log("Door closed!");
         yield return new WaitForSeconds(0.5f);
 
 
         Vector3 destination = transform.localPosition;
         destination += (elevatorType == ElevatorType.MoveUp) ? new Vector3(0, distance, 0) : new Vector3(0, -distance, 0);
-        while (Vector3.Distance(transform.localPosition, destination) > threshhold)
+        Debug.Log("davor");
+        while (Mathf.Abs( Vector3.Distance(transform.localPosition, destination)) > threshhold)
         {
+           // Debug.Log("ziel noch nicht erreicht");
             elevatorAudio.playSounds();
+           // Debug.Log("ziel noch nicht erreicht2");
             moveDistance();
             yield return 0;
         }
-
+       // Debug.Log("ziel erreicht");
         elevatorAudio.stopSounds();
         elevatorAudio.playBellSound();
         yield return new WaitForSeconds(1);
@@ -173,18 +178,16 @@ public class ElevatorRefac : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (elevatorType != ElevatorType.DoorClosed)
+        if (other.gameObject.tag == "Player" && !CR_running)
         {
-            if (other.gameObject.tag == "Player" && !CR_running)
+
+            if (elevatorType != ElevatorType.DoorClosed)
             {
-                StartCoroutine(moveUpDown());
-            }
-        }
 
-        if (elevatorType == ElevatorType.DoorClosed)
-        {
-            if (other.gameObject.tag == "Player" && !CR_running)
+                StartCoroutine(moveUpDown());
+               // Debug.Log("Triggered!");
+            }
+            else
             {
                 ElevatorReneStartCutscene Rene = GameObject.FindObjectOfType<ElevatorReneStartCutscene>();
                 if (Rene != null)
@@ -192,9 +195,11 @@ public class ElevatorRefac : MonoBehaviour
                     StartCoroutine(Rene.BeginHotelLevel());
                     CR_running = true;
                 }
-                
             }
         }
+
+
+
     }
 }
 

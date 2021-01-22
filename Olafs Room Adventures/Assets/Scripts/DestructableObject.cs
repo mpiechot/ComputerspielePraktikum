@@ -16,7 +16,6 @@ public class DestructableObject : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision: " + collision.impulse.magnitude);
         if(collision.impulse.magnitude >= maxImpulseValue)
         {
             Break();
@@ -25,7 +24,7 @@ public class DestructableObject : MonoBehaviour
 
     private void Break()
     {
-        GetComponent<Collider>().enabled = false;
+        Destroy(gameObject.GetComponent<Collider>());
         Destroy(gameObject.GetComponent<Rigidbody>());
         foreach(Collider collider in GetComponentsInChildren<Collider>())
         {

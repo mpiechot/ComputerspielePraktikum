@@ -190,5 +190,16 @@ What is the gameplay
 * +/- 3 Räume für Level 6 (Licht+Dunkelheit) (Philipp)
 
 ### Samstag 23.01.2021 16Uhr
-* Weekly Meeting Catch-up
+* Weekly Meeting Catch-up (<font color="lightgreen">**✓**</font>)
 * Damagesystem
+
+### Hausaufgabe
+* Dialogsystem überarbeiten (Leo)
+* Kamerascript + Low-Poly Terrain + Rätsel erster Raum Level2 (Marco)
+* Räume mit kleinen Details füllen + Schlüssel + Speichern/Laden/Checkpoints (Level 4) (Harald)
+* Pinguin + Feuerwand (Rene)
+* +/- 1 Räume für Level 6 (Licht+Dunkelheit) (Philipp)
+
+### Freitag 29.01.2021 16Uhr
+* Weekly Meeting Catch-up
+* Spontane Themen

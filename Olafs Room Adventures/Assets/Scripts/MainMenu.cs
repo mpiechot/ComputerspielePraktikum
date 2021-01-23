@@ -10,6 +10,12 @@ public class MainMenu : MonoBehaviour
     	SceneManager.LoadScene("Philipp", LoadSceneMode.Single);
     }
 
+    public void LoadGame()
+    {
+        Universal.load_game = true;
+        SceneManager.LoadScene("Level4.0", LoadSceneMode.Single);
+    }
+
     public void ExitGame ()
     {
     	Debug.Log("QUIT");

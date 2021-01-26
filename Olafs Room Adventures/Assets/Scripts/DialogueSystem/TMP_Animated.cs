@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class DialogueManager : MonoBehaviour
+public class TMP_Animated : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
@@ -21,6 +21,12 @@ public class DialogueManager : MonoBehaviour
     public float letterDelay;
 
     private int fontSize = 20;
+    public bool isWriting;
+
+    void Awake() 
+    {
+        isWriting = true;
+    }
 
     void Start()
     {
@@ -40,11 +46,6 @@ public class DialogueManager : MonoBehaviour
 
         foreach (string sentence in dialogue.sentences)
         {
-            string[] subTexts = sentence.Split('<', '>');
-            Debug.Log(subTexts.Length);
-            foreach(string s in subTexts) {
-                Debug.Log("subTexts contents: " + s);
-            }
             sentences.Enqueue(sentence);
         }
 
@@ -60,16 +61,20 @@ public class DialogueManager : MonoBehaviour
         }
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        dialogueText.text = sentence;
+        dialogueText.maxVisibleCharacters = 0;
+        StartCoroutine(TypeSentence());
     }
 
-    IEnumerator TypeSentence(string sentence)
+    IEnumerator TypeSentence()
     {
-        dialogueText.text = "";
-        foreach (char letter in sentence.ToCharArray())
+        int subCounter = 0;
+        int visibleCounter = 0;
+        while (subCounter < dialogueText.text.Length)
         {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(letterDelay);
+            visibleCounter++;
+            dialogueText.maxVisibleCharacters++;
+            yield return new WaitForSeconds(0.05f);
         }
     }
 
@@ -80,3 +85,4 @@ public class DialogueManager : MonoBehaviour
     }
 
 }
+

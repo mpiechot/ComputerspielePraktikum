@@ -53,7 +53,7 @@ public class SeeThroughSync : MonoBehaviour
         mat.SetFloat("_Distance", (transform.position - cam.transform.position).magnitude);
         while(mat.GetFloat(SizeID) != size)
         {
-            Debug.Log("Hiding " + mat.name + "!");
+            //Debug.Log("Hiding " + mat.name + "!");
             mat.SetFloat(SizeID, Mathf.Lerp(mat.GetFloat(SizeID), size, stepSize));
             yield return 0;
         }

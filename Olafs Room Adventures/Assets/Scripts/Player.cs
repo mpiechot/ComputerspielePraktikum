@@ -15,7 +15,12 @@ public class Player : MonoBehaviour
     private Sprite skin;
     [SerializeField]
     private Inventory inventory;
+    [SerializeField]
+    private float invincibleTime;
+    [SerializeField, Range(0,300)]
+    private float wallDamageThreshold;
 
+    private bool invincible;
 
     // Start is called before the first frame update
     void Start()
@@ -47,8 +52,39 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void OnParticleCollision(GameObject other)
+    public void OnCollide(Collision collision)
     {
-        Debug.Log("Particle Collided!");
+        if (invincible)
+        {
+
+        }
+        else
+        {
+            CollisionHandling(collision);
+            Debug.Log(name + "collided with " + collision.gameObject.name);
+        }
+    }
+
+    private void CollisionHandling(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Wall":
+                if (collision.impulse.magnitude > wallDamageThreshold)
+                {
+                    StartCoroutine("Invincible");
+                    TakeDamage((int)collision.impulse.magnitude);
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    private IEnumerator Invincible()
+    {
+        invincible = true;
+        yield return new WaitForSeconds(invincibleTime);
+        invincible = false;
     }
 }

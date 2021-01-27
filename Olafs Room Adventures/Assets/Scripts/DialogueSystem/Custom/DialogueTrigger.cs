@@ -7,12 +7,11 @@ namespace DialogueSystem
     public class DialogueTrigger : MonoBehaviour
     {
         public DialogueManager dm;
-
-        public Dialogue dialogue;
+        public Dialogue dialogueText;
 
         public void TriggerDialogue()
         {
-            dm.StartDialogue(dialogue);
+            dm.StartDialogue(dialogueText);
         } 
     }
 }

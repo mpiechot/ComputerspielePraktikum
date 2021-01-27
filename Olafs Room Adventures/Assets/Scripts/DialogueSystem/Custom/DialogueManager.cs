@@ -3,24 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Text.RegularExpressions;
+using UnityEngine.Events;
+using System.Globalization;
 
 namespace DialogueSystem
 {
+    [System.Serializable] public class TextRevealEvent : UnityEvent<char> { }
+
     public class DialogueManager : MonoBehaviour
     {
         public TextMeshProUGUI dialogueText; // text in dialogueText box
         public TextMeshProUGUI nameText;
 
         public float letterSpeed;
+        public TextRevealEvent onTextReveal;
+
         public Animator dialogueBoxAnimator;
+        public Animator dialogueTextAnimator;
+
+        private bool continueDialogue;
 
         private Queue<string> sentences;
         
-        private void Start() 
+        void Start() 
         {
             sentences = new Queue<string>();
             dialogueText.maxVisibleCharacters = 0; // hide the text currently written in the dialogueText box
         }
+
+        void Update() 
+        {
+            if (Input.GetKeyDown("space") && continueDialogue)
+            {
+                DisplayNextSentence();
+            }
+        }
+
 
         public void StartDialogue(Dialogue dialogue)
         {
@@ -36,6 +54,8 @@ namespace DialogueSystem
 
         public void DisplayNextSentence()
         {
+            continueDialogue = false;
+            dialogueTextAnimator.SetBool("isShaking", false);
             if (sentences.Count == 0)
             {
                 EndDialogue();
@@ -62,7 +82,7 @@ namespace DialogueSystem
 
             bool isCustomTag(string tag) 
             {
-                return tag.StartsWith("speed") || tag.StartsWith("pause");
+                return tag.StartsWith("speed") || tag.StartsWith("pause") || tag.StartsWith("shake") || tag.StartsWith("stopshake");
             }
 
             dialogueText.maxVisibleCharacters = 0;
@@ -88,29 +108,40 @@ namespace DialogueSystem
                     {
                         while (visibleCount < subTexts[subCounter].Length)
                         { 
+                            onTextReveal.Invoke(subTexts[subCounter][visibleCount]);
                             visibleCount++;
                             dialogueText.maxVisibleCharacters++;
                             
                             yield return new WaitForSeconds(1f / letterSpeed); 
                         }
-                        visibleCount=0;
+                        visibleCount = 0;
                     }
                     subCounter++;
                 }
+                continueDialogue = true;
+                yield return null;
 
                 WaitForSeconds EvaluateTag(string tag) 
                 {
                     if (tag.Length > 0)
                     {
                         if (tag.StartsWith("pause="))
-                        {
-                            return new WaitForSeconds(float.Parse(tag.Split('=')[1]));
+                        {   
+                            string pauseString = tag.Split('=')[1].Replace(',','.');
+                            return new WaitForSeconds(float.Parse(pauseString, CultureInfo.InvariantCulture));
                         }
                         else if (tag.StartsWith("speed="))
                         {
                             letterSpeed = float.Parse(tag.Split('=')[1]);
                         }
-                        Debug.Log("Tag:" + tag);
+                        else if (tag.StartsWith("shake"))
+                        {
+                            dialogueTextAnimator.SetBool("isShaking", true);
+                        }
+                        else if (tag.StartsWith("stopshake"))
+                        {
+                            dialogueTextAnimator.SetBool("isShaking", false);
+                        }
                     }
                     return null;
                 }

@@ -4,9 +4,7 @@ using UnityEngine.Timeline;
 
 public class DialogueMarker : Marker, INotification, INotificationOptionProvider
 {
-    [TextArea(3,10)]
-    [SerializeField] private string message = "";
-    [SerializeField] private float delay = 0.1f;
+    [SerializeField] private Dialogue dialogueText;
 
     [Space(20)]
     [SerializeField] private bool retroactive = false;
@@ -18,8 +16,7 @@ public class DialogueMarker : Marker, INotification, INotificationOptionProvider
     // // etc.
 
     public PropertyName id => new PropertyName(); // required by INotification but we are actually not using it
-    public string Message => message;
-    public float Delay => delay; 
+    public Dialogue DialogueText => dialogueText;
 
     public NotificationFlags flags => 
         (retroactive ? NotificationFlags.Retroactive : default) |

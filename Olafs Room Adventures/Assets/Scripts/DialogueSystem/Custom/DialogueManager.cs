@@ -20,8 +20,10 @@ namespace DialogueSystem
 
         public Animator dialogueBoxAnimator;
         public Animator dialogueTextAnimator;
+        public Animator dialogueContinueButtonAnimator;
 
         private bool continueDialogue;
+        public bool activeCutscene;
 
         private Queue<string> sentences;
         
@@ -33,9 +35,16 @@ namespace DialogueSystem
 
         void Update() 
         {
-            if (Input.GetKeyDown("space") && continueDialogue)
+            if (continueDialogue && !activeCutscene)
             {
-                DisplayNextSentence();
+                if (!dialogueContinueButtonAnimator.GetBool("sentenceFinished")) 
+                {
+                    dialogueContinueButtonAnimator.SetBool("sentenceFinished", true);
+                }
+                if (Input.GetKeyDown("space")) 
+                {
+                    DisplayNextSentence();
+                }
             }
         }
 
@@ -56,6 +65,8 @@ namespace DialogueSystem
         {
             continueDialogue = false;
             dialogueTextAnimator.SetBool("isShaking", false);
+            dialogueContinueButtonAnimator.SetBool("sentenceFinished", false);
+
             if (sentences.Count == 0)
             {
                 EndDialogue();

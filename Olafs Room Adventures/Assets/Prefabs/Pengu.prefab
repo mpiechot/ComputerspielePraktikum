@@ -379,7 +379,7 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 2d0013e75e3853c4f93864589d40c7c9, type: 2}
   penguTex: {fileID: 2800000, guid: 66335048c41f98a43b26f51eb90997cc, type: 3}
   penguTexBlinzeln: {fileID: 2800000, guid: 284717cfcc0b2fe4faf502131f20f059, type: 3}
-  PenguSound: {fileID: 8300000, guid: 0e35210aefc4a684b94b38862f1cc20e, type: 3}
+  PenguSound: {fileID: 8300000, guid: d778bd53229b5cf42a8bf5654af8fcab, type: 3}
   Volume: 0.5
 --- !u!95 &6985896495774726943
 Animator:

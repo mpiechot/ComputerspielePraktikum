@@ -21,7 +21,8 @@ public class Player : MonoBehaviour
     private float wallDamageThreshold;
 
     private bool invincible;
-
+    private bool bIsOnFire = false;
+    private bool CR_TakeDmgIsRunning = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
         {
             TakeDamage(20);
         }
+        
     }
 
     void TakeDamage(int dmg)
@@ -51,6 +53,8 @@ public class Player : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    
 
     public void OnCollide(Collision collision)
     {
@@ -86,5 +90,27 @@ public class Player : MonoBehaviour
         invincible = true;
         yield return new WaitForSeconds(invincibleTime);
         invincible = false;
+    }
+
+    private IEnumerator TakeFireDmgEverySecond(int dmg)
+    {
+        CR_TakeDmgIsRunning = true;
+        while (bIsOnFire)
+        { 
+            TakeDamage(dmg);
+            
+            yield return new WaitForSeconds(1);
+        }
+        CR_TakeDmgIsRunning = false;
+    }
+
+    public void setOlafOnFire()
+    {
+        bIsOnFire = true;
+
+        if (!CR_TakeDmgIsRunning)
+        {
+            StartCoroutine(TakeFireDmgEverySecond(5));
+        }
     }
 }

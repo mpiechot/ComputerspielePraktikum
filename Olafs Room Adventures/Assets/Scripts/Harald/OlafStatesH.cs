@@ -35,18 +35,18 @@ public class OlafStatesH : MonoBehaviour
 
 
     public void savePlayer(){
-        SaveSystem.savePlayerData(this);
+        //SaveSystem.savePlayerData(this);
     }
 
     public void loadPlayer(){
-        PlayerData data = SaveSystem.loadPlayerData();
+        // PlayerData data = SaveSystem.loadPlayerData();
 
-        has_key = data.has_key;
-        Vector3 position;
-        position.x = data.position[0];
-        position.y = data.position[1];
-        position.z = data.position[2];
-        Debug.Log(position);
-        transform.position = position;
+        // has_key = data.has_key;
+        // Vector3 position;
+        // position.x = data.position[0];
+        // position.y = data.position[1];
+        // position.z = data.position[2];
+        // Debug.Log(position);
+        // transform.position = position;
     }
 }

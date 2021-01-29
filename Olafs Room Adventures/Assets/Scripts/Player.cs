@@ -87,4 +87,13 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(invincibleTime);
         invincible = false;
     }
+
+
+    public int getCurrentHealth(){
+        return currentHealth;
+    }
+
+    public void setCurrentHealth(int current_health){
+        this.currentHealth = current_health;
+    }
 }

@@ -196,7 +196,7 @@ What is the gameplay
 ### Hausaufgabe
 * Dialogsystem überarbeiten (Leo)
 * Kamerascript + Low-Poly Terrain + Rätsel erster Raum Level2 (Marco)
-* Räume mit kleinen Details füllen + Schlüssel + Speichern/Laden/Checkpoints (Level 4) (Harald)
+* Räume mit kleinen Details füllen + Explosives + Speichern/Laden/Checkpoints (Level 4) (Harald)
 * Pinguin + Feuerwand (Rene)
 * +/- 1 Räume für Level 6 (Licht+Dunkelheit) (Philipp)
 

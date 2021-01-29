@@ -507,6 +507,7 @@ PlayableDirector:
     - aabb3830c7bdc4c4ea9bfd9459b2279a: {fileID: 1763961146}
     - d96816c9eceda03468a2f75f52033449: {fileID: 1966574179}
     - f9db06522c7ed574dba08979d3f3946d: {fileID: 1763961146}
+    - f5ce2ad5a412afa499cc35690e24fbec: {fileID: 317574488}
 --- !u!114 &51932434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,12 +523,42 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: d65fa5a94eabf9841949913a68399093, type: 2}
+    - {fileID: 11400000, guid: 37c82dfe7df5f4f459201f93b4ba8b90, type: 2}
+    - {fileID: 11400000, guid: 6318f37acd6630f479ecd8dbc9df304e, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2110846740}
           m_TargetAssemblyTypeName: DialogueSystem.DialogueManager, Assembly-CSharp
           m_MethodName: DisplayNextSentence
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1075071608}
+          m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+          m_MethodName: DeactivatePlayerInteraction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1075071608}
+          m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+          m_MethodName: ActivatePlayerInteraction
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -735,7 +766,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18382
+  m_Name: pb_Mesh39776
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -893,13 +924,19 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &317574488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3998846249937381438, guid: 4bbd0c3138ad532478b808e8825e416c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1216166612}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &346857499
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18492
+  m_Name: pb_Mesh39912
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1565,7 +1602,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-20938
+  m_Name: pb_Mesh39900
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2383,12 +2420,42 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: d65fa5a94eabf9841949913a68399093, type: 2}
+    - {fileID: 11400000, guid: 37c82dfe7df5f4f459201f93b4ba8b90, type: 2}
+    - {fileID: 11400000, guid: 6318f37acd6630f479ecd8dbc9df304e, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 2110846740}
           m_TargetAssemblyTypeName: DialogueSystem.DialogueManager, Assembly-CSharp
           m_MethodName: DisplayNextSentence
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1075071608}
+          m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+          m_MethodName: DeactivatePlayerInteraction
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1075071608}
+          m_TargetAssemblyTypeName: PlayerInteraction, Assembly-CSharp
+          m_MethodName: ActivatePlayerInteraction
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2436,7 +2503,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18294
+  m_Name: pb_Mesh39674
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2733,7 +2800,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 871635316}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -3024,7 +3091,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18406
+  m_Name: pb_Mesh39800
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3355,7 +3422,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18540
+  m_Name: pb_Mesh39962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4844,6 +4911,38 @@ AudioSource:
     type: 3}
   m_PrefabInstance: {fileID: 418598169}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1075071607 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1464114084188355472, guid: c8d0f300cf3bc424d9302332db267119,
+    type: 3}
+  m_PrefabInstance: {fileID: 359683826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1075071608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075071607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca3d427d840bb434ca2277e97510aedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityControl: {fileID: 1075071609}
+  dialogueManager: {fileID: 2110846740}
+--- !u!114 &1075071609 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1464114084188355473, guid: c8d0f300cf3bc424d9302332db267119,
+    type: 3}
+  m_PrefabInstance: {fileID: 359683826}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075071607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e66c18b752ca5e4c934aa6a15c3e261, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1118364227
 GameObject:
   m_ObjectHideFlags: 0
@@ -5580,7 +5679,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18360
+  m_Name: pb_Mesh39754
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5814,7 +5913,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: fda93da37db910d4eb3c83287ced776a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15369,7 +15468,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-11268
+  m_Name: pb_Mesh39840
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -16034,12 +16133,12 @@ PrefabInstance:
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0000000013583178
+      value: 0.0000000013583178
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 3.9286845e-11
+      value: -3.9286845e-11
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -16054,17 +16153,17 @@ PrefabInstance:
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.007417776
+      value: -0.007417778
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000019315962
+      value: -0.0000000016619225
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.43285436e-11
+      value: -1.2328111e-11
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -16169,17 +16268,17 @@ PrefabInstance:
     - target: {fileID: 6876013544298821832, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.010724404
+      value: 0.010724405
       objectReference: {fileID: 0}
     - target: {fileID: 6876013544298821832, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000000219198
+      value: 6.844458e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6876013544298821832, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 2.350903e-11
+      value: -7.340697e-12
       objectReference: {fileID: 0}
     - target: {fileID: 6876013544298821832, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -16335,7 +16434,7 @@ MonoBehaviour:
   - m_Script
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
-  m_Priority: 10
+  m_Priority: 1
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 1372998813}
   m_Follow: {fileID: 0}
@@ -16361,7 +16460,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016607650}
-  m_LocalRotation: {x: 0.24639854, y: -0.07363451, z: 0.018778427, w: 0.96618485}
+  m_LocalRotation: {x: 0.23796687, y: -0.08320354, z: 0.02046507, w: 0.96748656}
   m_LocalPosition: {x: 24.82955, y: 13.673046, z: -24.05516}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -16454,7 +16553,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh18326
+  m_Name: pb_Mesh39720
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

@@ -194,7 +194,7 @@ What is the gameplay
 * Damagesystem
 
 ### Hausaufgabe
-* Dialogsystem überarbeiten (Leo)
+* Dialogsystem überarbeiten (Leo) (<font color="lightgreen">**✓**</font>)
 * Kamerascript + Low-Poly Terrain + Rätsel erster Raum Level2 (Marco)
 * Räume mit kleinen Details füllen + Schlüssel + Speichern/Laden/Checkpoints (Level 4) (Harald)
 * Pinguin + Feuerwand (Rene)

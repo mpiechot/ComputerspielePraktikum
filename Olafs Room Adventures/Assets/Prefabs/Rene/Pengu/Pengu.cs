@@ -19,7 +19,7 @@ public class Pengu : MonoBehaviour
 
     private AudioSource PenguSource;
     public  AudioClip PenguSound;
-    public float Volume = 0.5f;
+    public float Volume = 0.2f;
     private bool CR_Running = false;
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class Pengu : MonoBehaviour
         PenguSource = gameObject.AddComponent<AudioSource>();
         PenguSource.clip = PenguSound;
         PenguSource.playOnAwake = false;
-        PenguSource.dopplerLevel = 1;
+        PenguSource.dopplerLevel = 0.1f;
         PenguSource.volume = Volume;
 
         

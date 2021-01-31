@@ -24,9 +24,9 @@ public class Pengu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
 
-       // m_Material = GetComponent<Renderer>().material;
+        m_Material.mainTexture = penguTex;
+        // m_Material = GetComponent<Renderer>().material;
         //m_Material.SetTexture("_MainTex", penguTexBlinzeln);
 
         animator = GetComponent<Animator>();
@@ -93,4 +93,8 @@ public class Pengu : MonoBehaviour
         yield return new WaitForSeconds(1);
         CR_Running = false;
     }
-}
+    void OnDestroy()
+    {
+        m_Material.mainTexture = penguTex;
+    }
+    }

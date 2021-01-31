@@ -9,7 +9,7 @@ public class lightplay : MonoBehaviour
 	public GameObject mesh;
 	private double delay = 0.5;
 	protected float Timer;
-	private bool entered = true;
+	private bool entered = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,19 +18,19 @@ public class lightplay : MonoBehaviour
 		//light.intensity = 0; 
     }
 
-    void onTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
     	Debug.Log("triggerevent startet");
-    	if(other.gameObject.tag == "Player")
+    	if(other.tag == "Player")
     	{
     		entered = true;
     	}
     }
 
-    void onTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
     	Debug.Log("triggerevent endet");
-    	if(other.gameObject.tag == "Player")
+    	if(other.tag == "Player")
     	{
     		entered = false;
     	}

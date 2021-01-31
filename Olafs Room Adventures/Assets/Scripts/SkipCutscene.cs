@@ -5,24 +5,43 @@ using UnityEngine.Playables;
 
 public class SkipCutscene : MonoBehaviour
 {
-    [SerializeField]
-    private PlayableDirector currentTimeline;
+    public Transform cutscenes;
+    // [SerializeField]
+    // private PlayableDirector currentTimeline;
 
-    [SerializeField]
-    private PlayableDirector skipTimeline;
+    // [SerializeField]
+    // private PlayableDirector skipTimeline_blackImage;
+    // [SerializeField]
+    // private PlayableDirector skipTimeline_noBlackImage;
 
-    [SerializeField]
-    private Animator dialogueBoxAnimator;
+    // public bool blackImageActive;
 
-    [SerializeField]
-    private GameObject skipButton;
+    // [SerializeField]
+    // private Animator dialogueBoxAnimator;
+
+    // [SerializeField]
+    // private GameObject skipButton;
 
     public void Skip()
     {
-        dialogueBoxAnimator.SetBool("isOpen", false);
-        currentTimeline.Stop();
-        skipButton.SetActive(false);
-        skipTimeline.Play();
+        // dialogueBoxAnimator.SetBool("isOpen", false);
+        // currentTimeline.Stop();
+        // skipButton.SetActive(false);
+
+        // if (blackImageActive) 
+        // {
+        //     skipTimeline_blackImage.Play();
+        // }
+        // else
+        // {
+        //     skipTimeline_noBlackImage.Play();
+        // }
+
+        // foreach (PlayableDirector pd in cutscenes) 
+        // {
+        //     Debug.Log(pd.IsPlaying());
+        // }
+
     }
 
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 [System.Serializable]
 public class SerializablePair
 {
-    public Axis direction;
-    public float minForce;
-    public float maxForce;
+    public Axis axis;
+    public bool direction;
 }

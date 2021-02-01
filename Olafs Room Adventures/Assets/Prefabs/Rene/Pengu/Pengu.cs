@@ -7,7 +7,7 @@ public class Pengu : MonoBehaviour
     Transform[] ArmsAndFeet= new Transform[4];
     bool moveFeet = false;
 
-
+    public bool floatsAround;
 
     private Animator animator;
     string stateName = "PenguFeet";
@@ -54,7 +54,11 @@ public class Pengu : MonoBehaviour
            StartCoroutine(blinzeln());
         }
 
-        transform.Rotate(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f, Space.Self);
+        if (floatsAround)
+        {
+            transform.Rotate(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f, Space.Self);
+        }
+        
 
         if (Input.anyKey)
         {

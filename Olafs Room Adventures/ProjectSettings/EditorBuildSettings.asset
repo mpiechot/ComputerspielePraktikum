@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ReneTest/HotelLobby2.unity
     guid: 8defbd72a87622a4ea60e7e4eb25769d
+  - enabled: 1
+    path: Assets/Scenes/Level4/Level4.0.unity
+    guid: 8f2d82362189d1c4d819c8c6b49a028d
   m_configObjects: {}

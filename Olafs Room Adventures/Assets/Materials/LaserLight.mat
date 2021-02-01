@@ -58,7 +58,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_1364A08A: 3
-    - Vector1_82A64C1A: 2
+    - Vector1_82A64C1A: 0
     - Vector1_8DFF3AB4: 0.047
     - Vector1_AD418005: 0.166
     - Vector1_BD41E92C: 40

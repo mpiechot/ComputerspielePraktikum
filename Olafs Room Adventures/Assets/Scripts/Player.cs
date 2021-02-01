@@ -92,6 +92,14 @@ public class Player : MonoBehaviour
         invincible = false;
     }
 
+
+    public int getCurrentHealth(){
+        return currentHealth;
+    }
+
+    public void setCurrentHealth(int current_health){
+        this.currentHealth = current_health;
+    }
     private IEnumerator TakeFireDmgEverySecond(int dmg)
     {
         CR_TakeDmgIsRunning = true;

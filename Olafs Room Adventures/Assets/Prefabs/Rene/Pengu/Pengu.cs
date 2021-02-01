@@ -19,14 +19,14 @@ public class Pengu : MonoBehaviour
 
     private AudioSource PenguSource;
     public  AudioClip PenguSound;
-    public float Volume = 0.5f;
+    public float Volume = 0.2f;
     private bool CR_Running = false;
     // Start is called before the first frame update
     void Start()
     {
-        
 
-       // m_Material = GetComponent<Renderer>().material;
+        m_Material.mainTexture = penguTex;
+        // m_Material = GetComponent<Renderer>().material;
         //m_Material.SetTexture("_MainTex", penguTexBlinzeln);
 
         animator = GetComponent<Animator>();
@@ -39,7 +39,7 @@ public class Pengu : MonoBehaviour
         PenguSource = gameObject.AddComponent<AudioSource>();
         PenguSource.clip = PenguSound;
         PenguSource.playOnAwake = false;
-        PenguSource.dopplerLevel = 1;
+        PenguSource.dopplerLevel = 0.1f;
         PenguSource.volume = Volume;
 
         
@@ -93,4 +93,8 @@ public class Pengu : MonoBehaviour
         yield return new WaitForSeconds(1);
         CR_Running = false;
     }
-}
+    void OnDestroy()
+    {
+        m_Material.mainTexture = penguTex;
+    }
+    }

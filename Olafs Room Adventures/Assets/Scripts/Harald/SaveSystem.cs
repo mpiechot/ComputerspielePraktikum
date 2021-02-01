@@ -76,7 +76,7 @@ public static class SaveSystem
 
 
 
-    public static void savePlayerData(OlafStatesH player){
+    public static void savePlayerData(Player player){
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/player.lol";
         FileStream stream = new FileStream(path, FileMode.Create);
@@ -88,7 +88,7 @@ public static class SaveSystem
     }
 
     public static PlayerData loadPlayerData (){
-        string path = Application.persistentDataPath + "/player.fun";
+        string path = Application.persistentDataPath + "/player.lol";
         if(File.Exists(path)){
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
@@ -122,4 +122,16 @@ public static class SaveSystem
         }
     }
 
+    
+
+}
+
+[System.Serializable]
+public class PlayerData
+{
+    public int current_health;
+
+    public PlayerData(Player player){
+        current_health = player.getCurrentHealth();
+    }
 }

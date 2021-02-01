@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     public void LoadGame()
     {
         Universal.load_game = true;
-        SceneManager.LoadScene("Level4.0", LoadSceneMode.Single);
+        SceneManager.LoadScene(SaveSystem.loadSceneName(), LoadSceneMode.Single);
     }
 
     public void ExitGame ()

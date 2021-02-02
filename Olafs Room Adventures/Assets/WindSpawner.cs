@@ -19,7 +19,8 @@ public class WindSpawner : MonoBehaviour
     {
         if (!waiting)
         {
-            Instantiate(windEffects[Random.Range(0, windEffects.Length)], spawnPositions[Random.Range(0, spawnPositions.Length)], Quaternion.identity);
+            int newWindIndex = Random.Range(0, windEffects.Length);
+            Instantiate(windEffects[newWindIndex], spawnPositions[Random.Range(0, spawnPositions.Length)], windEffects[newWindIndex].transform.rotation);
             StartCoroutine("WaitForNextWind");
         }
     }

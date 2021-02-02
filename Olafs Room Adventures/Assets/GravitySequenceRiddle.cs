@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class GravitySequenceRiddle : MonoBehaviour
 {
     [SerializeField]
+    private UnityEvent RiddleFailedEvent;
+    [SerializeField]
     private UnityEvent RiddleFinishedEvent;
     [SerializeField]
     private SerializablePair[] gravitySequence;
@@ -19,21 +21,25 @@ public class GravitySequenceRiddle : MonoBehaviour
     }
     public void OnGravityChanged()
     {
-        if(currentIndex < gravitySequence.Length)
+        SerializablePair activePair;
+        float gravityValue;
+        if(currentIndex >= gravitySequence.Length)
         {
-            SerializablePair activePair = gravitySequence[currentIndex];
-            float gravityValue = 0f;
-            switch (activePair.axis)
+            GetActivePairAndGravity(gravitySequence.Length-1,out activePair, out gravityValue);
+            if (activePair.direction && gravityValue < 0 || !activePair.direction && gravityValue > 0)
             {
-                case Axis.X: gravityValue = Physics.gravity.x; break;
-                case Axis.Y: gravityValue = Physics.gravity.y; break;
-                case Axis.Z: gravityValue = Physics.gravity.z; break;
+                RiddleFailedEvent.Invoke();
+                currentIndex = 0;
             }
-            
-            if (activePair.direction && gravityValue > 0 || !activePair.direction && gravityValue < 0 )
+        }
+        else
+        {
+            GetActivePairAndGravity(currentIndex,out activePair, out gravityValue);
+
+            if (activePair.direction && gravityValue > 0 || !activePair.direction && gravityValue < 0)
             {
                 currentIndex++;
-                if(currentIndex >= gravitySequence.Length)
+                if (currentIndex >= gravitySequence.Length)
                 {
                     PuzzleFinished();
                 }
@@ -42,6 +48,18 @@ public class GravitySequenceRiddle : MonoBehaviour
             {
                 WrongGravity();
             }
+        }
+    }
+
+    private void GetActivePairAndGravity(int index, out SerializablePair activePair, out float gravityValue)
+    {
+        activePair = gravitySequence[index];
+        gravityValue = 0f;
+        switch (activePair.axis)
+        {
+            case Axis.X: gravityValue = Physics.gravity.x; break;
+            case Axis.Y: gravityValue = Physics.gravity.y; break;
+            case Axis.Z: gravityValue = Physics.gravity.z; break;
         }
     }
 

@@ -9,6 +9,20 @@ public class CutsceneTrigger : MonoBehaviour
     [SerializeField]
     private PlayableDirector timeline;
 
+    public DialogueSystem.DialogueManager dialogueManager;
+
+    void Start() 
+    {
+        dialogueManager.onCutscene.AddListener((action) => SetCutscene(action));
+    }
+
+    public void SetCutscene(string action) 
+    {
+        Debug.Log("Message received: " + action);
+        timeline = GameObject.Find("/Cutscenes/" + action).GetComponent<PlayableDirector>();
+        TriggerCutscene();
+    }
+
     void OnTriggerEnter(Collider other)
     {
         if (!passCollider && other.tag == "Player" && !played)
@@ -28,6 +42,6 @@ public class CutsceneTrigger : MonoBehaviour
     private void TriggerCutscene() 
     {
         timeline.Play();
-            played = true;
+        played = true;
     }
 }

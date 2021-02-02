@@ -9,6 +9,7 @@ using System.Globalization;
 namespace DialogueSystem
 {
     [System.Serializable] public class TextRevealEvent : UnityEvent<char> { }
+    [System.Serializable] public class CutsceneEvent : UnityEvent<string> { }
 
     public class DialogueManager : MonoBehaviour
     {
@@ -17,6 +18,7 @@ namespace DialogueSystem
 
         public float letterSpeed;
         public TextRevealEvent onTextReveal;
+        public CutsceneEvent onCutscene;
 
         public Animator dialogueBoxAnimator;
         public Animator dialogueTextAnimator;
@@ -93,7 +95,7 @@ namespace DialogueSystem
 
             bool isCustomTag(string tag) 
             {
-                return tag.StartsWith("speed") || tag.StartsWith("pause") || tag.StartsWith("shake") || tag.StartsWith("stopshake");
+                return tag.StartsWith("speed") || tag.StartsWith("pause") || tag.StartsWith("shake") || tag.StartsWith("stopshake") || tag.StartsWith("cutscene");
             }
 
             dialogueText.maxVisibleCharacters = 0;
@@ -152,6 +154,10 @@ namespace DialogueSystem
                         else if (tag.StartsWith("stopshake"))
                         {
                             dialogueTextAnimator.SetBool("isShaking", false);
+                        }
+                        else if (tag.StartsWith("cutscene="))
+                        {
+                            onCutscene.Invoke(tag.Split('=')[1]);
                         }
                     }
                     return null;

@@ -95,7 +95,11 @@ namespace DialogueSystem
 
             bool isCustomTag(string tag) 
             {
-                return tag.StartsWith("speed") || tag.StartsWith("pause") || tag.StartsWith("shake") || tag.StartsWith("stopshake") || tag.StartsWith("cutscene");
+                return tag.StartsWith("speed") || 
+                       tag.StartsWith("pause") || 
+                       tag.StartsWith("shake") || 
+                       tag.StartsWith("stopshake") || 
+                       tag.StartsWith("cutscene");
             }
 
             dialogueText.maxVisibleCharacters = 0;

@@ -666,17 +666,17 @@ MonoBehaviour:
   dialogueText:
     name: Brian
     sentences:
-    - 'Hello there! <pause=0.5>
+    - 'Hello there! <pause=0.5> Admiring my rock collection?<pause=1>
 
-      Sorry for the mess, I forgot to clean up.
-      <pause=0.5><size=50%> I didn''t. I never clean.>
+      Sorry
+      for the mess, I forgot to clean up. <pause=0.5><size=50%> I never clean.>
 
 '
     - 'Since you made it so easily through the last room, I decided to make things
-      more<pause=0.3> . <pause=0.2> . <pause=0.2> .<pause=0.3> exciting. '
+      more<pause=0.3> . <pause=0.2> . <pause=0.2> .<pause=0.3> interesting. '
     - You are now <b>vulnerable!</b> <pause=0.5>If you get hit by a heavy object
       or crash into something very fast, you <b>lose life points!</b>
-    - Like this <pause=1><cutscene=DamagePresentation>
+    - Let me show you!<pause=0.8><cutscene=DamagePresentation>
   retroactive: 0
   emitOnce: 0
 --- !u!114 &11400000
@@ -717,6 +717,22 @@ MonoBehaviour:
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 37c82dfe7df5f4f459201f93b4ba8b90, type: 2}
+--- !u!114 &950306350456750764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 4122fd4ec84080446ab3c3e451a32285
+    defaultValue: {fileID: 0}
 --- !u!114 &4556743671227997415
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -737,7 +753,109 @@ MonoBehaviour:
   m_Curves: {fileID: 0}
   m_Parent: {fileID: 11400000}
   m_Children: []
-  m_Clips: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: 7717863995075338135}
+    m_Duration: 20.1
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 4556743671227997415}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: 2.5833333333333357
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: CM vcam1
+  - m_Version: 1
+    m_Start: 17.516666666666666
+    m_ClipIn: 0
+    m_Asset: {fileID: 950306350456750764}
+    m_Duration: 5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 4556743671227997415}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 2.5833333333333357
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: CM FreeLook1
   m_Markers:
     m_Objects: []
 --- !u!114 &7035657050612657957
@@ -781,3 +899,19 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
+--- !u!114 &7717863995075338135
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90fb794a295e73545af71bcdb7375791, type: 3}
+  m_Name: CinemachineShot
+  m_EditorClassIdentifier: 
+  DisplayName: 
+  VirtualCamera:
+    exposedName: 8dd1a7584e67bee4e92de7dac908eda4
+    defaultValue: {fileID: 0}

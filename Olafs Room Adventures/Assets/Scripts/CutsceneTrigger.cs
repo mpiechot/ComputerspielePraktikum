@@ -18,7 +18,6 @@ public class CutsceneTrigger : MonoBehaviour
 
     public void SetCutscene(string action) 
     {
-        Debug.Log("Message received: " + action);
         timeline = GameObject.Find("/Cutscenes/" + action).GetComponent<PlayableDirector>();
         TriggerCutscene();
     }

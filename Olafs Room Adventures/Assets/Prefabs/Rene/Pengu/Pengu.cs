@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Pengu : MonoBehaviour
 {
+    
+
     Transform[] ArmsAndFeet= new Transform[4];
     bool moveFeet = false;
 
@@ -21,6 +24,22 @@ public class Pengu : MonoBehaviour
     public  AudioClip PenguSound;
     public float Volume = 0.2f;
     private bool CR_Running = false;
+    private bool bShouldPlaySound = true;
+
+    public void playSounds()
+    {
+        bShouldPlaySound = true;
+    }
+
+    public void stopSounds()
+    {
+        bShouldPlaySound = false;
+    }
+    
+    
+    
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -42,8 +61,20 @@ public class Pengu : MonoBehaviour
         PenguSource.dopplerLevel = 0.1f;
         PenguSource.volume = Volume;
 
-        
-        
+        if (animator == null)
+        {
+            Debug.LogError("No Animator found on Pengu");
+            return;
+        }
+        animator.Play(stateName);
+
+
+        if (PenguSource == null)
+        {
+            Debug.LogError("No SoundSource on Pengu");
+            return;
+        }
+
     }
 
     // Update is called once per frame
@@ -60,31 +91,21 @@ public class Pengu : MonoBehaviour
         }
         
 
-        if (Input.anyKey)
+        
+
+        
+            
+        if (bShouldPlaySound)
         {
-            moveFeet = true;
-        }
+           if (!PenguSource.isPlaying)
+                    PenguSource.Play();
 
-        if (moveFeet)
+        }
+        else 
         {
-            if (animator == null)
-            {
-                Debug.LogError("No Animator found on Pengu");
-                return;
-            }
-            animator.Play(stateName);
-
-
-            if (PenguSource == null) 
-            {
-                Debug.LogError("No SoundSource on Pengu");
-                return; 
-            }
-            if ( !PenguSource.isPlaying)
-            {
-                PenguSource.Play();
-            }
+            PenguSource.Stop();
         }
+        
     }
 
     IEnumerator blinzeln()

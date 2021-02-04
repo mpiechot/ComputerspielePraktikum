@@ -8,6 +8,8 @@ public class FireWall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<Pengu>().stopSounds();
+       // FindObjectOfType<Pengu>().playSounds();
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 

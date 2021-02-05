@@ -1,6 +1,11 @@
 fileFormatVersion: 2
-guid: 09881bd247b516242a05bc28039b949f
+<<<<<<< Updated upstream:Olafs Room Adventures/Assets/Materials/Rene/FlameWall.mat.meta
+guid: 197b4962d3b314c3483a38653a89329f
 NativeFormatImporter:
+=======
+guid: f7e1bd20a0d934540beea752a0accba7
+DefaultImporter:
+>>>>>>> Stashed changes:Olafs Room Adventures/Assets/Scenes/Level6/Level_6_Rooms_1&2.unity.meta
   externalObjects: {}
   mainObjectFileID: 0
   userData: 

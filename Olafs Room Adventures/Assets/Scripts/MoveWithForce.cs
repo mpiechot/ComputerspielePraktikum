@@ -8,7 +8,6 @@ public class MoveWithForce : MonoBehaviour
 
     public void ActivateConstantForce() 
     {
-        Debug.Log("MoveWithForce was activated");
         Vector3 direction = new Vector3(destination.position.x - this.transform.position.x, 
                                         destination.position.y - this.transform.position.y, 
                                         destination.position.z - this.transform.position.z);

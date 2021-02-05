@@ -186,7 +186,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 310.8, y: -99}
+  m_AnchoredPosition: {x: 310.8, y: -102}
   m_SizeDelta: {x: 593.6743, y: 105.08598}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7742058720929200967
@@ -244,8 +244,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -344,8 +344,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 2.7999878, y: 75.5}
-  m_SizeDelta: {x: 626.42285, y: 133.0516}
+  m_AnchoredPosition: {x: -0.000005722046, y: 102.8}
+  m_SizeDelta: {x: 832.8994, y: 187.30823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7742058721168492532
 CanvasRenderer:
@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.92156863}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -420,6 +420,9 @@ MonoBehaviour:
   nameText: {fileID: 7742058721655104414}
   letterSpeed: 100
   onTextReveal:
+    m_PersistentCalls:
+      m_Calls: []
+  onCutscene:
     m_PersistentCalls:
       m_Calls: []
   dialogueBoxAnimator: {fileID: 7742058721168492533}
@@ -518,8 +521,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22
-  m_fontSizeBase: 22
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

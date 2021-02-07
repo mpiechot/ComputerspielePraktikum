@@ -197,7 +197,7 @@ What is the gameplay
 * Dialogsystem überarbeiten (Leo) (<font color="lightgreen">**✓**</font>)
 * Kamerascript + Low-Poly Terrain + Rätsel erster Raum Level2 (Marco) (mal wieder die hausi vergessen?)
 * Räume mit kleinen Details füllen + Explosives + Speichern/Laden/Checkpoints (Level 4) (Harald) (<font color="lightgreen">**✓**</font>)
-* Pinguin (Rene) (<font color="lightgreen">**✓**</font>) 
+* Pinguin (Rene) (<font color="lightgreen">**✓**</font>)
 * Code und Lasersäulen (Philipp) (<font color="lightgreen">**✓**</font>)
 
 ### Freitag 29.01.2021 16Uhr
@@ -208,12 +208,12 @@ What is the gameplay
 ### Questions Zwischenmeeting
 * wie schauts aus mit Copyright?
 * wie lang sollte das Spiel dauern?
-* 
+*
 
 
 ### Hausaufgabe
 * ALLE: Bis Montag 15 uhr Videoschnipsel Harald zuschicken
-* Raum 2 fertig machen (Leo) 
+* Raum 2 fertig machen (Leo)
 * Kamerascript + Low-Poly Terrain + Rätsel erster Raum Level2 (Marco)
 * Türen mit Schlüssel funktionsfähig und entsprechende Checkpoints laden (ggf. fenster u. dach u. licht) (Level 4) (Harald)
 * Feuerwand + nach Belieben (ggf. musik) (Rene)
@@ -222,3 +222,16 @@ What is the gameplay
 ### Freitag 05.02.2021 16Uhr
 * Weekly Meeting Catch-up
 * Spontane Themen
+
+### Hausaufgabe
+* ALLE: Steuerung + Camera ausprobieren + Ideen Bosskampf
+* Raum 3 machen (Leo)
+* Weitere Rätsel erstellen + Dialogsystem einbauen (Marco)
+* Checkpoints laden (ggf. fenster u. dach u. licht) (Level 4) (Harald)
+* Wasserwand + Pinguin aufräumen (Rene)
+* Bossmodel + Raum2 spielbar (Philipp)
+
+### Freitag 12.02.2021 16Uhr
+* Weekly Meeting Catch-up
+* Entscheidung Steuerung + Camera
+* Bossfight Ablauf

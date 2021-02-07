@@ -32,14 +32,7 @@ Einzelne Wände mit ProBuilder bauen. Nicht Cube + Flip Normals!
 * **Raum 3:**
 * **Raum 4:**
 
-### Level 5: Gravitationsfelder
-
-* **Raum 1:**
-* **Raum 2:**
-* **Raum 3:**
-* **Raum 4:**
-
-### Level 6: Licht + Dunkelheit
+### Level 5: Licht + Dunkelheit
 
 * **Raum 1:**
 * **Raum 2:**
@@ -47,3 +40,7 @@ Einzelne Wände mit ProBuilder bauen. Nicht Cube + Flip Normals!
 * **Raum 4:**
 
 ### Level Final: Brian the brain
+
+
+### Possible DLC:
+- Gravitatonsfelder

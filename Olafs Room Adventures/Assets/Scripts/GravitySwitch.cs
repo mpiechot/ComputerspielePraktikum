@@ -8,7 +8,9 @@ public class GravitySwitch : MonoBehaviour
     [SerializeField]
     private Axis gravityDirection;
     [SerializeField,Range(0,10f)]
-    private float GravityThreshold = 5f;
+    private float GravityThresholdOn = 5f;
+    [SerializeField, Range(-10f, 0f)]
+    private float GravityThresholdOff = 5f;
 
     [SerializeField]
     private UnityEvent SwitchOnEvent;
@@ -16,7 +18,7 @@ public class GravitySwitch : MonoBehaviour
     private UnityEvent SwitchOffEvent;
 
     private Animator anim;
-    private bool state = false;
+    private bool stateOn = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +31,9 @@ public class GravitySwitch : MonoBehaviour
     {
         if (NeedToSwitchStates())
         {
-            state = !state;
-            anim.SetBool("SwitchOn", state);
-            if (state)
+            stateOn = !stateOn;
+            anim.SetBool("SwitchOn", stateOn);
+            if (stateOn)
             {
                 SwitchOnEvent.Invoke();
             }
@@ -54,11 +56,11 @@ public class GravitySwitch : MonoBehaviour
     }
     private bool CheckGravity(float gravityAxisValue)
     {
-        if(state && gravityAxisValue < -GravityThreshold)
+        if(stateOn && gravityAxisValue <= GravityThresholdOff)
         {
             return true;
         }
-        if(!state && gravityAxisValue > GravityThreshold)
+        if(!stateOn && gravityAxisValue >= GravityThresholdOn)
         {
             return true;
         }

@@ -6,7 +6,7 @@ public class lightplay : MonoBehaviour
 {
     //Light light1;
     [SerializeField]
-    private Light light;
+    private Light light1,light2,light3,light4;
 
     [SerializeField]
     private GameObject nighttop;
@@ -31,7 +31,7 @@ public class lightplay : MonoBehaviour
     {
         deactivateNight();
         deactivateHelp();
-        nighttop.SetActive(false);
+        //nighttop.SetActive(false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -64,26 +64,39 @@ public class lightplay : MonoBehaviour
 
             if (Timer >= delay)
     		{
-    			if (light.intensity<1)
+                if (light1.intensity < 0.05)
+                {
+                    light1.intensity += (float)0.0003;
+                    light2.intensity += (float)0.0003;
+                    light3.intensity += (float)0.0003;
+                    light4.intensity += (float)0.0003;
+                }
+                if ((light1.intensity<0.6) && (light1.intensity>0.05))
     			{
-        			light.intensity += (float)0.02;
-    			}
+        			light1.intensity += (float)0.01;
+                    light2.intensity += (float)0.01;
+                    light3.intensity += (float)0.01;
+                    light4.intensity += (float)0.01;
+                }
     			Timer = 0;
     		}
 
-    		if ((light.intensity >= 0.6) && nwall0.active)
+    		if ((light1.intensity >= 0.6) && nwall0.active)
     		{
                 deactivateNight();
                 activateDay();
-                nighttop.SetActive(false);
+                //nighttop.SetActive(false);
     		}
 
-			if ((Input.GetKeyDown(KeyCode.L)) && (light.intensity > 0.8))
+			if ((Input.GetKeyDown(KeyCode.L)) && (light1.intensity > 0.4))
         	{
-           		light.intensity = 0;
+           		light1.intensity = 0;
+                light2.intensity = 0;
+                light3.intensity = 0;
+                light4.intensity = 0;
                 activateNight();
                 deactivateDay();
-                nighttop.SetActive(true);
+                //nighttop.SetActive(true);
        		}
 
             if (Timer2 >= 600)

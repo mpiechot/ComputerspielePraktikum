@@ -7,11 +7,22 @@ public class PassCodeQuestioning : MonoBehaviour
 {
 	private bool triggered = false;
     private bool solved = false;
-	public Image Keypad;
-	public Text Hint;
-	private string Code = "1111";
-    public Text enteredCode;
-	public GameObject toDisableObject;
+
+    [SerializeField]
+	private Image Keypad;
+
+    [SerializeField]
+    private bool codeNR;
+
+    [SerializeField]
+    private Text Hint,enteredCode;
+
+    private string Code2 = "6597";
+    private string Code1 = "1234";
+    private string Code;
+
+    [SerializeField]
+	private GameObject toDisableObject1,toDisableObject2;
     private string temp = "";
 
     // Start is called before the first frame update
@@ -19,6 +30,13 @@ public class PassCodeQuestioning : MonoBehaviour
     {
         enteredCode.color = Color.white;
         enteredCode.text = "";
+        if (codeNR)
+        {
+            Code = Code2;
+        }
+        else {
+            Code = Code1;
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -152,7 +170,8 @@ public class PassCodeQuestioning : MonoBehaviour
         {
             if (Code == enteredCode.text)
             {
-                toDisableObject.active = false;
+                toDisableObject1.active = false;
+                toDisableObject2.active = false;
                 enteredCode.text = "Correct";
                 yield return new WaitForSeconds(3);
                 Keypad.gameObject.SetActive(false);

@@ -9,6 +9,7 @@ TagManager:
   - BlackImage
   - Wall
   - Fire
+  - PedestalObject
   layers:
   - Default
   - TransparentFX

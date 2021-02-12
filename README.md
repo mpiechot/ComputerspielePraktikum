@@ -235,3 +235,25 @@ What is the gameplay
 * Weekly Meeting Catch-up
 * Entscheidung Steuerung + Camera
 * Bossfight Ablauf
+
+### Hausaufgabe
+* ALLE: Welche Kamera brauche ich für mein Level? Welche Kamera geht hier überhaupt nicht?
+* Raum 3 fertig machen + Übergänge zwischen den Räumen (Leo)
+* Rätsel für die letzten beiden Räume umsetzen + UI Gravitation Anzeige (Marco)
+* Dialogsystem + Videoeinführung + Wandproblem lösen + Schlüssel mit Schalter ersetzen(Versuch) (Harald)
+* Wasserwand + Pinguin Animationen (Rene)
+* Raum3 + Raum4 vormodellieren (Philipp)
+
+### Freitag 19.02.2021 16Uhr
+* Weekly Meeting Catch-up
+* Entscheidung Kamera
+
+
+>WASD-Steuerung: |||<
+Blick-Steuerung: ||
+TRPGBY-Steuerung:
+
+Losgelöste Kamera:
+Statische Kameras:
+Kamera folgt Spieler:
+Transparente Wände:

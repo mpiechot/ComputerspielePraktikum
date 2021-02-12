@@ -10,7 +10,7 @@ public class Pengu : MonoBehaviour
     Transform[] ArmsAndFeet= new Transform[4];
     bool moveFeet = false;
 
-    public bool floatsAround;
+    
 
     private Animator animator;
     string stateName = "PenguFeet";
@@ -20,21 +20,10 @@ public class Pengu : MonoBehaviour
     public Texture penguTexBlinzeln;
     
 
-    private AudioSource PenguSource;
-    public  AudioClip PenguSound;
-    public float Volume = 0.2f;
+    
     private bool CR_Running = false;
-    private bool bShouldPlaySound = true;
+   
 
-    public void playSounds()
-    {
-        bShouldPlaySound = true;
-    }
-
-    public void stopSounds()
-    {
-        bShouldPlaySound = false;
-    }
     
     
     
@@ -55,11 +44,7 @@ public class Pengu : MonoBehaviour
         ArmsAndFeet[2] = transform.Find("Feet1");
         ArmsAndFeet[3] = transform.Find("Feet1");
 
-        PenguSource = gameObject.AddComponent<AudioSource>();
-        PenguSource.clip = PenguSound;
-        PenguSource.playOnAwake = false;
-        PenguSource.dopplerLevel = 0.1f;
-        PenguSource.volume = Volume;
+        
 
         if (animator == null)
         {
@@ -69,11 +54,7 @@ public class Pengu : MonoBehaviour
         animator.Play(stateName);
 
 
-        if (PenguSource == null)
-        {
-            Debug.LogError("No SoundSource on Pengu");
-            return;
-        }
+        
 
     }
 
@@ -85,26 +66,14 @@ public class Pengu : MonoBehaviour
            StartCoroutine(blinzeln());
         }
 
-        if (floatsAround)
-        {
-            transform.Rotate(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f, Space.Self);
-        }
         
 
-        
 
+
+       // FindObjectOfType<PenguSound>().playSounds("PenguScreamSoundClip" , 100);
         
             
-        if (bShouldPlaySound)
-        {
-           if (!PenguSource.isPlaying)
-                    PenguSource.Play();
-
-        }
-        else 
-        {
-            PenguSource.Stop();
-        }
+        
         
     }
 

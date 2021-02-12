@@ -6,13 +6,14 @@ public class DoorOpener : MonoBehaviour
 {
     public GameObject olaf;
     public GameObject[] doors;
-    public bool[] keys_collected;
 
     public float distance_threshold;
     private bool[] doors_state; //false = close
+    private bool[] keys_collected;
 
     void Start(){
         doors_state = new bool[doors.Length];
+        keys_collected = new bool[doors.Length];
     }
 
     void Update(){
@@ -31,5 +32,9 @@ public class DoorOpener : MonoBehaviour
 
     float distance(Vector3 pos0, Vector3 pos1){
         return (pos0 - pos1).magnitude;
+    }
+
+    public void collectKey(int id){
+        keys_collected[id] = true;
     }
 }

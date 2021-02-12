@@ -225,7 +225,7 @@ What is the gameplay
 
 ### Hausaufgabe
 * ALLE: Steuerung + Camera ausprobieren + Ideen Bosskampf
-* Raum 3 machen (Leo)
+* Raum 3 machen (Leo furzt)
 * Weitere Rätsel erstellen + Dialogsystem einbauen (Marco)
 * Checkpoints laden (ggf. fenster u. dach u. licht) (Level 4) (Harald)
 * Wasserwand + Pinguin aufräumen (Rene)

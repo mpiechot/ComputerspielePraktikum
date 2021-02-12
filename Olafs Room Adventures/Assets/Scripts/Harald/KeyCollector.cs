@@ -10,7 +10,7 @@ public class KeyCollector : MonoBehaviour
     void OnCollisionEnter (Collision coll) {
         if (coll.collider.CompareTag ("Player")) {
             Debug.Log("Key collected " + key_id);
-            player.GetComponent<DoorOpener>().keys_collected[key_id] = true;
+            player.GetComponent<DoorOpener>().collectKey(key_id);
             Destroy(gameObject);
         }
     }

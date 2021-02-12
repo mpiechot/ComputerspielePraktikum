@@ -5,76 +5,40 @@ using UnityEngine;
 
 public class Pengu : MonoBehaviour
 {
+
+    //soundAbspielen
+    private event System.Action PlayScreamSound;
     
-
-    Transform[] ArmsAndFeet= new Transform[4];
-    bool moveFeet = false;
-
-    
-
-    private Animator animator;
-    string stateName = "PenguFeet";
-
+    //Blinzeln durch andere Texture
     public Material m_Material;
     public Texture penguTex;
     public Texture penguTexBlinzeln;
-    
 
-    
+    PenguSound Sounds;
     private bool CR_Running = false;
-   
+    [SerializeField]
+    private bool bBlinzeln = true;
+    [SerializeField]
+    private bool bPlayScreamSounds = true;
 
-    
-    
-    
-    
-    
     // Start is called before the first frame update
     void Start()
     {
-
+        //initialice standart texture
         m_Material.mainTexture = penguTex;
-        // m_Material = GetComponent<Renderer>().material;
-        //m_Material.SetTexture("_MainTex", penguTexBlinzeln);
-
-        animator = GetComponent<Animator>();
-
-        ArmsAndFeet[0] = transform.Find("Arm1");
-        ArmsAndFeet[1] = transform.Find("Arm2");
-        ArmsAndFeet[2] = transform.Find("Feet1");
-        ArmsAndFeet[3] = transform.Find("Feet1");
-
-        
-
-        if (animator == null)
-        {
-            Debug.LogError("No Animator found on Pengu");
-            return;
-        }
-        animator.Play(stateName);
-
-
-        
+        //Find Script for Sounds to play Scream soudn
+        Sounds = FindObjectOfType<PenguSound>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!CR_Running)
-        {
-           StartCoroutine(blinzeln());
-        }
-
+        if (!CR_Running && bBlinzeln)
+            StartCoroutine(blinzeln());
         
-
-
-
-       // FindObjectOfType<PenguSound>().playSounds("PenguScreamSoundClip" , 100);
-        
-            
-        
-        
+        if(bPlayScreamSounds)
+            Sounds.playSounds("PenguScreamSoundClip" , 100);//play Scream
     }
 
     IEnumerator blinzeln()
@@ -91,4 +55,6 @@ public class Pengu : MonoBehaviour
     {
         m_Material.mainTexture = penguTex;
     }
+
+    
     }

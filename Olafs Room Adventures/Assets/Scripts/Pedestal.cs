@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Pedestal : MonoBehaviour
 {
 
     public int id;
+    [SerializeField] private PedestalManager pedestalManager;
+
+    [SerializeField] private UnityEvent OnDocking;
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,8 +22,11 @@ public class Pedestal : MonoBehaviour
                 {
                     other.transform.localPosition = new Vector3(0.8f, 2.7f, -0.95f);
                     other.transform.eulerAngles = Vector3.zero;
-                    other.GetComponent<Rigidbody>().useGravity = false;
-                    other.GetComponent<Rigidbody>().isKinematic = false;
+                    Rigidbody rb = other.GetComponent<Rigidbody>();
+                    rb.useGravity = false;
+                    rb.isKinematic = true;
+
+                    OnDocking.Invoke();
                 }
             }
         }

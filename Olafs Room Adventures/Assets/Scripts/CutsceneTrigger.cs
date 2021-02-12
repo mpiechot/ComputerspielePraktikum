@@ -38,7 +38,7 @@ public class CutsceneTrigger : MonoBehaviour
         }
     }
 
-    private void TriggerCutscene() 
+    public void TriggerCutscene() 
     {
         timeline.Play();
         played = true;

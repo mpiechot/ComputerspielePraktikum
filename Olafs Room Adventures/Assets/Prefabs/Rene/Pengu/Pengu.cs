@@ -5,107 +5,40 @@ using UnityEngine;
 
 public class Pengu : MonoBehaviour
 {
+
+    //soundAbspielen
+    private event System.Action PlayScreamSound;
     
-
-    Transform[] ArmsAndFeet= new Transform[4];
-    bool moveFeet = false;
-
-    public bool floatsAround;
-
-    private Animator animator;
-    string stateName = "PenguFeet";
-
+    //Blinzeln durch andere Texture
     public Material m_Material;
     public Texture penguTex;
     public Texture penguTexBlinzeln;
-    
 
-    private AudioSource PenguSource;
-    public  AudioClip PenguSound;
-    public float Volume = 0.2f;
+    PenguSound Sounds;
     private bool CR_Running = false;
-    private bool bShouldPlaySound = true;
+    [SerializeField]
+    private bool bBlinzeln = true;
+    [SerializeField]
+    private bool bPlayScreamSounds = true;
 
-    public void playSounds()
-    {
-        bShouldPlaySound = true;
-    }
-
-    public void stopSounds()
-    {
-        bShouldPlaySound = false;
-    }
-    
-    
-    
-    
-    
     // Start is called before the first frame update
     void Start()
     {
-
+        //initialice standart texture
         m_Material.mainTexture = penguTex;
-        // m_Material = GetComponent<Renderer>().material;
-        //m_Material.SetTexture("_MainTex", penguTexBlinzeln);
-
-        animator = GetComponent<Animator>();
-
-        ArmsAndFeet[0] = transform.Find("Arm1");
-        ArmsAndFeet[1] = transform.Find("Arm2");
-        ArmsAndFeet[2] = transform.Find("Feet1");
-        ArmsAndFeet[3] = transform.Find("Feet1");
-
-        PenguSource = gameObject.AddComponent<AudioSource>();
-        PenguSource.clip = PenguSound;
-        PenguSource.playOnAwake = false;
-        PenguSource.dopplerLevel = 0.1f;
-        PenguSource.volume = Volume;
-
-        if (animator == null)
-        {
-            Debug.LogError("No Animator found on Pengu");
-            return;
-        }
-        animator.Play(stateName);
-
-
-        if (PenguSource == null)
-        {
-            Debug.LogError("No SoundSource on Pengu");
-            return;
-        }
+        //Find Script for Sounds to play Scream soudn
+        Sounds = FindObjectOfType<PenguSound>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!CR_Running)
-        {
-           StartCoroutine(blinzeln());
-        }
-
-        if (floatsAround)
-        {
-            transform.Rotate(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f, Space.Self);
-        }
+        if (!CR_Running && bBlinzeln)
+            StartCoroutine(blinzeln());
         
-
-        
-
-        
-            
-        if (bShouldPlaySound)
-        {
-           if (!PenguSource.isPlaying)
-                    PenguSource.Play();
-
-        }
-        else 
-        {
-            PenguSource.Stop();
-        }
-        
+        if(bPlayScreamSounds)
+            Sounds.playSounds("PenguScreamSoundClip" , 100);//play Scream
     }
 
     IEnumerator blinzeln()
@@ -122,4 +55,6 @@ public class Pengu : MonoBehaviour
     {
         m_Material.mainTexture = penguTex;
     }
+
+    
     }

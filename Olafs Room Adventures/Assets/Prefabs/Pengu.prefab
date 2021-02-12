@@ -334,6 +334,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7762292010471137698}
+  - component: {fileID: -9033489613566530847}
+  - component: {fileID: 4698192871527102835}
   - component: {fileID: 6985896495774726942}
   - component: {fileID: 6985896495774726943}
   - component: {fileID: 6985896495774726941}
@@ -364,6 +366,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -211.015, z: 0}
+--- !u!114 &-9033489613566530847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985896495774726936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd254d017000194897bed01c76f4813, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveFeet: 1
+  floatsAround: 0
+--- !u!114 &4698192871527102835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985896495774726936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1284153280c93469081eeefa8ada29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PenguScreamSoundClip: {fileID: 8300000, guid: d778bd53229b5cf42a8bf5654af8fcab,
+    type: 3}
+  Volume: 0.5
 --- !u!114 &6985896495774726942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,8 +410,8 @@ MonoBehaviour:
   m_Material: {fileID: 2100000, guid: 2d0013e75e3853c4f93864589d40c7c9, type: 2}
   penguTex: {fileID: 2800000, guid: 66335048c41f98a43b26f51eb90997cc, type: 3}
   penguTexBlinzeln: {fileID: 2800000, guid: 284717cfcc0b2fe4faf502131f20f059, type: 3}
-  PenguSound: {fileID: 8300000, guid: d778bd53229b5cf42a8bf5654af8fcab, type: 3}
-  Volume: 0.5
+  bBlinzeln: 1
+  bPlayScreamSounds: 1
 --- !u!95 &6985896495774726943
 Animator:
   serializedVersion: 3

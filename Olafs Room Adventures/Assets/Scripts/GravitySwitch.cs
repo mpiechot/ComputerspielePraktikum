@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(SwitchMaterials))]
 public class GravitySwitch : MonoBehaviour
 {
+    [SerializeField]
+    private SwitchMaterials materials;
+
     [SerializeField]
     private Axis gravityDirection;
     [SerializeField,Range(0,10f)]
@@ -19,11 +23,20 @@ public class GravitySwitch : MonoBehaviour
 
     private Animator anim;
     private bool stateOn = false;
+    private MeshRenderer switchRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();    
+        anim = GetComponent<Animator>();
+        switchRenderer = GetComponentsInChildren<MeshRenderer>()[1];
+
+        switch (gravityDirection)
+        {
+            case Axis.X: switchRenderer.material = materials.XAxisMat; break;
+            case Axis.Y: switchRenderer.material = materials.YAxisMat; break;
+            case Axis.Z: switchRenderer.material = materials.ZAxisMat; break;
+        }
     }
 
     // Update is called once per frame
@@ -35,11 +48,11 @@ public class GravitySwitch : MonoBehaviour
             anim.SetBool("SwitchOn", stateOn);
             if (stateOn)
             {
-                SwitchOnEvent.Invoke();
+                SwitchOnEvent?.Invoke();
             }
             else
             {
-                SwitchOffEvent.Invoke();
+                SwitchOffEvent?.Invoke();
             }
         }
     }

@@ -1113,7 +1113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b54b6ff525799c943850aae90097bf75, type: 2}
+  - {fileID: 2100000, guid: f775de7cb168b324da56af555e9c7ebb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1234,9 +1234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407a6d2224975814c8caa831d9fc80e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  XAxisMat: {fileID: 2100000, guid: 1e0ffe4fd92e17d44acdc8b75541d6c4, type: 2}
-  YAxisMat: {fileID: 2100000, guid: 52744b266e2e914488f83461a861b8e1, type: 2}
-  ZAxisMat: {fileID: 2100000, guid: b436956b841e1de44ab1261066c308bf, type: 2}
+  XAxisMat: {fileID: 2100000, guid: becf698a522f3de4f9fa4040011173e8, type: 2}
+  YAxisMat: {fileID: 2100000, guid: ec9f903943f9b1146af384704f37b98d, type: 2}
+  ZAxisMat: {fileID: 2100000, guid: 8e63022d2f7b6394cac7541ee4d1cf7a, type: 2}
 --- !u!1 &6869497109382071702
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class SerializablePair
+public class SerializablePair<K,V>
 {
-    public Axis axis;
-    public bool direction;
+    public K key;
+    public V value;
 }

@@ -11,7 +11,7 @@ public class GravitySequenceRiddle : MonoBehaviour
     [SerializeField]
     private UnityEvent RiddleFinishedEvent;
     [SerializeField]
-    private SerializablePair[] gravitySequence;
+    private SerializablePair<Axis,bool>[] gravitySequence;
     [SerializeField]
     private int currentIndex = 0;
 
@@ -21,12 +21,12 @@ public class GravitySequenceRiddle : MonoBehaviour
     }
     public void OnGravityChanged()
     {
-        SerializablePair activePair;
+        SerializablePair<Axis,bool> activePair;
         float gravityValue;
         if(currentIndex >= gravitySequence.Length)
         {
             GetActivePairAndGravity(gravitySequence.Length-1,out activePair, out gravityValue);
-            if (activePair.direction && gravityValue < 0 || !activePair.direction && gravityValue > 0)
+            if (activePair.value && gravityValue < 0 || !activePair.value && gravityValue > 0)
             {
                 RiddleFailedEvent.Invoke();
                 currentIndex = 0;
@@ -36,7 +36,7 @@ public class GravitySequenceRiddle : MonoBehaviour
         {
             GetActivePairAndGravity(currentIndex,out activePair, out gravityValue);
 
-            if (activePair.direction && gravityValue > 0 || !activePair.direction && gravityValue < 0)
+            if (activePair.value && gravityValue > 0 || !activePair.value && gravityValue < 0)
             {
                 currentIndex++;
                 if (currentIndex >= gravitySequence.Length)
@@ -51,11 +51,11 @@ public class GravitySequenceRiddle : MonoBehaviour
         }
     }
 
-    private void GetActivePairAndGravity(int index, out SerializablePair activePair, out float gravityValue)
+    private void GetActivePairAndGravity(int index, out SerializablePair<Axis,bool> activePair, out float gravityValue)
     {
         activePair = gravitySequence[index];
         gravityValue = 0f;
-        switch (activePair.axis)
+        switch (activePair.key)
         {
             case Axis.X: gravityValue = Physics.gravity.x; break;
             case Axis.Y: gravityValue = Physics.gravity.y; break;

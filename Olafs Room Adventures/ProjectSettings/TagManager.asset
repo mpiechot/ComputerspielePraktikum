@@ -10,6 +10,7 @@ TagManager:
   - Wall
   - Fire
   - PedestalObject
+  - Switch
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - SecondCam
   - Player
   - Wall
-  - 
+  - Interactable
   - 
   - 
   - 

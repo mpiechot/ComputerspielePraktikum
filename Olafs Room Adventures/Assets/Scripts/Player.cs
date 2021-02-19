@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -6,7 +7,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private int maxHealth = 100;
+    private int maxHealth = 100;   
     [SerializeField]
     private int currentHealth;
     [SerializeField]
@@ -28,16 +29,6 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.setMaxHealth(maxHealth);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
-        
     }
 
     void TakeDamage(int dmg)

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5162068009925419658}
   - component: {fileID: 4246942872061143902}
   - component: {fileID: 3109413784762887104}
+  - component: {fileID: 8222051909613184950}
   m_Layer: 0
   m_Name: GravitySwitch
   m_TagString: Untagged
@@ -1090,81 +1091,9 @@ MonoBehaviour:
   assetGuid: 
   m_Mesh: {fileID: 0}
   m_IsSelectable: 1
-  m_SelectedFaces: 1d0000000d0000000c0000000900000015000000140000001b0000001c0000001a000000
-  m_SelectedEdges:
-  - a: 116
-    b: 117
-  - a: 117
-    b: 118
-  - a: 118
-    b: 119
-  - a: 119
-    b: 116
-  - a: 52
-    b: 53
-  - a: 53
-    b: 54
-  - a: 54
-    b: 55
-  - a: 55
-    b: 52
-  - a: 48
-    b: 49
-  - a: 49
-    b: 50
-  - a: 50
-    b: 51
-  - a: 51
-    b: 48
-  - a: 36
-    b: 37
-  - a: 37
-    b: 38
-  - a: 38
-    b: 39
-  - a: 39
-    b: 36
-  - a: 84
-    b: 85
-  - a: 85
-    b: 86
-  - a: 86
-    b: 87
-  - a: 87
-    b: 84
-  - a: 80
-    b: 81
-  - a: 81
-    b: 82
-  - a: 82
-    b: 83
-  - a: 83
-    b: 80
-  - a: 108
-    b: 109
-  - a: 109
-    b: 110
-  - a: 110
-    b: 111
-  - a: 111
-    b: 108
-  - a: 112
-    b: 113
-  - a: 113
-    b: 114
-  - a: 114
-    b: 115
-  - a: 115
-    b: 112
-  - a: 104
-    b: 105
-  - a: 105
-    b: 106
-  - a: 106
-    b: 107
-  - a: 107
-    b: 104
-  m_SelectedVertices: 7600000074000000750000007700000036000000340000003500000037000000320000003000000031000000330000002600000024000000250000002700000056000000540000005500000057000000520000005000000051000000530000006e0000006c0000006d0000006f000000720000007000000071000000730000006a00000068000000690000006b000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!23 &8358706204429793965
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1184,7 +1113,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b54b6ff525799c943850aae90097bf75, type: 2}
+  - {fileID: 2100000, guid: f775de7cb168b324da56af555e9c7ebb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1240,8 +1169,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8fd63b11f1e69943865e52625d1e117, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  materials: {fileID: 8222051909613184950}
   gravityDirection: 1
-  GravityThreshold: 0.1
+  GravityThresholdOn: 5
+  GravityThresholdOff: 5
   SwitchOnEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1291,6 +1222,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8222051909613184950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304515267823095702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407a6d2224975814c8caa831d9fc80e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  XAxisMat: {fileID: 2100000, guid: becf698a522f3de4f9fa4040011173e8, type: 2}
+  YAxisMat: {fileID: 2100000, guid: ec9f903943f9b1146af384704f37b98d, type: 2}
+  ZAxisMat: {fileID: 2100000, guid: 8e63022d2f7b6394cac7541ee4d1cf7a, type: 2}
 --- !u!1 &6869497109382071702
 GameObject:
   m_ObjectHideFlags: 0

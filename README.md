@@ -248,12 +248,14 @@ What is the gameplay
 * Weekly Meeting Catch-up
 * Entscheidung Kamera
 
+### Hausaufgabe
+* Übergänge zwischen Raum 1 + 2 + LeosKamera (Leo)
+* Rätsel(abfolge) funktionsfähig machen + UI Gravitation Anzeige (Marco)
+* Dialogsystem + Videoeinführung + Wandproblem lösen + Schlüssel mit Schalter ersetzen(Versuch) (Harald)
+* Wasserwand + Pinguin Animationen (Rene)
+* Kinderzimmer (Philipp)
 
->WASD-Steuerung: |||<
-Blick-Steuerung: ||
-TRPGBY-Steuerung:
-
-Losgelöste Kamera:
-Statische Kameras:
-Kamera folgt Spieler:
-Transparente Wände:
+### Freitag 05.03.2021 16Uhr
+* Weekly Meeting Catch-up
+* Super Programmierwoche planen
+* Menüdesign besprechen

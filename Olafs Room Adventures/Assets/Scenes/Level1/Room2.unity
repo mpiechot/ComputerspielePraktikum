@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1878,7 +1878,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286751494}
-  m_LocalRotation: {x: -0.10423255, y: 0.88997054, z: -0.3630391, w: -0.25552034}
+  m_LocalRotation: {x: -0.10423252, y: 0.88997054, z: -0.3630391, w: -0.2555203}
   m_LocalPosition: {x: 35.924984, y: 40.3877, z: -50.664284}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4157,7 +4157,7 @@ PrefabInstance:
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.18263973
+      value: 0.18263972
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -7966,12 +7966,12 @@ PrefabInstance:
     - target: {fileID: 7742058721168492538, guid: 4bbd0c3138ad532478b808e8825e416c,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 2.7999878
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7742058721168492538, guid: 4bbd0c3138ad532478b808e8825e416c,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 75.5
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7742058721168492538, guid: 4bbd0c3138ad532478b808e8825e416c,
         type: 3}
@@ -12599,12 +12599,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d02a249eb137b31408d53426ad97c779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floatsAround: 0
   m_Material: {fileID: 2100000, guid: 2d0013e75e3853c4f93864589d40c7c9, type: 2}
   penguTex: {fileID: 2800000, guid: 66335048c41f98a43b26f51eb90997cc, type: 3}
   penguTexBlinzeln: {fileID: 2800000, guid: 284717cfcc0b2fe4faf502131f20f059, type: 3}
-  PenguSound: {fileID: 8300000, guid: d778bd53229b5cf42a8bf5654af8fcab, type: 3}
-  Volume: 0.5
+  bBlinzeln: 1
+  bPlayScreamSounds: 1
 --- !u!23 &6985896497417010982
 MeshRenderer:
   m_ObjectHideFlags: 0

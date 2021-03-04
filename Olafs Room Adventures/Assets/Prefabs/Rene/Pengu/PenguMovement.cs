@@ -9,14 +9,16 @@ public class PenguMovement : MonoBehaviour
     
     //Strauchel Animation
     private Animator animator;
-    string stateName = "PenguFeet"; //Strauchel Animation beginnt
+    string stateMoveFeet = "PenguFeet"; //Strauchel Animation beginnt
 
     [SerializeField]
     private bool moveFeet = false;
     [SerializeField]
     private bool floatsAround = false;
+    [SerializeField]
+    private bool walkBackAndForth = false;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +39,7 @@ public class PenguMovement : MonoBehaviour
     {
         if (moveFeet)
         {
-            animator.Play(stateName);
+            animator.Play(stateMoveFeet);
         }
 
 
@@ -46,6 +48,13 @@ public class PenguMovement : MonoBehaviour
             transform.Rotate(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f, Space.Self);
         }
     }
+
+    public void moveForeward()
+    { 
+        
+    }
+        
+
 
     private void getTransformOfLimbs()
     {

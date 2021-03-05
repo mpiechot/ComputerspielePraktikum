@@ -73,6 +73,7 @@ public class FreeMovingCamControl : MonoBehaviour
             transform.Translate(Camera.main.transform.forward * scrollSpeed * zoom_direction, Space.World);
         }
 
+
     }
 
     // Reset camera, so it is not attached to Olaf anymore

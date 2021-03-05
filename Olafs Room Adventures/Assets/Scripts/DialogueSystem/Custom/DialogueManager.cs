@@ -5,6 +5,7 @@ using TMPro;
 using System.Text.RegularExpressions;
 using UnityEngine.Events;
 using System.Globalization;
+using UnityEngine.UI;
 
 namespace DialogueSystem
 {
@@ -23,6 +24,7 @@ namespace DialogueSystem
         public Animator dialogueBoxAnimator;
         public Animator dialogueTextAnimator;
         public Animator dialogueContinueButtonAnimator;
+        public Button continueButton;
 
         private bool continueDialogue;
         public bool activeCutscene;
@@ -43,7 +45,7 @@ namespace DialogueSystem
                 {
                     dialogueContinueButtonAnimator.SetBool("sentenceFinished", true);
                 }
-                if (Input.GetKeyDown("space")) 
+                if (Input.GetKeyDown("return")) // continue dialogue by pressing the enter button 
                 {
                     DisplayNextSentence();
                 }
@@ -66,6 +68,7 @@ namespace DialogueSystem
         public void DisplayNextSentence()
         {
             continueDialogue = false;
+            continueButton.interactable = false;
             dialogueTextAnimator.SetBool("isShaking", false);
             dialogueContinueButtonAnimator.SetBool("sentenceFinished", false);
 
@@ -136,6 +139,7 @@ namespace DialogueSystem
                     subCounter++;
                 }
                 continueDialogue = true;
+                continueButton.interactable = true;
                 yield return null;
 
                 WaitForSeconds EvaluateTag(string tag) 

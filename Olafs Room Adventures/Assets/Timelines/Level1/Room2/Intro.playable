@@ -668,15 +668,13 @@ MonoBehaviour:
     sentences:
     - 'Hello there! <pause=0.5> Admiring my rock collection?<pause=1>
 
-      Sorry
-      for the mess, I forgot to clean up. <pause=0.5><size=50%> I never clean.>
 
 '
     - 'Since you made it so easily through the last room, I decided to make things
       more<pause=0.3> . <pause=0.2> . <pause=0.2> .<pause=0.3> interesting. '
     - You are now <b>vulnerable!</b> <pause=0.5>If you get hit by a heavy object
       or crash into something very fast, you <b>lose life points!</b>
-    - Let me show you!<pause=0.8><cutscene=DamagePresentation>
+    - Let me show you!<pause=1><cutscene=DamagePresentation>
   retroactive: 0
   emitOnce: 0
 --- !u!114 &11400000

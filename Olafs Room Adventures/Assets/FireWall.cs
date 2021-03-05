@@ -24,8 +24,8 @@ public class FireWall : MonoBehaviour
         if (collider.tag == "Player")
         {
             GameObject.FindObjectOfType<Player>().GetComponent<Player>().setOlafOnFire();
-            
 
+            Debug.Log("triggered");
         }
 
     }

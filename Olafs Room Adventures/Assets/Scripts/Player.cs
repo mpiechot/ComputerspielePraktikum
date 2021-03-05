@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     [SerializeField]
-    private int maxHealth = 100;   
+    private int maxHealth = 100;
     [SerializeField]
     private int currentHealth;
     [SerializeField]
@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     private Inventory inventory;
     [SerializeField]
     private float invincibleTime;
-    [SerializeField, Range(0,300)]
+    [SerializeField, Range(0, 300)]
     private float wallDamageThreshold;
 
     private bool invincible;
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     void TakeDamage(int dmg)
     {
         currentHealth -= dmg;
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
         Destroy(gameObject);
     }
 
-    
+
 
     public void OnCollide(Collision collision)
     {
@@ -84,20 +84,20 @@ public class Player : MonoBehaviour
     }
 
 
-    public int getCurrentHealth(){
+    public int getCurrentHealth() {
         return currentHealth;
     }
 
-    public void setCurrentHealth(int current_health){
+    public void setCurrentHealth(int current_health) {
         this.currentHealth = current_health;
     }
     private IEnumerator TakeFireDmgEverySecond(int dmg)
     {
         CR_TakeDmgIsRunning = true;
         while (bIsOnFire)
-        { 
+        {
             TakeDamage(dmg);
-            
+
             yield return new WaitForSeconds(1);
         }
         CR_TakeDmgIsRunning = false;
@@ -111,5 +111,10 @@ public class Player : MonoBehaviour
         {
             StartCoroutine(TakeFireDmgEverySecond(5));
         }
+    }
+
+    public void stopFireDamage()
+    {
+        bIsOnFire = false;
     }
 }

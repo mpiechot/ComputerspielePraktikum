@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/PrototypRoom1.unity
     guid: 84e7c49702bf37d4db14b844a0cb250d
   - enabled: 1
+    path: Assets/Scenes/Level1/Level1_Room1.unity
+    guid: 5662e6df1abccc04aaaad33b3cb67f36
+  - enabled: 1
+    path: Assets/Scenes/Level1/Level1_Room2.unity
+    guid: 4b0f11d58fac69d4190a8e1ea1793a2f
+  - enabled: 1
+    path: Assets/Scenes/Level1/Level1_Room3.unity
+    guid: 2b3f3f1939f92b24b84ec6e306f304de
+  - enabled: 1
     path: Assets/Scenes/ReneTest/ReneTunnel.unity
     guid: c58945580d1db6940822f82355d43032
   - enabled: 1

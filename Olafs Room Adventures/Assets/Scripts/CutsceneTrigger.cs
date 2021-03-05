@@ -18,8 +18,7 @@ public class CutsceneTrigger : MonoBehaviour
 
     public void SetCutscene(string action) 
     {
-        timeline = GameObject.Find("/Cutscenes/" + action).GetComponent<PlayableDirector>();
-        TriggerCutscene();
+        GameObject.Find("/Cutscenes/" + action).GetComponent<PlayableDirector>().Play();
     }
 
     void OnTriggerEnter(Collider other)
@@ -27,6 +26,7 @@ public class CutsceneTrigger : MonoBehaviour
         if (!passCollider && other.tag == "Player" && !played)
         {
             TriggerCutscene();
+            played = true;
         }
     }
 
@@ -35,12 +35,12 @@ public class CutsceneTrigger : MonoBehaviour
         if (passCollider & other.tag == "Player" && !played) 
         {
             TriggerCutscene();
+            played = true;
         }
     }
 
     public void TriggerCutscene() 
     {
         timeline.Play();
-        played = true;
     }
 }

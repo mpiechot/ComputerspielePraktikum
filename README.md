@@ -249,7 +249,7 @@ What is the gameplay
 * Entscheidung Kamera
 
 ### Hausaufgabe
-* Übergänge zwischen Raum 1 + 2 + LeosKamera (Leo)
+* Übergänge zwischen Raum 1 + 2 (<font color="lightgreen">**✓**</font>) + LeosKamera (Leo)
 * Rätsel(abfolge) funktionsfähig machen + UI Gravitation Anzeige (Marco)
 * Dialogsystem + Videoeinführung + Wandproblem lösen + Schlüssel mit Schalter ersetzen(Versuch) (Harald)
 * Wasserwand + Pinguin Animationen (Rene)

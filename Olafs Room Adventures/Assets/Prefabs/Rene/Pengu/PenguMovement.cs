@@ -23,7 +23,7 @@ public class PenguMovement : MonoBehaviour
     [SerializeField]
     private bool walkBackAndForth = false;
     private bool bMoveForward = false;
-
+    private Vector3 turnAroundAngle;
     
 
     // Start is called before the first frame update
@@ -63,7 +63,7 @@ public class PenguMovement : MonoBehaviour
 
         
         
-        transform.Rotate(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f, Space.Self);
+       
         if (floatsAround)
         {
             transform.Rotate(1.5f * Time.deltaTime, 1.5f * Time.deltaTime, 0.0f, Space.Self);
@@ -96,11 +96,44 @@ public class PenguMovement : MonoBehaviour
             animator.speed = 0;
 
             //turn around 180degres
-            walkBackAndForth = false;
+            turnAroundAngle = transform.rotation.eulerAngles + new Vector3(0f,180f,0f);
+            
+            while (!turnAround()) { yield return null; }
+            //move agian afterwards
         }
     }
 
-
+    //returns true when turned finished
+    private bool turnAround()
+    {
+        // 360 grad shit
+        if (turnAroundAngle == null)
+        {
+            turnAroundAngle = transform.rotation.eulerAngles + new Vector3(0f, 180f, 0f);   
+        }
+        if (turnAroundAngle.y > 360)
+        {
+            if (turnAroundAngle.y < 0)
+            {
+                turnAroundAngle.y = -(-1 * turnAroundAngle.y % 360);
+            }
+            else
+            {
+                turnAroundAngle.y = turnAroundAngle.y % 360;
+            }
+        }
+        //turn
+        transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(turnAroundAngle ),  Time.deltaTime );
+        
+        //stop at 180
+        if (Mathf.Abs(transform.rotation.eulerAngles.y - turnAroundAngle.y) < 10)
+        {
+            transform.rotation = Quaternion.Euler(turnAroundAngle);
+            return true;
+        }
+        
+        return false;
+    }
     private void getTransformOfLimbs()
     {
         ArmsAndFeet[0] = transform.Find("Arm1");

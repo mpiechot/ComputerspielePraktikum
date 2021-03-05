@@ -8,18 +8,22 @@ public class CheckpointActivator : MonoBehaviour
     public float delay;
     private bool already_activated = false;
 
-    void OnTriggerEnter (Collider other) {
-        if (other.CompareTag ("Player") && !already_activated) {
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && !already_activated)
+        {
             Debug.Log("Start activating checkpoints");
             already_activated = true;
-            StartCoroutine(activeCheckpoint(delay));            
+            StartCoroutine(activeCheckpoint(delay));
         }
     }
 
-    private IEnumerator activeCheckpoint(float delay){
+    private IEnumerator activeCheckpoint(float delay)
+    {
         yield return new WaitForSeconds(delay);
         Rigidbody[] rigidbodies = checkpoint_to_activate.GetComponentsInChildren<Rigidbody>();
-        foreach(Rigidbody rb in rigidbodies){
+        foreach (Rigidbody rb in rigidbodies)
+        {
             rb.isKinematic = false;
             rb.useGravity = true;
         }

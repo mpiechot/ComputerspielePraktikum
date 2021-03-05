@@ -428,6 +428,7 @@ MonoBehaviour:
   dialogueBoxAnimator: {fileID: 7742058721168492533}
   dialogueTextAnimator: {fileID: 7742058720929200960}
   dialogueContinueButtonAnimator: {fileID: 4135444708841041910}
+  continueButton: {fileID: 4513153713394573592}
   activeCutscene: 0
 --- !u!1 &7742058721655104412
 GameObject:

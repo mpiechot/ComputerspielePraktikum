@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
         {
             Die();
         }
-        healthBar.setHealth(currentHealth);
+        healthBar?.setHealth(currentHealth);
     }
     void Die()
     {

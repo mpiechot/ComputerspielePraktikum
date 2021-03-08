@@ -16,7 +16,6 @@ public class Wind : MonoBehaviour
     {
         if (ps)
         {           
-            Debug.Log(name + " is playing? " + ps.isPlaying);
             if (ps.isStopped)
             {
                 Destroy(gameObject);

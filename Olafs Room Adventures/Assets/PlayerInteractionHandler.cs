@@ -6,12 +6,23 @@ public class PlayerInteractionHandler : MonoBehaviour
 {
     [SerializeField]
     private float interactionRange = 10f;
+    [SerializeField]
+    private InteractUI interactUI;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        Collider[] inRange = Physics.OverlapSphere(transform.position, interactionRange, LayerMask.GetMask("Interactable"));
+        if(inRange.Length == 0)
         {
-            TryUse();
+            interactUI.Hide();
+        }
+        else
+        {
+           interactUI.Show();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                TryUse(inRange);
+            }
         }
     }
     private void OnDrawGizmos()
@@ -20,9 +31,8 @@ public class PlayerInteractionHandler : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, interactionRange);
     }
 
-    private void TryUse()
+    private void TryUse(Collider[] inRange)
     {
-        Collider[] inRange = Physics.OverlapSphere(transform.position, interactionRange, LayerMask.GetMask("Interactable"));
         foreach (Collider collider in inRange)
         {
             if (collider.tag == "Switch")

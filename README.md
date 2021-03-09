@@ -259,3 +259,23 @@ What is the gameplay
 * Weekly Meeting Catch-up
 * Super Programmierwoche planen
 * Menüdesign besprechen
+
+### Olafs Hackathon Runde 1:
+* Start: 21.03.2021
+* Ende: 23.03.2021
+
+### Olafs Hackathon Runde 2:
+* Start: 27.03.2021
+* Ende: 30.03.2021
+
+### Hausaufgabe
+* LeosKamera + Keine Steuerung während Cutscene + Raum 2 Problem lösen (Leo)
+* Rätsel(abfolge) funktionsfähig machen + UI Gravitation Anzeige + UI Interact (Marco)
+* Cutscenes + Videoeinführung von Marco stehlen + Anfang zweiter Raum (Harald)
+* Wasserwand + Raum aufräumen + neuen Raum anfangen + Dialogsystem (Rene)
+* Kinderzimmer integrieren (Philipp)
+
+### Samstag 13.03.2021 18Uhr
+* Weekly Meeting Catch-up
+* Super Programmierwoche planen
+* Menüdesign besprechen

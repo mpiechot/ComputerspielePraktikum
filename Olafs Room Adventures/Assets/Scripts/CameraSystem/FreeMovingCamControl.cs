@@ -90,13 +90,17 @@ public class FreeMovingCamControl : MonoBehaviour
         transform.eulerAngles = Vector3.zero;
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
         Debug.Log("Test");
-        if (other.gameObject.layer == 13) // layer 13: Wall
+        if (other.gameObject.layer == LayerMask.NameToLayer("Wall")) // layer 13: Wall
         {
             Debug.Log("Hit wall");
         }
+        
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger!!!");
+    }
 }

@@ -22,14 +22,11 @@ public class PlayerMovement : MonoBehaviour
         if(verticalInput >= keyPressThreshHold)
         {
             Vector3 newGravity = Camera.main.transform.forward * verticalInput * Time.deltaTime;
-            Debug.Log("Add to Gravity: " + newGravity);
             Physics.gravity += newGravity;
             if (Physics.gravity.magnitude > maxMagnitude)
             {
                 Physics.gravity = (Physics.gravity / Physics.gravity.magnitude) * maxMagnitude;
             }
-            Debug.Log("New Gravity: " + Physics.gravity);
-
         }
         else
         {

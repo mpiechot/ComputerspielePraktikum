@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField]
     private int maxHealth = 100;
     [SerializeField]
+    private int maxDamage = 25;
+    [SerializeField]
     private int currentHealth;
     [SerializeField]
     private HealthBar healthBar;
@@ -33,12 +35,13 @@ public class Player : MonoBehaviour
 
     void TakeDamage(int dmg)
     {
+        dmg = Mathf.Clamp(dmg, 0, maxDamage);
         currentHealth -= dmg;
         if (currentHealth <= 0)
         {
             Die();
         }
-        healthBar.setHealth(currentHealth);
+        healthBar?.setHealth(currentHealth);
     }
     void Die()
     {
@@ -56,24 +59,25 @@ public class Player : MonoBehaviour
         else
         {
             CollisionHandling(collision);
-            Debug.Log(name + "collided with " + collision.gameObject.name);
         }
     }
 
     private void CollisionHandling(Collision collision)
     {
-        switch (collision.gameObject.tag)
+        if (collision.relativeVelocity.magnitude > wallDamageThreshold)
         {
-            case "Wall":
-                if (collision.impulse.magnitude > wallDamageThreshold)
-                {
-                    StartCoroutine("Invincible");
-                    TakeDamage((int)collision.impulse.magnitude);
-                }
-                break;
-            default:
-                break;
+            StartCoroutine("Invincible");
+            TakeDamage((int)collision.impulse.magnitude);
         }
+        //Note: If we need to apply damage only on specific objects use the tag
+        //switch (collision.gameObject.tag)
+        //{
+        //    case "Wall":
+        //        Debug.Log(name + "collided" + collision.relativeVelocity.magnitude);
+        //        break;
+        //    default:
+        //        break;
+        //}
     }
 
     private IEnumerator Invincible()

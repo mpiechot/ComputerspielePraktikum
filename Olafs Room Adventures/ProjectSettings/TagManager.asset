@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - PedestalObject
   - Switch
+  - Door
   layers:
   - Default
   - TransparentFX

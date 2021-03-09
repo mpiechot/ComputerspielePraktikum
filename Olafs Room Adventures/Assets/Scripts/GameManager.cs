@@ -9,16 +9,21 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI keysText;
 
-    //public static GameManager instance;
+    private static GameManager gm;
+    public static GameManager Instance { get { return gm;} }
+    public bool PlayerHasKeys { get { return collectedKeys > 0; } }
 
-    //public static GameManager GetGM()
-    //{
-    //    if(instance == null)
-    //    {
-    //        instance = new GameManager();
-    //    }
-    //    return instance;
-    //}
+    private void Awake()
+    {
+        if(gm != null && gm != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            gm = this;
+        }
+    }
 
     public Animator animator;
 
@@ -36,4 +41,10 @@ public class GameManager : MonoBehaviour
         collectedKeys++;
         keysText.text = collectedKeys+"";
     }
+    public void OnUseKey()
+    {
+        collectedKeys--;
+        keysText.text = collectedKeys + "";
+    }
+
 }

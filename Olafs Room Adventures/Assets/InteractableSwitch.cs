@@ -12,6 +12,7 @@ public class InteractableSwitch : MonoBehaviour
 
     private void Start()
     {
+        Active = false;
         anim = GetComponent<Animator>();
     }
     public void UseSwitch()
@@ -29,6 +30,7 @@ public class InteractableSwitch : MonoBehaviour
 
     public void Switch()
     {
+        Debug.Log("Switch!");
         Active = !Active;
         anim.SetBool("SwitchOn", Active);
     }

@@ -20,7 +20,6 @@ public class InteractableDoor : MonoBehaviour
     }
     public void UseDoor()
     {
-        Debug.Log("Use Door!" + gm + " -> " + GameManager.Instance);
         if(gm.PlayerHasKeys && keysNeeded > 0)
         {
             gm.OnUseKey();

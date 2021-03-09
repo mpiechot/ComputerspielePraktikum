@@ -35,7 +35,6 @@ public class PlayerInteractionHandler : MonoBehaviour
     {
         foreach (Collider collider in inRange)
         {
-            Debug.Log("Try use: " + collider.gameObject.name);
             if (collider.tag == "Switch")
             {
                 InteractableSwitch switchObj = collider.gameObject.GetComponent<InteractableSwitch>();
@@ -43,7 +42,6 @@ public class PlayerInteractionHandler : MonoBehaviour
             }
             if (collider.tag == "Door")
             {
-                Debug.Log("Door detected");
                 InteractableDoor switchObj = collider.gameObject.GetComponentInParent<InteractableDoor>();
                 switchObj.UseDoor();
             }

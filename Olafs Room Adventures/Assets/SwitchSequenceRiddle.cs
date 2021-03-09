@@ -17,13 +17,11 @@ public class SwitchSequenceRiddle : MonoBehaviour
 
     public void OnSwitchStateChanged(InteractableSwitch interactableSwitch)
     {
-        if(switchOrder[currentIndex] != interactableSwitch)
+        Debug.Log("Interact: " + interactableSwitch.Active);
+        if(switchOrder[currentIndex] != interactableSwitch || !interactableSwitch.Active)
         {
             Reset();
-        }
-        if(!interactableSwitch.Active)
-        {
-            Reset();
+            return;
         }
         if((currentIndex+1) == switchOrder.Length)
         {

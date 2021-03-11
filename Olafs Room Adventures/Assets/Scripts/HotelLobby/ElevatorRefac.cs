@@ -18,10 +18,12 @@ public class ElevatorRefac : MonoBehaviour
 
 
     private float DoorSpeed = 1f;
+    [SerializeField]
     private float ElevatorSpeed = 5f;
 
     private bool bDoorIsOpen;
     private bool bOpenDoorNow;
+
 
     private GameObject Door;
     private GameObject[] leftRightDoor = new GameObject[2];

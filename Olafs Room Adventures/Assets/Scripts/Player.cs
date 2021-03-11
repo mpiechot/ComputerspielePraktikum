@@ -117,7 +117,7 @@ public class Player : MonoBehaviour
 
         if (!CR_TakeDmgIsRunning)
         {
-            StartCoroutine(TakeFireDmgEverySecond(5));
+            StartCoroutine(TakeFireDmgEverySecond(2));
         }
     }
 

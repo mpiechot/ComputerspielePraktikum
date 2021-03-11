@@ -12,7 +12,7 @@ TagManager:
   - PedestalObject
   - Switch
   - Door
-  - NoCollision
+  - NoCollisionDmg
   layers:
   - Default
   - TransparentFX

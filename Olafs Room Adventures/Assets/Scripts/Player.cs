@@ -64,6 +64,10 @@ public class Player : MonoBehaviour
 
     private void CollisionHandling(Collision collision)
     {
+        if (collision.collider.tag == "NoCollision")
+        {
+            return;
+        }
         if (collision.relativeVelocity.magnitude > wallDamageThreshold)
         {
             StartCoroutine("Invincible");

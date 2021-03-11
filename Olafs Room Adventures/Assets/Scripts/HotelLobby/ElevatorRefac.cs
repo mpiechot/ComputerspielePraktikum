@@ -129,12 +129,12 @@ public class ElevatorRefac : MonoBehaviour
         if (elevatorType == ElevatorType.MoveDown)
         {
             transform.localPosition = transform.localPosition + Vector3.down * Time.deltaTime * ElevatorSpeed;
-            olaf.transform.Translate(Vector3.down * Time.deltaTime * ElevatorSpeed*0.5f, Space.World);
+            olaf.transform.Translate(Vector3.down * Time.deltaTime * ElevatorSpeed, Space.World);
         }
         if (elevatorType == ElevatorType.MoveUp)
         {
             transform.localPosition = transform.localPosition + Vector3.up * Time.deltaTime * ElevatorSpeed;
-            olaf.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+            olaf.transform.Translate(Vector3.up * Time.deltaTime * ElevatorSpeed, Space.World);
         }
 
     }
@@ -155,8 +155,8 @@ public class ElevatorRefac : MonoBehaviour
 
         Vector3 destination = transform.localPosition;
         destination += (elevatorType == ElevatorType.MoveUp) ? new Vector3(0, distance, 0) : new Vector3(0, -distance, 0);
-        Debug.Log("davor");
-        while (Mathf.Abs( Vector3.Distance(transform.localPosition, destination)) > threshhold)
+        
+        while (Mathf.Abs( Vector3.Distance(transform.localPosition, destination)) > threshhold * 10f)
         {
            // Debug.Log("ziel noch nicht erreicht");
             elevatorAudio.playSounds();
@@ -187,7 +187,7 @@ public class ElevatorRefac : MonoBehaviour
             {
 
                 StartCoroutine(moveUpDown());
-               // Debug.Log("Triggered!");
+               
             }
             else
             {

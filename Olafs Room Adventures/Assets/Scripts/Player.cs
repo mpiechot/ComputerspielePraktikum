@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
 
         if (!CR_TakeDmgIsRunning)
         {
-            StartCoroutine(TakeFireDmgEverySecond(2));
+            StartCoroutine(TakeFireDmgEverySecond(1));
             
             if (FireFollowingOlaf != null)
             {

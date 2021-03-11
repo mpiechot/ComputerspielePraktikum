@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
 
     public void FadeOut()
     {
-        Debug.Log("Faded");
         animator.SetTrigger("FadeOut");
     }
     public void FadeIn()

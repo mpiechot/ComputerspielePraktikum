@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
 
     private void CollisionHandling(Collision collision)
     {
-        if (collision.collider.tag == "NoCollision")
+        if (collision.collider.tag == "NoCollisionDmg")
         {
             return;
         }

@@ -129,7 +129,7 @@ public class ElevatorRefac : MonoBehaviour
         if (elevatorType == ElevatorType.MoveDown)
         {
             transform.localPosition = transform.localPosition + Vector3.down * Time.deltaTime * ElevatorSpeed;
-            olaf.transform.Translate(Vector3.down * Time.deltaTime, Space.World);
+            olaf.transform.Translate(Vector3.down * Time.deltaTime * ElevatorSpeed*0.5f, Space.World);
         }
         if (elevatorType == ElevatorType.MoveUp)
         {

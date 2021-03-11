@@ -14974,17 +14974,17 @@ PrefabInstance:
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.028911075
+      value: 0.028911073
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000031677216
+      value: 0.0000000025634188
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -9.162054e-11
+      value: -7.4142185e-11
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543311075639, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -15009,17 +15009,17 @@ PrefabInstance:
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0074177757
+      value: -0.0074177785
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 6.682745e-11
+      value: 0.000000002084849
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 4.957263e-13
+      value: 1.5465374e-11
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -74743,12 +74743,12 @@ PrefabInstance:
     - target: {fileID: 4779589946378763320, guid: c6feadf3f316bc84dac196044bf96e96,
         type: 3}
       propertyPath: ElevatorSpeed
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4779589946378763320, guid: c6feadf3f316bc84dac196044bf96e96,
         type: 3}
       propertyPath: distance
-      value: 100
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 4779589946378763321, guid: c6feadf3f316bc84dac196044bf96e96,
         type: 3}

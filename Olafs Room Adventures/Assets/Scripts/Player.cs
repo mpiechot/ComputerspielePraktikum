@@ -135,5 +135,7 @@ public class Player : MonoBehaviour
     public void stopFireDamage()
     {
         bIsOnFire = false;
+        FireFollowingOlaf.transform.parent = null;
+        FireFollowingOlaf.transform.localScale = new Vector3(0, 0, 0);
     }
 }

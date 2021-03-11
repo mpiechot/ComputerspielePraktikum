@@ -26,11 +26,14 @@ public class Player : MonoBehaviour
     private bool invincible;
     private bool bIsOnFire = false;
     private bool CR_TakeDmgIsRunning = false;
+
+    private GameObject FireFollowingOlaf;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthBar?.setMaxHealth(maxHealth);
+        FireFollowingOlaf = GameObject.Find("FireFollowingOlaf");
     }
 
     void TakeDamage(int dmg)
@@ -118,6 +121,14 @@ public class Player : MonoBehaviour
         if (!CR_TakeDmgIsRunning)
         {
             StartCoroutine(TakeFireDmgEverySecond(2));
+            
+            if (FireFollowingOlaf != null)
+            {
+                //make Fire Particles follow Olaf
+                FireFollowingOlaf.transform.parent = transform.Find("root").Find("spine").Find("brust");
+                FireFollowingOlaf.transform.localPosition = new Vector3(0, 0, -0.03f);
+                FireFollowingOlaf.transform.localScale = new Vector3(2, 2, 2);
+            }
         }
     }
 

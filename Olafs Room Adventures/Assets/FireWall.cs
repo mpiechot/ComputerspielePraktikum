@@ -8,7 +8,7 @@ public class FireWall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
         Player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -25,7 +25,7 @@ public class FireWall : MonoBehaviour
         {
             GameObject.FindObjectOfType<Player>().GetComponent<Player>().setOlafOnFire();
 
-            Debug.Log("triggered");
+            
         }
 
     }

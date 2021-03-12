@@ -128,6 +128,8 @@ public class Player : MonoBehaviour
                 FireFollowingOlaf.transform.parent = transform.Find("root").Find("spine").Find("brust");
                 FireFollowingOlaf.transform.localPosition = new Vector3(0, 0, -0.03f);
                 FireFollowingOlaf.transform.localScale = new Vector3(2, 2, 2);
+                FireFollowingOlaf.transform.localRotation = Quaternion.Euler(-207,-177,57);
+                
             }
         }
     }

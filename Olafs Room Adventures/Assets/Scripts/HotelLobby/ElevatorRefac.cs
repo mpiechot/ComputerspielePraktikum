@@ -12,11 +12,11 @@ public enum ElevatorType
 
 public class ElevatorRefac : MonoBehaviour
 {
-    public GameObject olaf;
+    private GameObject olaf;
     public ElevatorType elevatorType;
     public float distance = 10f;
 
-
+    [SerializeField]
     private float DoorSpeed = 1f;
     [SerializeField]
     private float ElevatorSpeed = 5f;
@@ -35,7 +35,7 @@ public class ElevatorRefac : MonoBehaviour
     private float threshhold;
 
     private ElevatorSouds elevatorAudio;
-    bool CR_running = false;
+    private bool CR_running = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,8 +43,9 @@ public class ElevatorRefac : MonoBehaviour
 
         threshhold = leftRightDoor[0].transform.localScale.x * 0.005f;
         elevatorAudio = GameObject.FindObjectOfType<ElevatorSouds>();
+        olaf = GameObject.FindGameObjectWithTag("Player");
 
-        
+
     }
 
     // Update is called once per frame

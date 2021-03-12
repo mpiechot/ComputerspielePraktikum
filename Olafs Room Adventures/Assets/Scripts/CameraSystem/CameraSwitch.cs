@@ -10,7 +10,6 @@ public class CameraSwitch : MonoBehaviour
 
     public void SwitchCameras()
     {
-        Debug.Log("Switch camera was called");
         SetPriority(oldCam, 1);
         SetPriority(newCam, 20);
     }
@@ -34,5 +33,11 @@ public class CameraSwitch : MonoBehaviour
         {
             Debug.Log("error: cam has both components (virtual cam and free look cam)");
         }
+    }
+
+    public void SwitchCamerasBack()
+    {
+        SetPriority(newCam, 1);
+        SetPriority(oldCam, 20);
     }
 }

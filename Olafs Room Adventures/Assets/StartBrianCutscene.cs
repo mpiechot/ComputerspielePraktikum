@@ -17,6 +17,7 @@ public class StartBrianCutscene : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             timeline.Play();
+
         }
     }
 }

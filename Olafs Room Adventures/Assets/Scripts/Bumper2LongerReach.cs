@@ -25,9 +25,9 @@ public class Bumper2LongerReach : MonoBehaviour
         startPosition = spring.transform.position;
 
     }
-
+  
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
         if (bPlayerHit)
@@ -36,7 +36,7 @@ public class Bumper2LongerReach : MonoBehaviour
             spring.transform.position = Vector3.Lerp(startPosition, endPosition, lrpPrc);
             lrpPrc += Time.deltaTime * speed;
 
-            olaf.transform.Translate((endPosition - startPosition) * Time.deltaTime * 0.5f, Space.World);
+            olaf.transform.Translate((endPosition - startPosition) * Time.deltaTime * 1.5f, Space.World);
 
         }
         else

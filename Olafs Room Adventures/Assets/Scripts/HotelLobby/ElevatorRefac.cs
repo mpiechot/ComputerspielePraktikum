@@ -16,7 +16,7 @@ public class ElevatorRefac : MonoBehaviour
     public ElevatorType elevatorType;
     public float distance = 10f;
 
-
+    [SerializeField]
     private float DoorSpeed = 1f;
     [SerializeField]
     private float ElevatorSpeed = 5f;

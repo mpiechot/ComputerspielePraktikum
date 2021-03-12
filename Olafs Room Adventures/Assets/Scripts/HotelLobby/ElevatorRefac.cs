@@ -12,7 +12,7 @@ public enum ElevatorType
 
 public class ElevatorRefac : MonoBehaviour
 {
-    public GameObject olaf;
+    private GameObject olaf;
     public ElevatorType elevatorType;
     public float distance = 10f;
 
@@ -43,8 +43,9 @@ public class ElevatorRefac : MonoBehaviour
 
         threshhold = leftRightDoor[0].transform.localScale.x * 0.005f;
         elevatorAudio = GameObject.FindObjectOfType<ElevatorSouds>();
+        olaf = GameObject.FindGameObjectWithTag("Player");
 
-        
+
     }
 
     // Update is called once per frame

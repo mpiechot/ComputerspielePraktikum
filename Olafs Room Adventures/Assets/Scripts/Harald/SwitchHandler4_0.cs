@@ -12,9 +12,15 @@ public class SwitchHandler4_0 : MonoBehaviour
     {
         if (!state && distance(olaf.transform.position, transform.position) < distance_threshold)
         {
-            state = true;
-            //GetComponent<Switch>().SwitchOn();
-            GetComponent<CutsceneTrigger>().TriggerCutscene();
+            //show press space
+            if(Input.GetKeyDown(KeyCode.Space)){
+                state = true;
+                //GetComponent<Switch>().SwitchOn();
+                GetComponent<CutsceneTrigger>().TriggerCutscene();
+            }
+        }
+        else{
+            // Dont show press space
         }
     }
 

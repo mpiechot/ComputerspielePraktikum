@@ -7,6 +7,7 @@ public class ElevatorRotate : MonoBehaviour
     private Vector3 turnLeftAngle;
     private Vector3 initAngle;
     private bool bTurn = false;
+    private bool bTurned = false;
     private float delay = 7.0f;
     private float startTime = 0.0f;
     private float currTime = 0.0f;
@@ -23,10 +24,12 @@ public class ElevatorRotate : MonoBehaviour
     {
         if (bTurn)
         {
+            Debug.Log("bturn true");
             currTime = Time.time;
-            if (Mathf.Abs(currTime - startTime) > delay)
-            { 
-
+            Debug.Log("time " + (currTime - startTime));
+            if ((currTime - startTime) > delay)
+            {
+                Debug.Log("time true ");
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(turnLeftAngle), Time.deltaTime * speed);
 
                 //stop at 90
@@ -41,9 +44,10 @@ public class ElevatorRotate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.tag == "Player" && bTurned == false)
         {
             bTurn = true;
+            bTurned = true;
             startTime = Time.time;
             currTime = Time.time;
         }

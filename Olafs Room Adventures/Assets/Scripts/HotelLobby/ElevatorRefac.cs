@@ -12,16 +12,18 @@ public enum ElevatorType
 
 public class ElevatorRefac : MonoBehaviour
 {
-    public GameObject olaf;
+    private GameObject olaf;
     public ElevatorType elevatorType;
     public float distance = 10f;
 
-
+    [SerializeField]
     private float DoorSpeed = 1f;
+    [SerializeField]
     private float ElevatorSpeed = 5f;
 
     private bool bDoorIsOpen;
     private bool bOpenDoorNow;
+
 
     private GameObject Door;
     private GameObject[] leftRightDoor = new GameObject[2];
@@ -33,7 +35,7 @@ public class ElevatorRefac : MonoBehaviour
     private float threshhold;
 
     private ElevatorSouds elevatorAudio;
-    bool CR_running = false;
+    private bool CR_running = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,8 +43,9 @@ public class ElevatorRefac : MonoBehaviour
 
         threshhold = leftRightDoor[0].transform.localScale.x * 0.005f;
         elevatorAudio = GameObject.FindObjectOfType<ElevatorSouds>();
+        olaf = GameObject.FindGameObjectWithTag("Player");
 
-        
+
     }
 
     // Update is called once per frame
@@ -127,12 +130,12 @@ public class ElevatorRefac : MonoBehaviour
         if (elevatorType == ElevatorType.MoveDown)
         {
             transform.localPosition = transform.localPosition + Vector3.down * Time.deltaTime * ElevatorSpeed;
-            olaf.transform.Translate(Vector3.down * Time.deltaTime, Space.World);
+            olaf.transform.Translate(Vector3.down * Time.deltaTime * ElevatorSpeed, Space.World);
         }
         if (elevatorType == ElevatorType.MoveUp)
         {
             transform.localPosition = transform.localPosition + Vector3.up * Time.deltaTime * ElevatorSpeed;
-            olaf.transform.Translate(Vector3.up * Time.deltaTime, Space.World);
+            olaf.transform.Translate(Vector3.up * Time.deltaTime * ElevatorSpeed, Space.World);
         }
 
     }
@@ -153,8 +156,8 @@ public class ElevatorRefac : MonoBehaviour
 
         Vector3 destination = transform.localPosition;
         destination += (elevatorType == ElevatorType.MoveUp) ? new Vector3(0, distance, 0) : new Vector3(0, -distance, 0);
-        Debug.Log("davor");
-        while (Mathf.Abs( Vector3.Distance(transform.localPosition, destination)) > threshhold)
+        
+        while (Mathf.Abs( Vector3.Distance(transform.localPosition, destination)) > threshhold * 10f)
         {
            // Debug.Log("ziel noch nicht erreicht");
             elevatorAudio.playSounds();
@@ -185,7 +188,7 @@ public class ElevatorRefac : MonoBehaviour
             {
 
                 StartCoroutine(moveUpDown());
-               // Debug.Log("Triggered!");
+               
             }
             else
             {

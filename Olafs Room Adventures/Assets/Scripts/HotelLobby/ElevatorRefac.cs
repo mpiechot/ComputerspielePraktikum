@@ -35,7 +35,7 @@ public class ElevatorRefac : MonoBehaviour
     private float threshhold;
 
     private ElevatorSouds elevatorAudio;
-    bool CR_running = false;
+    private bool CR_running = false;
     // Start is called before the first frame update
     void Start()
     {

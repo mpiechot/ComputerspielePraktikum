@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ReneLevelPartManager : MonoBehaviour
 {
+    
     AsyncOperation levelToLoad;
     // Start is called before the first frame update
     void Start()
@@ -21,16 +22,19 @@ public class ReneLevelPartManager : MonoBehaviour
     private IEnumerator LoadAsyncronously(string scene)
     {
         levelToLoad = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Additive);
-
+        
 
         while (!levelToLoad.isDone)
         {
              yield return null;
         }
+        
     }
 
     public void loadPart(string scene)
     {
-        StartCoroutine(LoadAsyncronously(scene));
+
+            StartCoroutine(LoadAsyncronously(scene));
+  
     }
 }

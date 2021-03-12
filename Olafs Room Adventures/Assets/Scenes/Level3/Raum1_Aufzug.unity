@@ -2426,7 +2426,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh28612
+  m_Name: pb_Mesh228306
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4837,6 +4837,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   elevatorType: 1
   distance: 100
+  DoorSpeed: 1
   ElevatorSpeed: 10
 --- !u!1 &4779589947055147739
 GameObject:

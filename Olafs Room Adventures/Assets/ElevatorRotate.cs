@@ -7,7 +7,7 @@ public class ElevatorRotate : MonoBehaviour
     private Vector3 turnLeftAngle;
     private Vector3 initAngle;
     private bool bTurn = false;
-    private float delay = 8.0f;
+    private float delay = 7.0f;
     private float startTime = 0.0f;
     private float currTime = 0.0f;
     private float speed = 0.5f;
@@ -43,9 +43,10 @@ public class ElevatorRotate : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            bTurn = true;    
+            bTurn = true;
+            startTime = Time.time;
+            currTime = Time.time;
         }
-        startTime = Time.time;
-        currTime = Time.time;
+        
     }
 }

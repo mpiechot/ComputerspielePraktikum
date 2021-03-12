@@ -14,7 +14,7 @@ public class Bumper2LongerReach : MonoBehaviour
     private Vector3 endPosition;
     private bool CR_runnig = false;
     float lrpPrc = 0;
-    private bool bHitWall = false;
+    
 
 
     // Start is called before the first frame update
@@ -46,6 +46,7 @@ public class Bumper2LongerReach : MonoBehaviour
             spring.transform.position = Vector3.Lerp(endPosition, startPosition, lrpPrc);
             lrpPrc += Time.deltaTime * speed;
         }
+        
     }
 
     IEnumerator bumpAfterDelay()
@@ -54,13 +55,13 @@ public class Bumper2LongerReach : MonoBehaviour
         yield return new WaitForSeconds(Delay);
         lrpPrc = 0;
         bPlayerHit = true;
-        if (!bHitWall)
-        {
-            olaf.transform.Translate((endPosition - startPosition) * 0.1f, Space.World);
-        }
+       
+        
+        olaf.transform.Translate((endPosition - startPosition) * 0.1f, Space.World);
+        
         //Make Player Freefloat after getting hit for 1 sec
         StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(2.5f));
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.5f);
         lrpPrc = 0;
         bPlayerHit = false;
         yield return new WaitForSeconds(3);
@@ -74,14 +75,17 @@ public class Bumper2LongerReach : MonoBehaviour
         {
             StartCoroutine(bumpAfterDelay());
         }
+        
 
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag = "NoCollisionDmg")
+        if (collision.gameObject.tag == "NoCollisionDmg")
         {
-            bHitWall = true;
+            bPlayerHit = false;
         }
     }
+
+
 }

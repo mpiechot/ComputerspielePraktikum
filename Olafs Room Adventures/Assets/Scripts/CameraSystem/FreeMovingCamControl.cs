@@ -1,8 +1,9 @@
-﻿ using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 using Cinemachine;
+using TMPro;
 
 public class FreeMovingCamControl : MonoBehaviour
 {
@@ -16,78 +17,102 @@ public class FreeMovingCamControl : MonoBehaviour
     [Header("Scrolling speed")]
     public float scrollSpeed;
 
-    [Header("Player transform")]
-    public Transform olaf;
-
     private float horizontal;
     private float vertical;
     private Vector3 newPos;
     private Vector3 newRot;
+    private CinemachineVirtualCamera cinemachine;
 
-    private CinemachineFreeLook cinemachine;
+    [Header("UI")]
+    public bool cameraLocked = true;
+    public TextMeshProUGUI btText;
+
+    private CameraSwitch cameraSwitch;
 
     void Awake()
     {
         // Initialize variables 
         horizontal = speedH;
         vertical = speedV;
-        cinemachine = transform.GetComponent<CinemachineFreeLook>();
+        cinemachine = transform.GetComponent<CinemachineVirtualCamera>();
+        cameraSwitch = transform.GetComponent<CameraSwitch>();
+        if (cameraLocked) 
+        {
+            LockCam();
+        }
+        else
+        {
+            UnlockCam();
+        }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown("space")) // move camera back to Olaf upon pressing space
+        if (cameraLocked) // switch to orbit camera
         {
-            FocusOlaf();
+            if (Input.GetKeyDown("space"))
+            {
+                UnlockCam();
+            }
         }
-
-        if (Input.GetMouseButton(1)) // right mouse button pressed -> rotate camera
+        else // free moving cam
         {
-            DetachFromOlaf();
-            horizontal += speedH * Input.GetAxis("Mouse X");
-            vertical -= speedV * Input.GetAxis("Mouse Y");
+            if (Input.GetKeyDown("space"))
+            {
+                LockCam();
+            }
+            if (Input.GetMouseButton(1)) // right mouse button pressed -> rotate camera
+            {
+                horizontal -= speedH * Input.GetAxis("Mouse X");
+                vertical += speedV * Input.GetAxis("Mouse Y");
+                
+                transform.eulerAngles = new Vector3(vertical, horizontal, 0.0f);
+            }
+            if (Input.GetMouseButton(2)) // mouse wheel pressed -> move camera upwards or sideways
+            {
+                newPos = transform.position;
+                newPos.y -= speedV * Input.GetAxis("Mouse Y");
+                transform.position = newPos;
+                transform.Translate(-transform.right * Input.GetAxisRaw("Mouse X") * movementSpeed, Space.World);
+            }
 
-            transform.eulerAngles = new Vector3(vertical, horizontal, 0.0f);
+            float zoom_direction = Math.Sign(Input.GetAxis("Mouse ScrollWheel")); // positive -> 1, negative -> -1, zero -> 0
+            if (zoom_direction != 0f) // scrolling moves camera forwards or backwards
+            {
+                transform.Translate(transform.forward * scrollSpeed * zoom_direction, Space.World);
+            }
         }
-        else // prevent rotating camera without clicking any button (just cinemachine stuff that happens otherwise)
-        {
-            cinemachine.m_XAxis.m_InputAxisName = "";
-            cinemachine.m_YAxis.m_InputAxisName = "";
-            cinemachine.m_XAxis.m_InputAxisValue = 0;
-            cinemachine.m_YAxis.m_InputAxisValue = 0;
-        }
-
-        if (Input.GetMouseButton(2)) // mouse wheel pressed -> move camera upwards or sideways
-        {  
-            DetachFromOlaf();
-            newPos = transform.position;    
-            newPos.y -= speedV * Input.GetAxis("Mouse Y");
-            transform.position = newPos;
-            transform.Translate(-Camera.main.transform.right * Input.GetAxisRaw("Mouse X") * movementSpeed, Space.World);
-        }
-        
-        float zoom_direction = Math.Sign(Input.GetAxis("Mouse ScrollWheel")); // positive -> 1, negative -> -1, zero -> 0
-        if (zoom_direction != 0f ) // scrolling moves camera forwards or backwards
-        {
-            DetachFromOlaf();
-            transform.Translate(Camera.main.transform.forward * scrollSpeed * zoom_direction, Space.World);
-        }
-
 
     }
 
-    // Reset camera, so it is not attached to Olaf anymore
-    public void DetachFromOlaf()
+    public void UnlockCam()
     {
-        cinemachine.m_Follow = null;
-        cinemachine.m_LookAt = null;
+        cameraSwitch.SwitchCamerasBack();
+        cameraLocked = false;
+        btText.text = "cam free";
+        transform.position = cameraSwitch.newCam.transform.position;
+        transform.rotation = Camera.main.transform.rotation;
+        horizontal = Camera.main.transform.eulerAngles.y;
+        vertical = Camera.main.transform.eulerAngles.x;
     }
 
-    public void FocusOlaf()
+    public void LockCam()
     {
-        cinemachine.m_Follow = olaf;
-        cinemachine.m_LookAt = olaf;
-        transform.eulerAngles = Vector3.zero;
+        cameraSwitch.SwitchCameras();
+        cameraLocked = true;
+        btText.text = "cam locked";
+    }
+
+    public void OnButtonClick()
+    {
+        if (cameraLocked)
+        {
+            UnlockCam();
+        }
+        else
+        {
+            LockCam();
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -97,7 +122,7 @@ public class FreeMovingCamControl : MonoBehaviour
         {
             Debug.Log("Hit wall");
         }
-        
+
     }
     private void OnTriggerEnter(Collider other)
     {

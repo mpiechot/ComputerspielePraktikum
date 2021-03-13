@@ -5,7 +5,9 @@ using UnityEngine;
 public class ReneMoveToTopView : MonoBehaviour
 {
     private Animator animator;
-
+    [SerializeField]
+    private bool ChangeViewToTopCam = true;
+    private bool changed = false;
     private bool FreelookCam = true;
     // Start is called before the first frame update
     void Start()
@@ -19,20 +21,19 @@ public class ReneMoveToTopView : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !changed)
         {
-            
-            if(FreelookCam)
+            if (ChangeViewToTopCam)
             {
                 animator.Play("TopViewCam");
-                
             }
             else
             {
                 animator.Play("FreelookCam");
                 
             }
-            FreelookCam = !FreelookCam;
+            changed = true;
+
         }
     }
 }

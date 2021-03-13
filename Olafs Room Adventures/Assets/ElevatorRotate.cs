@@ -15,6 +15,7 @@ public class ElevatorRotate : MonoBehaviour
     private float currTime = 0.0f;
     private float speed = 0.5f;
     private GameObject olaf;
+    private Vector3 moveWithElevator = new Vector3(0, 0, 0);
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +27,12 @@ public class ElevatorRotate : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        //olaf.transform.position = center.position;
+        //moveWithElevator = center.position - olaf.transform.position;
+        //olaf.transform.Translate(moveWithElevator * Time.deltaTime * 5.5f, Space.World);
+
         if (bTurn)
         {
             
@@ -37,9 +42,9 @@ public class ElevatorRotate : MonoBehaviour
             {
                 
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(turnLeftAngle), Time.deltaTime * speed);
-                Vector3 moveWithElevator = new Vector3(0,0,0);
+                
                 moveWithElevator = center.position - olaf.transform.position;
-                olaf.transform.Translate(moveWithElevator * Time.deltaTime * 0.05f, Space.World);
+                olaf.transform.position -= moveWithElevator * Time.deltaTime * 0.001f;
                 //stop at 90
                 if (Mathf.Abs(transform.rotation.eulerAngles.y - turnLeftAngle.y) < 1)
                 {

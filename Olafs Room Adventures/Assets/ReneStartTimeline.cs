@@ -28,7 +28,7 @@ public class ReneStartTimeline : MonoBehaviour
         {
             if (bStart) 
             {
-                //timeline.Play();
+                timeline.Play();
                 if (camFollows && !CR)
                 {
                     StartCoroutine("changeView");

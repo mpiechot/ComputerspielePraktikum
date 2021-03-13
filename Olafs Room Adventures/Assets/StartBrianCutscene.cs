@@ -7,13 +7,13 @@ public class StartBrianCutscene : MonoBehaviour
 {
     public PlayableDirector timeline;
     private ReneStartSong song;
-    private StartStopFlames flames;
+    public StartStopFlames flames;
     bool CR = false;
     // Start is called before the first frame update
     void Start()
     {
         song = FindObjectOfType<ReneStartSong>();
-        flames = FindObjectOfType<StartStopFlames>();
+        //flames = FindObjectOfType<StartStopFlames>();
     }
 
     private void OnTriggerEnter(Collider other)

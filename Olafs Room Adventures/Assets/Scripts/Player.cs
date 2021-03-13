@@ -71,7 +71,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        Debug.Log("collided with" + collision.gameObject.name);
+        
         if (collision.relativeVelocity.magnitude > wallDamageThreshold)
         {
             StartCoroutine("Invincible");

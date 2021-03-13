@@ -23,7 +23,7 @@ public class StopOlafBumper : MonoBehaviour
 
         if (collision.gameObject.tag == "Player" && !stoped)
         {
-            olaf.transform.Translate(new Vector3(0,0,0), Space.Self);
+            olaf.GetComponent<Rigidbody>().velocity = new Vector3(0,0,0);
             stoped = true;
         }
 

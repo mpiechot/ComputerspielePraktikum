@@ -7,7 +7,7 @@ public class Bumper2LongerReach : MonoBehaviour
     private float speed = 1f;
     [SerializeField]
     public float Delay = 0f;
-    public GameObject olaf;
+    public GameObject olaf; //olaf butt because of rigitbody
     private GameObject spring;
     private bool bPlayerHit = false;
     private Vector3 startPosition;
@@ -57,11 +57,11 @@ public class Bumper2LongerReach : MonoBehaviour
         bPlayerHit = true;
        
         
-        olaf.transform.Translate((endPosition - startPosition) * 0.1f, Space.World);
-        
+        olaf.transform.Translate((endPosition - startPosition) * 0.05f, Space.World);
+        olaf.transform.parent.transform.parent.transform.Translate((endPosition - startPosition) * 0.02f, Space.World);
         //Make Player Freefloat after getting hit for 1 sec
-        StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(2.5f));
-        yield return new WaitForSeconds(2.5f);
+        StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(3f));
+        yield return new WaitForSeconds(3f);
         lrpPrc = 0;
         bPlayerHit = false;
         yield return new WaitForSeconds(3);

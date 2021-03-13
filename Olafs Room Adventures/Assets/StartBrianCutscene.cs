@@ -8,7 +8,8 @@ public class StartBrianCutscene : MonoBehaviour
     public PlayableDirector timeline;
     private ReneStartSong song;
     public StartStopFlames flames;
-    bool CR = false;
+    private bool CR = false;
+    private bool played = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +19,16 @@ public class StartBrianCutscene : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !played)
         {
             if (CR == false)
             {
                 StartCoroutine("FlameAndNewSong");
                 Debug.Log("start CR");
             }
-                
 
 
+            played = true;
             timeline.Play();
             
         }

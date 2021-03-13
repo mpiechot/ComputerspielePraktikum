@@ -48,21 +48,27 @@ public class Bumper2LongerReach : MonoBehaviour
         }
         
     }
-
+    public void stopBeingHit()
+    {
+        bPlayerHit = false;
+    }
     IEnumerator bumpAfterDelay()
     {
         CR_runnig = true;
         yield return new WaitForSeconds(Delay);
         lrpPrc = 0;
         bPlayerHit = true;
-       
-        
+
+        //olaf.transform.Translate(new Vector3(1, 0, 0), Space.World);
         olaf.transform.Translate((endPosition - startPosition) * 0.05f, Space.World);
+        // olaf.transform.position = olaf.transform.position + new Vector3(1, 0, 0);
         //translate root
-        olaf.transform.parent.transform.parent.transform.Translate((endPosition - startPosition) * 0.02f, Space.World);
+        //olaf.transform.parent.transform.parent.transform.Translate(new Vector3(10, 0, 0) , Space.World);
+
+        //olaf.transform.parent.transform.parent.transform.Translate((endPosition - startPosition) , Space.World);
         //Make Player Freefloat after getting hit for 1 sec
-        StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(5f));
-        yield return new WaitForSeconds(5f);
+        StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(2f));
+        yield return new WaitForSeconds(2f);
         lrpPrc = 0;
         bPlayerHit = false;
         yield return new WaitForSeconds(3);

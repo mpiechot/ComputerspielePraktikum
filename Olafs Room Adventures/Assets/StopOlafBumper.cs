@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StopOlafBumper : MonoBehaviour
 {
+    public GameObject BumperStopperInMiddleToDeleteFuckThisGuyInParticullar;
     private bool bStop = false;
     private bool stoped = false;
     public GameObject olaf1;//testtest lul
@@ -76,6 +77,8 @@ public class StopOlafBumper : MonoBehaviour
         bStop = true;
         yield return new WaitForSeconds(0.2f);
         bStop = false;
+        if(BumperStopperInMiddleToDeleteFuckThisGuyInParticullar != null)
+            Destroy(BumperStopperInMiddleToDeleteFuckThisGuyInParticullar);
 
     }
 }

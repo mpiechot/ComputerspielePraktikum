@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class ElevatorRotate : MonoBehaviour
 {
+    public Transform center;
     private Vector3 turnLeftAngle;
     private Vector3 initAngle;
+    private Vector3 olafAngle;
     private bool bTurn = false;
     private bool bTurned = false;
     private float delay = 7.0f;
     private float startTime = 0.0f;
     private float currTime = 0.0f;
     private float speed = 0.5f;
+    private GameObject olaf;
     // Start is called before the first frame update
     void Start()
     {
         initAngle = transform.localRotation.eulerAngles;
         turnLeftAngle = initAngle + new Vector3(0, -90, 0);
+        olaf = GameObject.FindGameObjectWithTag("Player");
+        
+        
     }
 
     // Update is called once per frame
@@ -24,14 +30,16 @@ public class ElevatorRotate : MonoBehaviour
     {
         if (bTurn)
         {
-            Debug.Log("bturn true");
+            
             currTime = Time.time;
-            Debug.Log("time " + (currTime - startTime));
+            
             if ((currTime - startTime) > delay)
             {
-                Debug.Log("time true ");
+                
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(turnLeftAngle), Time.deltaTime * speed);
-
+                Vector3 moveWithElevator = new Vector3(0,0,0);
+                moveWithElevator = center.position - olaf.transform.position;
+                olaf.transform.Translate(moveWithElevator * Time.deltaTime * 0.05f, Space.World);
                 //stop at 90
                 if (Mathf.Abs(transform.rotation.eulerAngles.y - turnLeftAngle.y) < 1)
                 {

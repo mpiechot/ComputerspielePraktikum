@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3/Raum1_Aufzug.unity
     guid: 4ef7e98e8e4367646a6f52a72053cb19
+  - enabled: 1
+    path: Assets/Scenes/Level3/CatRoom.unity
+    guid: 5e40642a513cd9444bf6eb2d0ac5df79
   m_configObjects: {}

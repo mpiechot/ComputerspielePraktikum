@@ -20,6 +20,8 @@ namespace DialogueSystem
         public float letterSpeed;
         public TextRevealEvent onTextReveal;
         public CutsceneEvent onCutscene;
+        [SerializeField] private UnityEvent onDialogueStart;
+        [SerializeField] private UnityEvent onDialogueEnd;
 
         public Animator dialogueBoxAnimator;
         public Animator dialogueTextAnimator;
@@ -63,6 +65,7 @@ namespace DialogueSystem
                 
             }
             DisplayNextSentence();
+            onDialogueStart.Invoke();
         }
 
         public void DisplayNextSentence()
@@ -178,6 +181,7 @@ namespace DialogueSystem
         public void EndDialogue()
         {
             dialogueBoxAnimator.SetBool("isOpen", false);
+            onDialogueEnd.Invoke();
         }
         
     }

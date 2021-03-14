@@ -13,6 +13,8 @@ public class GravityController : MonoBehaviour
 
     public bool  bFreeFloating = false;
 
+    public Transform objectContainer;
+
     private void Start()
     {
         Physics.gravity = Vector3.zero;
@@ -104,5 +106,37 @@ public class GravityController : MonoBehaviour
         ChangeGravityToZero(Axis.X);
         ChangeGravityToZero(Axis.Y);
         ChangeGravityToZero(Axis.Z);
+    }
+
+    public void FreezeEverything() 
+    {
+        Debug.Log(GameObject.FindGameObjectWithTag("Player").name);
+        bFreeFloating = true;
+        DeactivateGravity();
+
+        Rigidbody[] rigidbodies = objectContainer.GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody rb in rigidbodies)
+        {
+            rb.isKinematic = true;
+        }
+        foreach (Rigidbody rb in GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Rigidbody>())
+        {
+            rb.isKinematic = true;
+        }
+        
+    }
+
+    public void UnfreezeEverything() 
+    {
+        bFreeFloating = false;
+        Rigidbody[] rigidbodies = objectContainer.GetComponentsInChildren<Rigidbody>();
+        foreach (Rigidbody rb in rigidbodies)
+        {
+            rb.isKinematic = false;
+        }
+        foreach (Rigidbody rb in GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Rigidbody>())
+        {
+            rb.isKinematic = false;
+        }
     }
 }

@@ -9,6 +9,7 @@ public class SwitchToCatScene : MonoBehaviour
     private AudioSource SoundSource;
     public AudioClip ReverseSound;
     private GameManager gameManager;
+    private ReneStartSong song;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class SwitchToCatScene : MonoBehaviour
         SoundSource.playOnAwake = false;
 
         gameManager = FindObjectOfType<GameManager>();
+        song = FindObjectOfType<ReneStartSong>();
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class SwitchToCatScene : MonoBehaviour
         {
             triggered = true;
             SoundSource.Play();
-            
+            song.FadeOut();
             StartCoroutine("goToCatRoom");
         }
     }

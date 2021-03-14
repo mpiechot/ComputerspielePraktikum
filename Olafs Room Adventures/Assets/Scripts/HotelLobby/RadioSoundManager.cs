@@ -57,6 +57,14 @@ public class RadioSoundManager : MonoBehaviour
         bPlayOnRepeat = true;
     }
 
+    public void stopPlaying()
+    {
+
+        bPlayOnRepeat = false;
+        radioSongSource.Stop();
+
+    }
+
     public void setVolume(float volume) 
     {
         radioSongSource.volume = volume;

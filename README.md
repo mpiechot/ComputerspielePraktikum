@@ -270,12 +270,20 @@ What is the gameplay
 
 ### Hausaufgabe
 * LeosKamera (<font color="lightgreen">Wände Problem noch da, aber Übergang zwischen Kameras ziemlich nice</font>)+ Keine Steuerung während Cutscene (<font color="lightgreen">**✓**</font>) + Raum 2 Problem lösen (<font color="lightgreen">**✓**</font>) (Leo)
-* Rätsel(abfolge) funktionsfähig machen + UI Gravitation Anzeige + UI Interact (Marco)
+* Rätsel(abfolge) funktionsfähig machen + UI Gravitation Anzeige (<font color="lightgreen">**✓**</font>) UI Interact (<font color="lightgreen">**✓**</font>) (Marco)
 * Cutscenes + Videoeinführung von Marco stehlen + Anfang zweiter Raum (Harald)
 * Wasserwand + Raum aufräumen + neuen Raum anfangen + Dialogsystem (Rene)
 * Kinderzimmer integrieren (Philipp)
 
 ### Samstag 13.03.2021 18Uhr
 * Weekly Meeting Catch-up
-* Super Programmierwoche planen
-* Menüdesign besprechen
+
+### Hausaufgabe
+* LeosKamera + PlayerFreeze + Bug: Raum3 Schlüssel (Leo)
+* Rätsel(abfolge) funktionsfähig machen + Player Collision Script + "Whiteboards malen" (Marco)
+* Anfang zweiter Raum + outro timeline + Texte + Brain in jeden Raum (Harald)
+* Raum aufräumen + Beispiel Cutscene (Rene)
+* Kinderzimmer spielbar + Pferdeaugen (Philipp)
+
+### Sonntag 21.03.2021 10Uhr bis open end
+* Weekly Meeting Catch-up

@@ -5,11 +5,18 @@ using UnityEngine;
 public class ReneLoadElevator : MonoBehaviour
 {
     private bool bLevelLoaded = false;
+    [SerializeField]
+    private bool Ontrigger = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<ReneLevelPartManager>().loadPart("Raum1_Aufzug");
+        if (!Ontrigger)
+        {
+            FindObjectOfType<ReneLevelPartManager>().loadPart("Raum1_Aufzug");
+            FindObjectOfType<ReneLevelPartManager>().loadPart("Raum1_Part1");
+        }
+        
     }
 
     // Update is called once per frame
@@ -20,9 +27,10 @@ public class ReneLoadElevator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" && !bLevelLoaded)
+        if (other.gameObject.tag == "Player" && !bLevelLoaded && Ontrigger)
         {
-            FindObjectOfType<ReneLevelPartManager>().loadPart("Raum1_Aufzug");
+            //FindObjectOfType<ReneLevelPartManager>()
+            FindObjectOfType<ReneLevelPartManager>().loadPart("Raum1_Part2");
             bLevelLoaded = true;
         }
             

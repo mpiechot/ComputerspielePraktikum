@@ -32,4 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3/CatRoom.unity
     guid: 5e40642a513cd9444bf6eb2d0ac5df79
+  - enabled: 1
+    path: Assets/Scenes/Level3/Raum1_Part1.unity
+    guid: 09c9bfbe04d647c4e8c7a4b33b8b7976
+  - enabled: 1
+    path: Assets/Scenes/Level3/Raum1_Part2.unity
+    guid: de43e8304cef57f44ab4ab9ed86ddc3c
   m_configObjects: {}

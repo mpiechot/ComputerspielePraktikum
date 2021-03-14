@@ -17,25 +17,28 @@ public class FreeMovingCamControl : MonoBehaviour
     [Header("Scrolling speed")]
     public float scrollSpeed;
 
-    private float horizontal;
-    private float vertical;
-    private Vector3 newPos;
-    private Vector3 newRot;
-    private CinemachineVirtualCamera cinemachine;
-
     [Header("UI")]
     public bool cameraLocked = true;
     public TextMeshProUGUI btText;
 
+    private float horizontal;
+    private float vertical;
+    private Vector3 newPos;
+    private Vector3 newVelocity;
+    private Vector3 newRot;
+    private CinemachineVirtualCamera cinemachine;
     private CameraSwitch cameraSwitch;
+    private Rigidbody rb;
 
     void Awake()
     {
         // Initialize variables 
         horizontal = speedH;
         vertical = speedV;
+        newVelocity = Vector3.zero;
         cinemachine = transform.GetComponent<CinemachineVirtualCamera>();
         cameraSwitch = transform.GetComponent<CameraSwitch>();
+        rb = transform.GetComponent<Rigidbody>();
         if (cameraLocked) 
         {
             LockCam();
@@ -46,7 +49,7 @@ public class FreeMovingCamControl : MonoBehaviour
         }
     }
 
-    void Update()
+    void Update() 
     {
         if (cameraLocked) // switch to orbit camera
         {
@@ -73,8 +76,25 @@ public class FreeMovingCamControl : MonoBehaviour
                 newPos = transform.position;
                 newPos.y -= speedV * Input.GetAxis("Mouse Y");
                 transform.position = newPos;
-                transform.Translate(-transform.right * Input.GetAxisRaw("Mouse X") * movementSpeed, Space.World);
+                transform.position += -transform.right * Input.GetAxisRaw("Mouse X") * movementSpeed;
+                // float deltaX = Math.Sign(Input.GetAxis("Mouse X"));
+                // if (deltaX != 0) 
+                // {
+                //     rb.velocity = new Vector3(-deltaX * movementSpeed, 0.0f, 0.0f);
+                // } 
+                // else 
+                // {
+                //     rb.velocity = Vector3.zero;
+                // }
+                // newVelocity = -transform.right * Math.Sign(Input.GetAxis("Mouse X")) * movementSpeed;
+                // newVelocity.y -= movementSpeed * Math.Sign(Input.GetAxis("Mouse Y"));
+                // rb.velocity = newVelocity;
             }
+            // else 
+            // {
+            //     rb.velocity = Vector3.zero;
+            // }
+            // rb.angularVelocity = Vector3.zero;
 
             float zoom_direction = Math.Sign(Input.GetAxis("Mouse ScrollWheel")); // positive -> 1, negative -> -1, zero -> 0
             if (zoom_direction != 0f) // scrolling moves camera forwards or backwards
@@ -82,7 +102,6 @@ public class FreeMovingCamControl : MonoBehaviour
                 transform.Translate(transform.forward * scrollSpeed * zoom_direction, Space.World);
             }
         }
-
     }
 
     public void UnlockCam()
@@ -115,17 +134,11 @@ public class FreeMovingCamControl : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        Debug.Log("Test");
-        if (other.gameObject.layer == LayerMask.NameToLayer("Wall")) // layer 13: Wall
-        {
-            Debug.Log("Hit wall");
-        }
-
-    }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger!!!");
+        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            Debug.Log("Trigger!!!");
+        }
     }
 }

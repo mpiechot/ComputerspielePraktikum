@@ -19234,7 +19234,8 @@ GameObject:
   - component: {fileID: 1047759944}
   - component: {fileID: 1047759943}
   - component: {fileID: 1047759942}
-  m_Layer: 0
+  - component: {fileID: 1047759945}
+  m_Layer: 16
   m_Name: CM LeosCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19323,6 +19324,19 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 1959053768}
+--- !u!65 &1047759945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047759940}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1056434536
 GameObject:
   m_ObjectHideFlags: 0
@@ -35105,7 +35119,7 @@ GameObject:
   - component: {fileID: 1959053771}
   - component: {fileID: 1959053770}
   - component: {fileID: 1959053769}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: cm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35232,22 +35246,22 @@ PrefabInstance:
     - target: {fileID: 2761033473054731617, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -4.7549444e-16
+      value: 3.1408939e-15
       objectReference: {fileID: 0}
     - target: {fileID: 2761033473054731617, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.86338675
+      value: 0.8633868
       objectReference: {fileID: 0}
     - target: {fileID: 2761033473054731617, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.1367663e-16
+      value: -5.3747807e-15
       objectReference: {fileID: 0}
     - target: {fileID: 2761033473054731617, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.50454277
+      value: 0.5045427
       objectReference: {fileID: 0}
     - target: {fileID: 2761033473054731617, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
@@ -35387,17 +35401,17 @@ PrefabInstance:
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0074177724
+      value: -0.0074177715
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.0000000016619225
+      value: 2.1278682e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1.2328101e-11
+      value: 1.578449e-12
       objectReference: {fileID: 0}
     - target: {fileID: 6876013543341749740, guid: 3b9a6041bef03a64aa188aac0cdcfec9,
         type: 3}

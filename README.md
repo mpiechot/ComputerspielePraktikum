@@ -269,7 +269,7 @@ What is the gameplay
 * Ende: 30.03.2021
 
 ### Hausaufgabe
-* LeosKamera + Keine Steuerung während Cutscene + Raum 2 Problem lösen (Leo)
+* LeosKamera (<font color="lightgreen">Wände Problem noch da, aber Übergang zwischen Kameras ziemlich nice</font>)+ Keine Steuerung während Cutscene + Raum 2 Problem lösen (<font color="lightgreen">**✓**</font>) (Leo)
 * Rätsel(abfolge) funktionsfähig machen + UI Gravitation Anzeige + UI Interact (Marco)
 * Cutscenes + Videoeinführung von Marco stehlen + Anfang zweiter Raum (Harald)
 * Wasserwand + Raum aufräumen + neuen Raum anfangen + Dialogsystem (Rene)

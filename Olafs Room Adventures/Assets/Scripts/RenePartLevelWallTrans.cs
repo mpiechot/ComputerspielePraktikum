@@ -18,7 +18,7 @@ public class RenePartLevelWallTrans : MonoBehaviour
         rend = GetComponent<MeshRenderer>();
         player_component = GameObject.FindGameObjectWithTag("Player");
         cam = GameObject.FindGameObjectWithTag("MainCamera");
-
+        player_component = player_component.transform.Find("root").transform.Find("butt").gameObject;
 
     }
 

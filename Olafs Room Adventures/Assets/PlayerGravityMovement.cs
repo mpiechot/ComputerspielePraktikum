@@ -10,6 +10,8 @@ public class PlayerGravityMovement : MonoBehaviour
 
     public bool bFreeFloating = false;
 
+    private Vector3 gravityInputVector = new Vector3();
+
     private void Start()
     {
         Physics.gravity = Vector3.zero;
@@ -21,31 +23,10 @@ public class PlayerGravityMovement : MonoBehaviour
         {
             return;
         }
+        
+        SetGravityVectorOnInput();
 
-        if (Input.GetKey(KeyCode.Q))
-        {
-            ChangeGravity(new Vector3(0, -gravityForce, 0));
-        }
-        if (Input.GetKey(KeyCode.E))
-        {
-            ChangeGravity(new Vector3(0, gravityForce, 0));
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            ChangeGravity(new Vector3(-gravityForce, 0, 0));
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            ChangeGravity(new Vector3(gravityForce, 0, 0));
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            ChangeGravity(new Vector3(0, 0, -gravityForce));
-        }
-        if (Input.GetKey(KeyCode.W))
-        {
-            ChangeGravity(new Vector3(0, 0, gravityForce));
-        }
+        ChangeGravity(gravityInputVector);
 
         if (!Input.GetKey(KeyCode.Q) && !Input.GetKey(KeyCode.E))
         {
@@ -61,6 +42,43 @@ public class PlayerGravityMovement : MonoBehaviour
         }
 
     }
+
+    private void OnDrawGizmos()
+    {
+        //float angle = Mathf.Acos(Vector3.Dot(lookDirection, gravityInputVector.normalized));
+        var rot = Quaternion.Euler(Camera.main.transform.eulerAngles);
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, rot * gravityInputVector * 10);
+    }
+
+    private void SetGravityVectorOnInput()
+    {
+        if (Input.GetKey(KeyCode.Q))
+        {
+            gravityInputVector.y = -gravityForce;
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            gravityInputVector.y = gravityForce;
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            gravityInputVector.x = -gravityForce;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            gravityInputVector.x = gravityForce;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            gravityInputVector.z = -gravityForce;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            gravityInputVector.z = gravityForce;
+        }
+    }
+
     private void ChangeGravityToZero(Axis axis)
     {
         switch (axis)

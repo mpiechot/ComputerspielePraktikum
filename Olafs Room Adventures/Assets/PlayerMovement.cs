@@ -18,20 +18,20 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float verticalInput = Input.GetAxisRaw("Vertical");
-        if(verticalInput >= keyPressThreshHold)
-        {
-            Vector3 newGravity = Camera.main.transform.forward * verticalInput * Time.deltaTime;
-            Physics.gravity += newGravity;
-            if (Physics.gravity.magnitude > maxMagnitude)
-            {
-                Physics.gravity = (Physics.gravity / Physics.gravity.magnitude) * maxMagnitude;
-            }
-        }
-        else
-        {
-            Physics.gravity = Vector3.Lerp(Physics.gravity, Vector3.zero, gravityReduceStepSize);
-        }
+        //float verticalInput = Input.GetAxisRaw("Vertical");
+        //if(verticalInput >= keyPressThreshHold)
+        //{
+        //    Vector3 newGravity = Camera.main.transform.forward * verticalInput * Time.deltaTime;
+        //    Physics.gravity += newGravity;
+        //    if (Physics.gravity.magnitude > maxMagnitude)
+        //    {
+        //        Physics.gravity = (Physics.gravity / Physics.gravity.magnitude) * maxMagnitude;
+        //    }
+        //}
+        //else
+        //{
+        //    Physics.gravity = Vector3.Lerp(Physics.gravity, Vector3.zero, gravityReduceStepSize);
+        //}
         //Vector3 direction = new Vector3(0f, 0f, verticalInput).normalized;
 
         //float targetAngleXY = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg * cam.eulerAngles.z;
@@ -40,5 +40,13 @@ public class PlayerMovement : MonoBehaviour
         //float angleXZ = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngleXZ, ref turnSmoothVelocity, turnSmoothTime);
 
 
+    }
+
+    private void OnDrawGizmos()
+    {
+        //float angle = Mathf.Acos(Vector3.Dot(lookDirection, gravityInputVector.normalized));
+        var rot = Quaternion.Euler(Camera.main.transform.eulerAngles);
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, rot * Physics.gravity);
     }
 }

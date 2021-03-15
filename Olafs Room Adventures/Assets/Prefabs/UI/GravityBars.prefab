@@ -287,10 +287,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be7c4a7fa1241e4c9462f1994b6cb63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 0
+  axis: 2
   positiveSlider: {fileID: 791028466517580072}
   negativeSlider: {fileID: 791028467897712229}
-  valueColor: {r: 1, g: 0, b: 0, a: 1}
+  valueColor: {r: 0, g: 0.07986283, b: 1, a: 1}
   maxValue: 9.8
 --- !u!1 &791028467121881714
 GameObject:
@@ -2049,10 +2049,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5be7c4a7fa1241e4c9462f1994b6cb63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axis: 2
+  axis: 0
   positiveSlider: {fileID: 3927112809315176469}
   negativeSlider: {fileID: 2565700683728267364}
-  valueColor: {r: 0, g: 0.0543108, b: 1, a: 1}
+  valueColor: {r: 1, g: 0, b: 0.027146816, a: 1}
   maxValue: 9.8
 --- !u!1 &8048637162991039785
 GameObject:

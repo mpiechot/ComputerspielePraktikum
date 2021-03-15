@@ -25,11 +25,11 @@ public class PlayerInteractionHandler : MonoBehaviour
             }
         }
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, interactionRange);
-    }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireSphere(transform.position, interactionRange);
+    //}
 
     private void TryUse(Collider[] inRange)
     {

@@ -23,8 +23,10 @@ public class PlayerGravityMovement : MonoBehaviour
         {
             return;
         }
-        
         SetGravityVectorOnInput();
+
+        var rot = Quaternion.Euler(Camera.main.transform.eulerAngles);
+        gravityInputVector = (rot * gravityInputVector.normalized) * 10;
 
         ChangeGravity(gravityInputVector);
 
@@ -41,14 +43,6 @@ public class PlayerGravityMovement : MonoBehaviour
             ChangeGravityToZero(Axis.Z);
         }
 
-    }
-
-    private void OnDrawGizmos()
-    {
-        //float angle = Mathf.Acos(Vector3.Dot(lookDirection, gravityInputVector.normalized));
-        var rot = Quaternion.Euler(Camera.main.transform.eulerAngles);
-        Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, rot * gravityInputVector * 10);
     }
 
     private void SetGravityVectorOnInput()

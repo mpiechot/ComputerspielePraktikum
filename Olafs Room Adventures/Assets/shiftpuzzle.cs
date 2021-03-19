@@ -24,6 +24,9 @@ public class shiftpuzzle : MonoBehaviour
     {
         MakeList();
         Shuffle();
+        //Debug.Log("pieces is: " + pieces[0]+ pieces[1]+ pieces[2]+ pieces[3]+ pieces[4]+ pieces[5]+ pieces[6]+ pieces[7]+ pieces[8]+ pieces[9]+ pieces[10]+ pieces[11]+ pieces[12]+ pieces[13]+ pieces[14]+ pieces[15]);
+        //Debug.Log("pchecklist is: " + pchecklist[0] + pchecklist[1] + pchecklist[2] + pchecklist[3] + pchecklist[4] + pchecklist[5] + pchecklist[6] + pchecklist[7] + pchecklist[8] + pchecklist[9] + pchecklist[10] + pchecklist[11] + pchecklist[12] + pchecklist[13] + pchecklist[14] + pchecklist[15]);
+        //Debug.Log("psolutionlist is: " + psolutionlist[0] + psolutionlist[1] + psolutionlist[2] + psolutionlist[3] + psolutionlist[4] + psolutionlist[5] + psolutionlist[6] + psolutionlist[7] + psolutionlist[8] + psolutionlist[9] + psolutionlist[10] + psolutionlist[11] + psolutionlist[12] + psolutionlist[13] + psolutionlist[14] + psolutionlist[15]);
     }
 
     // Update is called once per frame
@@ -33,17 +36,8 @@ public class shiftpuzzle : MonoBehaviour
         
         if (!solved)
         {
-            if (Input.GetKeyDown(KeyCode.L))
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                Debug.Log("pressed L");
-                Switch(2,15);
-                Debug.Log("pressed L");
-            }
-            //Debug.Log("current  position is " + currentEmpty.x + "/" + currentEmpty.y);
-            //Debug.Log("current  position  in list is " + WhichPlaceInList(currentEmpty));
-            if (Input.GetKeyDown(KeyCode.A))
-            {
-                Debug.Log("pressed A");
                 if (IsAllowed("left"))
                 {
                     newv.x = currentEmpty.x;
@@ -52,12 +46,10 @@ public class shiftpuzzle : MonoBehaviour
                     currentp = WhichPlaceInList(currentEmpty);
                     currentEmpty = newv;
                     Switch(newp, currentp);
-                    Debug.Log("executed left");
                 }
             }
-            if (Input.GetKeyDown(KeyCode.D))
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                Debug.Log("pressed D");
                 if (IsAllowed("right"))
                 {
                     newv.x = currentEmpty.x;
@@ -66,12 +58,10 @@ public class shiftpuzzle : MonoBehaviour
                     currentp = WhichPlaceInList(currentEmpty);
                     currentEmpty = newv;
                     Switch(newp, currentp);
-                    Debug.Log("executed right");
                 }
             }
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                Debug.Log("pressed E");
                 if (IsAllowed("up"))
                 {
                     newv.x = currentEmpty.x - 1;
@@ -80,12 +70,10 @@ public class shiftpuzzle : MonoBehaviour
                     currentp = WhichPlaceInList(currentEmpty);
                     currentEmpty = newv;
                     Switch(newp, currentp);
-                    Debug.Log("executed up");
                 }
             }
-            if (Input.GetKeyDown(KeyCode.Q))
+            if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                Debug.Log("pressed Q");
                 if (IsAllowed("down"))
                 {
                     newv.x = currentEmpty.x + 1;
@@ -94,7 +82,6 @@ public class shiftpuzzle : MonoBehaviour
                     currentp = WhichPlaceInList(currentEmpty);
                     currentEmpty = newv;
                     Switch(newp, currentp);
-                    Debug.Log("executed down");
                 }
             }
         }
@@ -237,7 +224,7 @@ public class shiftpuzzle : MonoBehaviour
         {
             return 9;
         }
-        if (v.x == 3 && v.y == 3)
+        if (v.x == 2 && v.y == 3)
         {
             return 10;
         }

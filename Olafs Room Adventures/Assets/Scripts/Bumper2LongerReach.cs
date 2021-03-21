@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bumper2LongerReach : MonoBehaviour
 {
     private float speed = 1f;
+    private float speedOlaf = 5f;
     [SerializeField]
     public float Delay = 0f;
     public GameObject olaf; //olaf butt because of rigitbody
@@ -12,6 +13,7 @@ public class Bumper2LongerReach : MonoBehaviour
     private bool bPlayerHit = false;
     private Vector3 startPosition;
     private Vector3 endPosition;
+    private Vector3 Directions;
     private bool CR_runnig = false;
     float lrpPrc = 0;
     
@@ -24,12 +26,13 @@ public class Bumper2LongerReach : MonoBehaviour
         endPosition = spring.transform.position;
         spring.transform.Translate(new Vector3(0, 0, transform.localScale.z * 6), Space.Self);
         startPosition = spring.transform.position;
-
+        Directions = (endPosition - startPosition).normalized;
     }
   
     // Update is called once per frame
     void FixedUpdate()
     {
+        
 
         if (bPlayerHit)
         {
@@ -37,8 +40,8 @@ public class Bumper2LongerReach : MonoBehaviour
             spring.transform.position = Vector3.Lerp(startPosition, endPosition, lrpPrc);
             lrpPrc += Time.deltaTime * speed;
 
-            olaf.transform.Translate((endPosition - startPosition) * Time.deltaTime * 1.5f, Space.World);
-
+            olaf.transform.Translate((endPosition - startPosition) * 4f * Time.deltaTime , Space.World);
+            
         }
         else
         {

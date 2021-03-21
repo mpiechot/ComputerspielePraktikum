@@ -7,12 +7,14 @@ public class PushPlayerAway : MonoBehaviour
     [SerializeField]
     private Vector3 Directions = new Vector3(0, 0, 0);
     private float speed = 10.2f;
+    private float magnitude = 3f;
     private bool pushOlafOut = false;
     private GameObject Olaf;
     
     // Start is called before the first frame update
     void Start()
     {
+        Directions *= magnitude;
         Olaf = GameObject.FindGameObjectWithTag("Player");    
     }
 

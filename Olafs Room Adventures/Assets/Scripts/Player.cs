@@ -111,6 +111,12 @@ public class Player : MonoBehaviour
         CR_TakeDmgIsRunning = false;
     }
 
+    public void resetHealth(){
+        Debug.Log("HELLO WORLD");
+        this.currentHealth = maxHealth;
+        healthBar?.setMaxHealth(this.currentHealth);
+    }
+
     public void setOlafOnFire()
     {
         bIsOnFire = true;

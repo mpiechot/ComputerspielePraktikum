@@ -7,16 +7,16 @@ public class ReneTriggerTopView : MonoBehaviour
     private ReneMoveToTopView switchCam;
     private bool switched = false;
     
-    private PlayerGravityMovement oldMovement;
+    private ReneOldMovementInverted oldMovement;
     
     private PlayerMovement newMovement;
     // Start is called before the first frame update
     void Start()
     {
         switchCam = FindObjectOfType<ReneMoveToTopView>();
-        oldMovement = FindObjectOfType<PlayerGravityMovement>();
+        oldMovement = FindObjectOfType<ReneOldMovementInverted>();
         newMovement = FindObjectOfType<PlayerMovement>();
-        Debug.Log(oldMovement.gameObject.name);
+        
     }
 
     // Update is called once per frame

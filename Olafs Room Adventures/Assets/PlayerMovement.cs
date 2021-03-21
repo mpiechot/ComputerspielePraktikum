@@ -37,7 +37,10 @@ public class PlayerMovement : MonoBehaviour
             Physics.gravity = Vector3.Lerp(Physics.gravity, Vector3.zero, gravityReduceStepSize);
         }
     }
-
+    public void DeactivateGravity()
+    {
+        Physics.gravity = Vector3.zero;
+    }
     private void OnDrawGizmos()
     {
         //float angle = Mathf.Acos(Vector3.Dot(lookDirection, gravityInputVector.normalized));

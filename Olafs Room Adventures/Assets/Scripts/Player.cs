@@ -137,4 +137,24 @@ public class Player : MonoBehaviour
         FireFollowingOlaf.transform.parent = null;
         FireFollowingOlaf.transform.localScale = new Vector3(0, 0, 0);
     }
+
+    public void healOverTime(float seconds)
+    {
+        StartCoroutine(healEveryHalfSecond(seconds));
+    }
+
+    private IEnumerator healEveryHalfSecond(float seconds)
+    {
+        float startTime = Time.time;
+        while (Time.time - startTime < seconds)
+        {
+            if (currentHealth <= maxHealth)
+                setCurrentHealth(currentHealth + 2);
+
+            healthBar?.setHealth(currentHealth);
+            Debug.Log("heealing " + getCurrentHealth());
+            yield return new WaitForSeconds(0.5f);
+
+        }
+    }
 }

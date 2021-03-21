@@ -67,7 +67,7 @@ public class Bumper2LongerReach : MonoBehaviour
 
         //olaf.transform.parent.transform.parent.transform.Translate((endPosition - startPosition) , Space.World);
         //Make Player Freefloat after getting hit for 1 sec
-        StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(2f));
+        //StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(2f));
         yield return new WaitForSeconds(2f);
         lrpPrc = 0;
         bPlayerHit = false;

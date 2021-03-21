@@ -14,7 +14,7 @@ public class PlayerInteractionHandler : MonoBehaviour
         Collider[] inRange = Physics.OverlapSphere(transform.position, interactionRange, LayerMask.GetMask("Interactable"));
         if(inRange.Length == 0)
         {
-            interactUI.Hide();
+            interactUI?.Hide();
         }
         else
         {

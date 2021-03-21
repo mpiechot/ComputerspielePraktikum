@@ -9,10 +9,8 @@ public class shiftpuzzle : MonoBehaviour
 
 
     //pieces wird position gewechselt
-    //pcheck ist aktuelle position
     //psolution ist original /losung
     List<GameObject> pieces = new List<GameObject>();
-    List<GameObject> pchecklist = new List<GameObject>();
     List<GameObject> psolutionlist = new List<GameObject>();
     private bool solved = false;
     Vector2 currentEmpty = new Vector2(0, 3);
@@ -24,19 +22,19 @@ public class shiftpuzzle : MonoBehaviour
     {
         MakeList();
         Shuffle();
-        //Debug.Log("pieces is: " + pieces[0]+ pieces[1]+ pieces[2]+ pieces[3]+ pieces[4]+ pieces[5]+ pieces[6]+ pieces[7]+ pieces[8]+ pieces[9]+ pieces[10]+ pieces[11]+ pieces[12]+ pieces[13]+ pieces[14]+ pieces[15]);
-        //Debug.Log("pchecklist is: " + pchecklist[0] + pchecklist[1] + pchecklist[2] + pchecklist[3] + pchecklist[4] + pchecklist[5] + pchecklist[6] + pchecklist[7] + pchecklist[8] + pchecklist[9] + pchecklist[10] + pchecklist[11] + pchecklist[12] + pchecklist[13] + pchecklist[14] + pchecklist[15]);
-        //Debug.Log("psolutionlist is: " + psolutionlist[0] + psolutionlist[1] + psolutionlist[2] + psolutionlist[3] + psolutionlist[4] + psolutionlist[5] + psolutionlist[6] + psolutionlist[7] + psolutionlist[8] + psolutionlist[9] + psolutionlist[10] + psolutionlist[11] + psolutionlist[12] + psolutionlist[13] + psolutionlist[14] + psolutionlist[15]);
+        //Debug.Log("pieces is: " + pieces[0].name + pieces[1].name + pieces[2].name + pieces[3].name + pieces[4].name + pieces[5].name + pieces[6].name + pieces[7].name + pieces[8].name + pieces[9].name + pieces[10].name + pieces[11].name + pieces[12].name + pieces[13].name + pieces[14].name + pieces[15].name );
+        //Debug.Log("pchecklist is: " + pchecklist[0].name + pchecklist[1].name + pchecklist[2].name + pchecklist[3].name + pchecklist[4].name + pchecklist[5].name + pchecklist[6].name + pchecklist[7].name + pchecklist[8].name + pchecklist[9].name + pchecklist[10].name + pchecklist[11].name + pchecklist[12].name + pchecklist[13].name + pchecklist[14].name + pchecklist[15].name);
+        //Debug.Log("psolutionlist is: " + psolutionlist[0].name + psolutionlist[1].name + psolutionlist[2].name + psolutionlist[3].name + psolutionlist[4].name + psolutionlist[5].name + psolutionlist[6].name + psolutionlist[7].name + psolutionlist[8].name + psolutionlist[9].name + psolutionlist[10].name + psolutionlist[11].name + psolutionlist[12].name + psolutionlist[13].name + psolutionlist[14].name + psolutionlist[15].name);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //IsSolved();
-        
+        IsSolved();
+
         if (!solved)
         {
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (Input.GetKeyDown(KeyCode.D))
             {
                 if (IsAllowed("left"))
                 {
@@ -48,7 +46,7 @@ public class shiftpuzzle : MonoBehaviour
                     Switch(newp, currentp);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (Input.GetKeyDown(KeyCode.A))
             {
                 if (IsAllowed("right"))
                 {
@@ -60,7 +58,7 @@ public class shiftpuzzle : MonoBehaviour
                     Switch(newp, currentp);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 if (IsAllowed("up"))
                 {
@@ -72,7 +70,7 @@ public class shiftpuzzle : MonoBehaviour
                     Switch(newp, currentp);
                 }
             }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (IsAllowed("down"))
                 {
@@ -106,8 +104,22 @@ public class shiftpuzzle : MonoBehaviour
         pieces.Add(cube15);
         pieces.Add(cube0);
 
-        psolutionlist = pieces;
-        pchecklist = pieces;
+        psolutionlist.Add(cube1);
+        psolutionlist.Add(cube2);
+        psolutionlist.Add(cube3);
+        psolutionlist.Add(cube4);
+        psolutionlist.Add(cube5);
+        psolutionlist.Add(cube6);
+        psolutionlist.Add(cube7);
+        psolutionlist.Add(cube8);
+        psolutionlist.Add(cube9);
+        psolutionlist.Add(cube10);
+        psolutionlist.Add(cube11);
+        psolutionlist.Add(cube12);
+        psolutionlist.Add(cube13);
+        psolutionlist.Add(cube14);
+        psolutionlist.Add(cube15);
+        psolutionlist.Add(cube0);
     }
 
     private void Shuffle()
@@ -126,14 +138,14 @@ public class shiftpuzzle : MonoBehaviour
     private void Switch(int a, int b)
     {
         Vector3 placeSwap;
-        GameObject positionSwap;
+        GameObject swapper;
         placeSwap = pieces[a].transform.position;
         pieces[a].transform.position = pieces[b].transform.position;
         pieces[b].transform.position = placeSwap;
 
-        positionSwap = pchecklist[a];
-        pchecklist[a] = pchecklist[b];
-        pchecklist[b] = positionSwap;
+        swapper = pieces[a];
+        pieces[a] = pieces[b];
+        pieces[b] = swapper;
     }
 
     private void IsSolved()
@@ -142,7 +154,6 @@ public class shiftpuzzle : MonoBehaviour
         {
             solved = true;
         }
-        solved = false;
     }
 
     private bool IsAllowed(string direction)

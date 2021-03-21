@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         FireFollowingOlaf = GameObject.Find("FireFollowingOlaf");
     }
 
-    void TakeDamage(int dmg)
+    public void TakeDamage(int dmg)
     {
         dmg = Mathf.Clamp(dmg, 0, maxDamage);
         currentHealth -= dmg;

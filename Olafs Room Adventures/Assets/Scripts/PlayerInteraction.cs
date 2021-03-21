@@ -9,20 +9,18 @@ using UnityEngine;
 //      - 
 public class PlayerInteraction : MonoBehaviour
 {
-    public GravityController gravityControl;
+    public PlayerMovement playerMovement;
     public DialogueSystem.DialogueManager dialogueManager;
 
     public void ActivatePlayerInteraction() 
     {
         dialogueManager.activeCutscene = false;
-        gravityControl.bFreeFloating = false;
     }
 
     public void DeactivatePlayerInteraction() 
     {
         dialogueManager.activeCutscene = true;
-        gravityControl.bFreeFloating = true;
-        gravityControl.DeactivateGravity();
+        playerMovement.DeactivateGravity();
     }
 
 }

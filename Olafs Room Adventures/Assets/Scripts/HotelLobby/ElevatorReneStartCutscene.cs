@@ -39,7 +39,7 @@ public class ElevatorReneStartCutscene : MonoBehaviour
     public IEnumerator BeginHotelLevel()
     {
         CR_running = true;
-        StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(7f));
+        //StartCoroutine(FindObjectOfType<GravityController>().LockGravityAndFreeFloat(7f));
         elevatorAudio.playSounds();
         while (radio.playRadioLouder())
         {

@@ -55,11 +55,7 @@ public class Player : MonoBehaviour
 
     public void OnCollide(Collision collision)
     {
-        if (invincible)
-        {
-
-        }
-        else
+        if (!invincible)
         {
             CollisionHandling(collision);
         }

@@ -13,6 +13,7 @@ TagManager:
   - Switch
   - Door
   - NoCollisionDmg
+  - InteractableObject
   layers:
   - Default
   - TransparentFX

@@ -7,9 +7,14 @@ public class GravityBoxRiddle : MonoBehaviour
 {
     [SerializeField]
     private UnityEvent RiddleFinishedEvent;
+    private bool alreadyFinished = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        RiddleFinishedEvent?.Invoke();
+        if (!alreadyFinished)
+        {
+            RiddleFinishedEvent?.Invoke();
+            alreadyFinished = true;
+        }
     }
 }

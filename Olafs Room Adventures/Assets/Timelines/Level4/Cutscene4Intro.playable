@@ -53,13 +53,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dd5e1107c8e9e4482ba209af035f56, type: 3}
   m_Name: Dialogue Marker
   m_EditorClassIdentifier: 
-  m_Time: 13.816666666666666
+  m_Time: 12.75
   dialogueText:
     name: 
     sentences:
-    - Hi
-    - Suck
-    - Dick
+    - <size=250%>Hi!
+    - <speed=30> I am so glad that you are back to consciuosness and finally here
+      in my <pause=0.5> . <pause=0.5> .  <pause=0.5> .  <shake> <size=50>  DYNAMITE
+      LEVEL
+    - <speed=30> When i was a baby, mama Brian has let me play with dynamite every
+      day! <size=10> (She was so caring until i ate her, lol)
+    - <speed=30>Anyway, I want to share my experiences with you! To do so, feel free
+      to check out all rooms! <size=10> As if you had a choice hihihi
+    - <speed=30> And I promise, the explosiveness is going to be <pause=0.5> <shake>
+      <size=50>  THICC!!!!!!!
   retroactive: 0
   emitOnce: 0
 --- !u!114 &-2159863334316508134
@@ -860,13 +867,49 @@ MonoBehaviour:
     m_BlendOutDuration: 1.1500000000000021
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -893,7 +936,25 @@ MonoBehaviour:
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

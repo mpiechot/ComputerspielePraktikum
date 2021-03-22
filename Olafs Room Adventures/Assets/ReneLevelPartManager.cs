@@ -31,6 +31,23 @@ public class ReneLevelPartManager : MonoBehaviour
         
     }
 
+    private IEnumerator UnLoadAsyncronously(string scene)
+    {
+        levelToLoad = SceneManager.UnloadSceneAsync(scene);
+
+
+        while (!levelToLoad.isDone)
+        {
+            yield return null;
+        }
+
+    }
+    public void unLoadPart(string scene)
+    {
+
+        StartCoroutine(UnLoadAsyncronously(scene));
+
+    }
     public void loadPart(string scene)
     {
 

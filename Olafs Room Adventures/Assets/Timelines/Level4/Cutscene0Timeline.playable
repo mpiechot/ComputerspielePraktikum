@@ -69,13 +69,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dd5e1107c8e9e4482ba209af035f56, type: 3}
   m_Name: Dialogue Marker
   m_EditorClassIdentifier: 
-  m_Time: 8.833333333333334
+  m_Time: 8.383333333333333
   dialogueText:
     name: Brian
     sentences:
-    - You little fucker...
-    - motherfucker...
-    - MOTHERFUCKER
+    - <speed=30> Amazing! Seems like you found out how to enter the next room!
+    - Go on, it would be so funny to see you <pause=0.5> <size=50> <shake> DIE IN
+      THERE! <size=10> hihihi
   retroactive: 0
   emitOnce: 0
 --- !u!114 &-2715724006593896164

@@ -45,6 +45,11 @@ public class PlayerInteractionHandler : MonoBehaviour
                 InteractableDoor switchObj = collider.gameObject.GetComponentInParent<InteractableDoor>();
                 switchObj.UseDoor();
             }
+            if (collider.tag == "InteractableObject")
+            {
+                InteractableObject switchObj = collider.gameObject.GetComponentInParent<InteractableObject>();
+                switchObj.Use();
+            }
         }
     }
 }

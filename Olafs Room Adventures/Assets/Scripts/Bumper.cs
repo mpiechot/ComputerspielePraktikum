@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bumper : MonoBehaviour
 {
-    private float speed = 1.2f;
+    private float speed = 2.2f;
     [SerializeField]
     public float Delay = 0f;
     [SerializeField]

@@ -25,8 +25,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlayScream(){
         int id = (int)(UnityEngine.Random.Range(0f,1f) * 4);
-        Sound s = Array.Find(sounds, sound => sound.name == "urgh" + (int)(UnityEngine.Random.Range(0f,1f) * 4));
-        Debug.Log(id);
+        Sound s = Array.Find(sounds, sound => sound.name == "urgh" + id);
         s.source.Play();
     }
 }

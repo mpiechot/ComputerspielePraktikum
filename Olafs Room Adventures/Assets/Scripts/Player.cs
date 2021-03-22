@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
         if (collision.relativeVelocity.magnitude > wallDamageThreshold)
         {
             StartCoroutine("Invincible");
+            FindObjectOfType<AudioManager>()?.PlayScream();
             TakeDamage((int)collision.impulse.magnitude);
         }
         //Note: If we need to apply damage only on specific objects use the tag

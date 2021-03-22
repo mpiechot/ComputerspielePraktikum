@@ -22,4 +22,11 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+
+    public void PlayScream(){
+        int id = (int)(UnityEngine.Random.Range(0f,1f) * 4);
+        Sound s = Array.Find(sounds, sound => sound.name == "urgh" + (int)(UnityEngine.Random.Range(0f,1f) * 4));
+        Debug.Log(id);
+        s.source.Play();
+    }
 }

@@ -85,9 +85,7 @@ MonoBehaviour:
   dialogueText:
     name: Brian
     sentences:
-    - <speed=30> Amazing!! Glad to see you doing so well!
-    - '<speed=30>The next room might seem a bit empty, but who knows?! Go and check
-      it out! <size=20> hihihihi '
+    - '<speed=30> Amazing!! Glad to see you doing so well! Go on! <size=20> hihihihi '
   retroactive: 0
   emitOnce: 0
 --- !u!114 &1296146798738435977

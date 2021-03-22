@@ -28,7 +28,6 @@ public class PlayerMovement : MonoBehaviour
             newGravity += Camera.main.transform.right * horizontalInput * gravityMultiplyer * Time.deltaTime;
             newGravity += Camera.main.transform.up * zAxisInput * gravityMultiplyer * Time.deltaTime;
             Physics.gravity += newGravity;
-            Debug.Log("lol");
             if (Physics.gravity.magnitude > maxMagnitude)
             {
                 Physics.gravity = (Physics.gravity / Physics.gravity.magnitude) * maxMagnitude;

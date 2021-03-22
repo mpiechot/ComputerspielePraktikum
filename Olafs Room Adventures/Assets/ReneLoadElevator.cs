@@ -7,6 +7,9 @@ public class ReneLoadElevator : MonoBehaviour
     private bool bLevelLoaded = false;
     [SerializeField]
     private bool Ontrigger = false;
+    [SerializeField]
+    private GameObject BumperFireElevator;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +35,7 @@ public class ReneLoadElevator : MonoBehaviour
             //FindObjectOfType<ReneLevelPartManager>()
             FindObjectOfType<ReneLevelPartManager>().loadPart("Raum1_Part2");
             FindObjectOfType<ReneLevelPartManager>().unLoadPart("Raum1_Part1");
+            BumperFireElevator.SetActive( false);
             bLevelLoaded = true;
         }
             

@@ -36,7 +36,7 @@ public class TurnOnAndOff : MonoBehaviour
         float time = Random.Range(0.2f, 2f);
         active =  !active;
         light.enabled = active;
-        Debug.Log("active " + active);
+        
         yield return new WaitForSeconds(time);
         CR = false;
     }

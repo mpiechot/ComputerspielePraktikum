@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CheckpointActivator : MonoBehaviour
 {
     public Component checkpoint_to_activate;
     public float delay;
     private bool already_activated = false;
+
+    public UnityEvent CheckpointPassedEvent;
+    public UnityEvent ActivationDelayExpiredEvent;
 
     void OnTriggerEnter(Collider other)
     {
@@ -15,6 +19,7 @@ public class CheckpointActivator : MonoBehaviour
             Debug.Log("Start activating checkpoints");
             already_activated = true;
             StartCoroutine(activeCheckpoint(delay));
+            CheckpointPassedEvent.Invoke();
         }
     }
 
@@ -27,6 +32,7 @@ public class CheckpointActivator : MonoBehaviour
             rb.isKinematic = false;
             rb.useGravity = true;
         }
+        ActivationDelayExpiredEvent.Invoke();
         Debug.Log("checkpoint activates");
     }
 }

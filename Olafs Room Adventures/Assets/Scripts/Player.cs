@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         FireFollowingOlaf = GameObject.Find("FireFollowingOlaf");
     }
 
-    void TakeDamage(int dmg)
+    public void TakeDamage(int dmg)
     {
         dmg = Mathf.Clamp(dmg, 0, maxDamage);
         currentHealth -= dmg;
@@ -111,6 +111,12 @@ public class Player : MonoBehaviour
         CR_TakeDmgIsRunning = false;
     }
 
+    public void resetHealth(){
+        Debug.Log("HELLO WORLD");
+        this.currentHealth = maxHealth;
+        healthBar?.setMaxHealth(this.currentHealth);
+    }
+
     public void setOlafOnFire()
     {
         bIsOnFire = true;
@@ -136,5 +142,25 @@ public class Player : MonoBehaviour
         bIsOnFire = false;
         FireFollowingOlaf.transform.parent = null;
         FireFollowingOlaf.transform.localScale = new Vector3(0, 0, 0);
+    }
+
+    public void healOverTime(float seconds)
+    {
+        StartCoroutine(healEveryHalfSecond(seconds));
+    }
+
+    private IEnumerator healEveryHalfSecond(float seconds)
+    {
+        float startTime = Time.time;
+        while (Time.time - startTime < seconds)
+        {
+            if (currentHealth <= maxHealth)
+                setCurrentHealth(currentHealth + 2);
+
+            healthBar?.setHealth(currentHealth);
+            Debug.Log("heealing " + getCurrentHealth());
+            yield return new WaitForSeconds(0.5f);
+
+        }
     }
 }

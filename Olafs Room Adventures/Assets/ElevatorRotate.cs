@@ -16,14 +16,16 @@ public class ElevatorRotate : MonoBehaviour
     private float speed = 0.5f;
     private GameObject olaf;
     private Vector3 moveWithElevator = new Vector3(0, 0, 0);
+    private Player player;
     // Start is called before the first frame update
     void Start()
     {
         initAngle = transform.localRotation.eulerAngles;
         turnLeftAngle = initAngle + new Vector3(0, -90, 0);
         olaf = GameObject.FindGameObjectWithTag("Player");
-        
-        
+        player = FindObjectOfType<Player>();
+
+
     }
 
     // Update is called once per frame
@@ -57,12 +59,22 @@ public class ElevatorRotate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && bTurned == false)
+
+        
+        if (other.gameObject.tag == "Player")
         {
-            bTurn = true;
-            bTurned = true;
-            startTime = Time.time;
-            currTime = Time.time;
+
+            
+
+            if (bTurned == false)
+            {
+                player.healOverTime(10);
+                bTurn = true;
+                bTurned = true;
+                startTime = Time.time;
+                currTime = Time.time;
+            }
+            
         }
         
     }

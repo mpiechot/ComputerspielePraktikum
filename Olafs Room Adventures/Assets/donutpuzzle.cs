@@ -37,12 +37,12 @@ public class donutpuzzle : MonoBehaviour
     {
         //Debug.Log(Vector3.Distance(donuts[0].transform.position, positions[0]));
         //isSolved();
-        Debug.Log((donuts[3].transform.position == positions[3]));
-        Debug.Log(donuts[3].transform.position);
-        donuts[1].transform.position = positions[1];
-        Debug.Log((donuts[3].transform.position == positions[3]));
-        Debug.Log(donuts[3].transform.position);
-        Debug.Log(positions[3]);
+        //Debug.Log(positions[3] == donuts[3].transform.position);
+        //Debug.Log(donuts[3].transform.position);
+        //donuts[1].transform.position = positions[1];
+        //Debug.Log((positions[3] == donuts[3].transform.position));
+        //Debug.Log(donuts[3].transform.position);
+        //Debug.Log(positions[3]);
         if (!solved)
         {
             clippIt();
@@ -58,12 +58,19 @@ public class donutpuzzle : MonoBehaviour
         donuts.Add(d5);
         donuts.Add(d6);
 
-        positions.Add(d1.transform.position);
-        positions.Add(d2.transform.position);
-        positions.Add(d3.transform.position);
-        positions.Add(d4.transform.position);
-        positions.Add(d5.transform.position);
-        positions.Add(d6.transform.position);
+        GameObject dd = Instantiate(d4);
+        Debug.Log(dd.transform.position == donuts[3].transform.position);
+        
+        Debug.Log(Vector3.Distance(donuts[3].transform.position, dd.transform.position));
+        Debug.Log(Vector3.Distance(donuts[3].transform.position, donuts[3].transform.position));
+        positions.Add(donuts[0].transform.position);
+        positions.Add(donuts[1].transform.position);
+        positions.Add(donuts[2].transform.position);
+        positions.Add(donuts[3].transform.position);
+        positions.Add(donuts[4].transform.position);
+        positions.Add(donuts[5].transform.position);
+
+        Debug.Log(Vector3.Distance(donuts[3].transform.position, positions[3]));
 
         randomPositions.Add(p1);
         randomPositions.Add(p2);

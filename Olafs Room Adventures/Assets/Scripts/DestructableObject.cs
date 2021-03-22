@@ -11,8 +11,8 @@ public class DestructableObject : MonoBehaviour
     [Header("Note: Dont use a Rigidbody-Component on")]
 
     [SerializeField]
-    [Range(0,20)]
-    private float maxImpulseValue;
+    [Range(1,20)]
+    private float maxImpulseValue = 15;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -24,15 +24,32 @@ public class DestructableObject : MonoBehaviour
 
     private void Break()
     {
-        Destroy(gameObject.GetComponent<Collider>());
+        if(gameObject.transform.childCount == 0)
+        {
+            Destroy(gameObject);
+        }
+        foreach (Collider collider in GetComponents<Collider>())
+        {
+            Destroy(collider);
+        }
         Destroy(gameObject.GetComponent<Rigidbody>());
-        foreach(Collider collider in GetComponentsInChildren<Collider>())
+        Collider[] children = GetComponentsInChildren<Collider>();
+        foreach (Collider collider in children)
         {
             collider.enabled = true;
             if(collider.gameObject.GetComponent<Rigidbody>() == null)
             {
                 collider.gameObject.AddComponent(typeof(Rigidbody));
             }
+            else
+            {
+                Rigidbody rb = collider.gameObject.GetComponent<Rigidbody>();
+                rb.useGravity = true;
+                rb.isKinematic = false;
+            }
+            //DestructableObject destObj = collider.gameObject.AddComponent<DestructableObject>();
+            //destObj.maxImpulseValue = Mathf.Clamp(maxImpulseValue - 3, 1, 20);
         }
+        Destroy(this);
     }
 }

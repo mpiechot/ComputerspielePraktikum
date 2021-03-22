@@ -21,6 +21,10 @@ public class FreeMovingCamControl : MonoBehaviour
     public bool cameraLocked = true;
     public TextMeshProUGUI btText;
 
+    [Header("Settings")]
+    public bool invert;
+    public float rayCastLength;
+
     private float horizontal;
     private float vertical;
     private Vector3 newPos;
@@ -29,6 +33,7 @@ public class FreeMovingCamControl : MonoBehaviour
     private CinemachineVirtualCamera cinemachine;
     private CameraSwitch cameraSwitch;
     private Rigidbody rb;
+    private int dir;
 
     void Awake()
     {
@@ -39,7 +44,7 @@ public class FreeMovingCamControl : MonoBehaviour
         cinemachine = transform.GetComponent<CinemachineVirtualCamera>();
         cameraSwitch = transform.GetComponent<CameraSwitch>();
         rb = transform.GetComponent<Rigidbody>();
-        if (cameraLocked) 
+        if (cameraLocked)
         {
             LockCam();
         }
@@ -47,9 +52,11 @@ public class FreeMovingCamControl : MonoBehaviour
         {
             UnlockCam();
         }
+
+        dir = invert ? 1 : -1;
     }
 
-    void Update() 
+    void Update()
     {
         if (cameraLocked) // switch to orbit camera
         {
@@ -64,44 +71,138 @@ public class FreeMovingCamControl : MonoBehaviour
             {
                 LockCam();
             }
+
             if (Input.GetMouseButton(1)) // right mouse button pressed -> rotate camera
             {
-                horizontal -= speedH * Input.GetAxis("Mouse X");
+                horizontal -= dir * speedH * Input.GetAxis("Mouse X");
                 vertical += speedV * Input.GetAxis("Mouse Y");
-                
+
                 transform.eulerAngles = new Vector3(vertical, horizontal, 0.0f);
             }
             if (Input.GetMouseButton(2)) // mouse wheel pressed -> move camera upwards or sideways
             {
-                newPos = transform.position;
-                newPos.y -= speedV * Input.GetAxis("Mouse Y");
-                transform.position = newPos;
-                transform.position += -transform.right * Input.GetAxisRaw("Mouse X") * movementSpeed;
-                // float deltaX = Math.Sign(Input.GetAxis("Mouse X"));
-                // if (deltaX != 0) 
-                // {
-                //     rb.velocity = new Vector3(-deltaX * movementSpeed, 0.0f, 0.0f);
-                // } 
-                // else 
-                // {
-                //     rb.velocity = Vector3.zero;
-                // }
-                // newVelocity = -transform.right * Math.Sign(Input.GetAxis("Mouse X")) * movementSpeed;
-                // newVelocity.y -= movementSpeed * Math.Sign(Input.GetAxis("Mouse Y"));
-                // rb.velocity = newVelocity;
+                bool moveHorizontal = true;
+                bool moveVertical = true;
+
+                float mouseX = Input.GetAxisRaw("Mouse X");
+                float mouseY = Input.GetAxis("Mouse Y");
+
+                if (mouseX < 0) // right
+                {
+                    moveHorizontal = RaycastsHitWall(transform.right,
+                                                    (transform.forward + transform.right + transform.up),
+                                                    (transform.forward - transform.right - transform.up),
+                                                    (-transform.forward + transform.right + transform.up),
+                                                    (-transform.forward - transform.right - transform.up));
+                }
+                else if (mouseX > 0) // left
+                {
+                    moveHorizontal = RaycastsHitWall(-transform.right,
+                                                    (transform.forward - transform.right + transform.up),
+                                                    (transform.forward - transform.right - transform.up),
+                                                    (-transform.forward - transform.right + transform.up),
+                                                    (-transform.forward - transform.right - transform.up));
+                }
+
+                if (mouseY < 0) // up
+                {
+                    moveVertical = RaycastsHitWall(transform.up,
+                                                  (transform.forward + transform.right + transform.up),
+                                                  (transform.forward - transform.right + transform.up),
+                                                  (-transform.forward + transform.right + transform.up),
+                                                  (-transform.forward - transform.right + transform.up));
+                }
+                else if (mouseY > 0) // down
+                {
+                    moveVertical = RaycastsHitWall(-transform.up,
+                                                  (transform.forward + transform.right - transform.up),
+                                                  (transform.forward - transform.right - transform.up),
+                                                  (-transform.forward + transform.right - transform.up),
+                                                  (-transform.forward - transform.right - transform.up));
+                }
+
+                if (moveVertical)
+                {
+                    newPos = transform.position;
+                    newPos.y -= speedV * Input.GetAxis("Mouse Y");
+                    transform.position = newPos;
+                }
+                if (moveHorizontal)
+                {
+                    transform.position += dir * transform.right * Input.GetAxisRaw("Mouse X") * movementSpeed;
+                }
+
             }
-            // else 
-            // {
-            //     rb.velocity = Vector3.zero;
-            // }
-            // rb.angularVelocity = Vector3.zero;
 
             float zoom_direction = Math.Sign(Input.GetAxis("Mouse ScrollWheel")); // positive -> 1, negative -> -1, zero -> 0
             if (zoom_direction != 0f) // scrolling moves camera forwards or backwards
             {
-                transform.Translate(transform.forward * scrollSpeed * zoom_direction, Space.World);
-            }
+                bool moveForwardBackward = true;
+
+                if (zoom_direction < 0) // back
+                {
+                    moveForwardBackward = RaycastsHitWall(-transform.forward,
+                                                         (-transform.forward + transform.right + transform.up),
+                                                         (-transform.forward + transform.right - transform.up),
+                                                         (-transform.forward - transform.right + transform.up),
+                                                         (-transform.forward - transform.right - transform.up));
+                }
+                else if (zoom_direction > 0) // front
+                {
+                    moveForwardBackward = RaycastsHitWall(transform.forward, 
+                                                         (transform.forward + transform.right + transform.up), 
+                                                         (transform.forward + transform.right - transform.up), 
+                                                         (transform.forward - transform.right + transform.up), 
+                                                         (transform.forward - transform.right - transform.up));
+                }
+
+                if (moveForwardBackward)
+                {
+                    transform.Translate(transform.forward * scrollSpeed * zoom_direction, Space.World);
+                }
+            
+            } 
         }
+    }
+
+    private bool RaycastsHitWall(Vector3 dir0, Vector3 dir1, Vector3 dir2, Vector3 dir3, Vector3 dir4) 
+    {
+        Debug.DrawRay(transform.position, dir0 * rayCastLength, Color.yellow);
+        Debug.DrawRay(transform.position, dir1 * rayCastLength, Color.yellow);
+        Debug.DrawRay(transform.position, dir2 * rayCastLength, Color.yellow);
+        Debug.DrawRay(transform.position, dir3 * rayCastLength, Color.yellow);
+        Debug.DrawRay(transform.position, dir4 * rayCastLength, Color.yellow);
+
+        RaycastHit hit = new RaycastHit();
+        if (Physics.Raycast(transform.position, dir0, out hit, rayCastLength))
+        {
+            return !WallCollision(hit);
+        }
+        else if (Physics.Raycast(transform.position, dir1, out hit, 2 * rayCastLength))
+        {
+            return !WallCollision(hit);
+        }
+        else if (Physics.Raycast(transform.position, dir2, out hit, 2 * rayCastLength))
+        {
+            return !WallCollision(hit);
+        }
+        else if (Physics.Raycast(transform.position, dir3, out hit, 2 * rayCastLength))
+        {
+            return !WallCollision(hit);
+        }
+        else if (Physics.Raycast(transform.position, dir4, out hit, 2 * rayCastLength))
+        {
+            return !WallCollision(hit);
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    private bool WallCollision(RaycastHit hit) 
+    {
+        return hit.transform.tag == "Wall";
     }
 
     public void UnlockCam()

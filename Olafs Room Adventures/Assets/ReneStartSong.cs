@@ -6,6 +6,8 @@ public class ReneStartSong : MonoBehaviour
 {
     private AudioSource SoundSource;
     public AudioClip SynthSong;
+    private AudioSource GuitarSoundSource;
+    public AudioClip GuitarSong;
     private bool bFade = false;
     float fatespeed = 10.0f;
 
@@ -15,8 +17,12 @@ public class ReneStartSong : MonoBehaviour
     {
         radioRene = FindObjectOfType<RadioSoundManager>();
         SoundSource = gameObject.AddComponent<AudioSource>();
+        GuitarSoundSource = gameObject.AddComponent<AudioSource>();
         SoundSource.clip = SynthSong;
         SoundSource.playOnAwake = false;
+        GuitarSoundSource.clip = GuitarSong;
+        SoundSource.playOnAwake = false;
+        GuitarSoundSource.volume = 1;
     }
 
     public void playNewSong()
@@ -24,6 +30,12 @@ public class ReneStartSong : MonoBehaviour
         radioRene.stopPlaying();
         SoundSource.Play();
     }
+    public void playGuitar()
+    {
+        GuitarSoundSource.Play();
+        Debug.Log("playGuit");
+    }
+
 
     private void Update()
     {
@@ -32,7 +44,7 @@ public class ReneStartSong : MonoBehaviour
 
             SoundSource.volume = Mathf.Lerp(SoundSource.volume, 0, Time.deltaTime);
             
-            Debug.Log("Fadeee");
+            
             if (SoundSource.volume < 0.01)
             {
                 bFade = false;

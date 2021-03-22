@@ -16,7 +16,7 @@ public class Bumper2LongerReach : MonoBehaviour
     private Vector3 Directions;
     private bool CR_runnig = false;
     float lrpPrc = 0;
-    
+    private bool bShootSpringHit = false;
 
 
     // Start is called before the first frame update
@@ -32,16 +32,10 @@ public class Bumper2LongerReach : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        
-
-        if (bPlayerHit)
+        if (bShootSpringHit)
         {
-
             spring.transform.position = Vector3.Lerp(startPosition, endPosition, lrpPrc);
             lrpPrc += Time.deltaTime * speed;
-
-            olaf.transform.Translate((endPosition - startPosition) * 4f * Time.deltaTime , Space.World);
-            
         }
         else
         {
@@ -49,6 +43,16 @@ public class Bumper2LongerReach : MonoBehaviour
             spring.transform.position = Vector3.Lerp(endPosition, startPosition, lrpPrc);
             lrpPrc += Time.deltaTime * speed;
         }
+
+        if (bPlayerHit)
+        {
+
+            
+
+            olaf.transform.Translate((endPosition - startPosition) * 4.5f * Time.deltaTime , Space.World);
+            
+        }
+        
         
     }
     public void stopBeingHit()
@@ -60,6 +64,8 @@ public class Bumper2LongerReach : MonoBehaviour
         CR_runnig = true;
         yield return new WaitForSeconds(Delay);
         lrpPrc = 0;
+        bShootSpringHit = true;
+        yield return new WaitForSeconds(0.4f);
         bPlayerHit = true;
 
         //olaf.transform.Translate(new Vector3(1, 0, 0), Space.World);
@@ -74,6 +80,7 @@ public class Bumper2LongerReach : MonoBehaviour
         yield return new WaitForSeconds(2f);
         lrpPrc = 0;
         bPlayerHit = false;
+        bShootSpringHit = false;
         yield return new WaitForSeconds(3);
         CR_runnig = false;
     }

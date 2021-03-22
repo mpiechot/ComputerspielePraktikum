@@ -66,10 +66,10 @@ public class lightplay : MonoBehaviour
     		{
                 if (light1.intensity < 0.05)
                 {
-                    light1.intensity += (float)0.0003;
-                    light2.intensity += (float)0.0003;
-                    light3.intensity += (float)0.0003;
-                    light4.intensity += (float)0.0003;
+                    light1.intensity += (float)0.0005;
+                    light2.intensity += (float)0.0005;
+                    light3.intensity += (float)0.0005;
+                    light4.intensity += (float)0.0005;
                 }
                 if ((light1.intensity<0.6) && (light1.intensity>0.05))
     			{

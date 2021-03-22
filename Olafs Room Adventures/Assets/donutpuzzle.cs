@@ -83,14 +83,15 @@ public class donutpuzzle : MonoBehaviour
 
     private void isSolved()
     {
-        bool sred = (donuts[5].transform.position == positions[5]);
-        bool sblue = (donuts[4].transform.position == positions[4]);
-        bool sgreen = (donuts[3].transform.position == positions[3]);
-        bool sw1 = (donuts[2].transform.position == positions[2]);
-        bool sw2 = (donuts[1].transform.position == positions[1]);
-        bool sblack = (donuts[0].transform.position == positions[0]);
+        double err = 0.0001;
+        bool sred = (Vector3.Distance(donuts[5].transform.position, positions[5]) < err);
+        bool sblue = (Vector3.Distance(donuts[4].transform.position, positions[4]) < err);
+        bool sgreen = (Vector3.Distance(donuts[3].transform.position, positions[3]) < err);
+        bool sw1 = (Vector3.Distance(donuts[2].transform.position, positions[2]) < err);
+        bool sw2 = (Vector3.Distance(donuts[1].transform.position, positions[1]) < err);
+        bool sblack = (Vector3.Distance(donuts[0].transform.position, positions[0]) < err);
 
-        if(sred && sblue && sgreen && sw1 && sw2 && sblack)
+        if (sred && sblue && sgreen && sw1 && sw2 && sblack)
         {
             solved = true;
             bars.SetActive(false);
@@ -99,12 +100,13 @@ public class donutpuzzle : MonoBehaviour
 
     private void clippIt()
     {
-        red = (donuts[5].transform.position == positions[5]);
-        blue = (donuts[4].transform.position == positions[4]);
-        green = (donuts[3].transform.position == positions[3]);
-        w1 = (donuts[2].transform.position == positions[2]);
-        w2 = (donuts[1].transform.position == positions[1]);
-        black = (donuts[0].transform.position == positions[0]);
+        double err = 0.0001;
+        red = (Vector3.Distance(donuts[5].transform.position, positions[5]) < err);
+        blue = (Vector3.Distance(donuts[4].transform.position, positions[4]) < err);
+        green = (Vector3.Distance(donuts[3].transform.position, positions[3]) < err);
+        w1 = (Vector3.Distance(donuts[2].transform.position, positions[2]) < err);
+        w2 = (Vector3.Distance(donuts[1].transform.position, positions[1]) < err);
+        black = (Vector3.Distance(donuts[0].transform.position, positions[0]) < err);
         int distance = 9;
 
         if ((Vector3.Distance(donuts[1].transform.position, positions[1]) < distance) && !w2)

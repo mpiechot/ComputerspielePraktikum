@@ -121,8 +121,9 @@ MonoBehaviour:
   dialogueText:
     name: Brian
     sentences:
-    - Samsung
-    - Sesam
+    - <speed=30> Yep, i kinda lied! This room is not special at all <shake> HIHIHIHIHI
+    - Time to enter my last room! I bet you already miss some <size=100> <shake>
+      DYNAMITE
   retroactive: 0
   emitOnce: 0
 --- !u!114 &-1162724494710285899

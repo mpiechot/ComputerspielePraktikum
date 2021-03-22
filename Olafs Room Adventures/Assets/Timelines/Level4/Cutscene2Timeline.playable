@@ -81,12 +81,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94dd5e1107c8e9e4482ba209af035f56, type: 3}
   m_Name: Dialogue Marker
   m_EditorClassIdentifier: 
-  m_Time: 14.6
+  m_Time: 14.25
   dialogueText:
     name: Brian
     sentences:
-    - BAAAA
-    - LAAAAA
+    - <speed=30> Amazing!! Glad to see you doing so well!
+    - '<speed=30>The next room might seem a bit empty, but who knows?! Go and check
+      it out! <size=20> hihihihi '
   retroactive: 0
   emitOnce: 0
 --- !u!114 &1296146798738435977
@@ -663,25 +664,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     m_MixOutCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4

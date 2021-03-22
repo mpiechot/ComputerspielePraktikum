@@ -44,8 +44,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: DeathScream
-    clip: {fileID: 8300000, guid: 73dcd4e7bb9808f45bbeb1f79e9fe606, type: 3}
+  - name: urgh0
+    clip: {fileID: 8300000, guid: 286c1b8797adb1746a8ee7010f23d551, type: 3}
+    volume: 0.423
+    pitch: 1
+    source: {fileID: 0}
+  - name: urgh1
+    clip: {fileID: 8300000, guid: c6edb548b44c7f149a50cfdc907427e6, type: 3}
+    volume: 0.423
+    pitch: 1
+    source: {fileID: 0}
+  - name: urgh2
+    clip: {fileID: 8300000, guid: 1dc7e95f04ee00e4bafa3bf43cc73486, type: 3}
+    volume: 0.423
+    pitch: 1
+    source: {fileID: 0}
+  - name: urgh3
+    clip: {fileID: 8300000, guid: 173a4eede86fb644bb2df9eb28458a98, type: 3}
+    volume: 0.423
+    pitch: 1
+    source: {fileID: 0}
+  - name: urgh4
+    clip: {fileID: 8300000, guid: 896e8038bfcc01f46841616f0a74c6bb, type: 3}
     volume: 0.423
     pitch: 1
     source: {fileID: 0}

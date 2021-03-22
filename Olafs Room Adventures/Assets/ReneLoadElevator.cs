@@ -35,7 +35,7 @@ public class ReneLoadElevator : MonoBehaviour
             //FindObjectOfType<ReneLevelPartManager>()
             FindObjectOfType<ReneLevelPartManager>().loadPart("Raum1_Part2");
             FindObjectOfType<ReneLevelPartManager>().unLoadPart("Raum1_Part1");
-            BumperFireElevator.SetActive( false);
+            BumperFireElevator.SetActive(false);
             bLevelLoaded = true;
         }
             

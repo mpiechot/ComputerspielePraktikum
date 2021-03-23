@@ -15,8 +15,7 @@ public class TextureAnimator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_Material.mainTexture = textures[0];
-        PlayAnimation();
+        m_Material.mainTexture = textures[0]; 
     }
 
     // Update is called once per frame

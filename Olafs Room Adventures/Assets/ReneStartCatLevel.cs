@@ -20,7 +20,7 @@ public class ReneStartCatLevel : MonoBehaviour
         SoundSource.playOnAwake = false;
 
         SoundSource.Play();
-        
+        StartCoroutine(CatSmile());
     }
     private void Start()
     {
@@ -31,5 +31,10 @@ public class ReneStartCatLevel : MonoBehaviour
     void Update()
     {
         light.range = Mathf.Lerp(light.range, 60, Time.deltaTime);
+    }
+    private IEnumerator CatSmile()
+    {
+        yield return new WaitForSeconds(3);
+        FindObjectOfType<TextureAnimator>().PlayAnimation();
     }
 }

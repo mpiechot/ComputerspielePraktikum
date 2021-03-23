@@ -12,41 +12,79 @@ public class GameSaveController : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
+    {   
+        //// do all the stuff that must happen when you directly load this lvl (by pressing load game in the menu)
+        //if(Universal.load_game){
+        //    if(has_checkpoints){
+        //        // load checkpoint via SaveSystem
+        //        int checkpoint_id = SaveSystem.loadSceneCheckpoint();
+
+        //        // access checkpoint and enable all furnitures ...
+        //        GameObject checkpoint = checkpoints[checkpoint_id];
+
+        //        Vector3 position = checkpoint.GetComponent<CheckpointStartPosition>().position;
+        //        olaf_player.transform.position = position;
+
+
+        //        // access stored player specific informations (e.g. health) if necessary
+        //        PlayerData player_data = SaveSystem.loadPlayerData();
+
+        //        // assign attributes to the player
+        //        olaf_player.setCurrentHealth(player_data.current_health);
+        //    }
+        //    else{
+        //        // i think there is nothing else to do? No checkpoints -> only 1 room -> everything will be loaded anyway and player data are set to their desired values as well
+        //    }
+
+        //    // set load game back to false, else it would act wrong in the next scene
+        //    Universal.load_game = false;
+        //}
+        //else{
+        //    if(has_checkpoints){
+        //        save(0); // assume 0 as first checkpoint
+        //    }
+        //    else{
+        //        save();
+        //    }
+        //}
+    }
+
+    public void Load(CheckpointStartPosition start)
     {
+        Debug.Log($"Start: " + start.position);
         // do all the stuff that must happen when you directly load this lvl (by pressing load game in the menu)
-        if(Universal.load_game){
-            if(has_checkpoints){
+        if (Universal.load_game)
+        {
+            if (has_checkpoints)
+            {
                 // load checkpoint via SaveSystem
-                int checkpoint_id = SaveSystem.loadSceneCheckpoint();
-
-                // access checkpoint and enable all furnitures ...
-                GameObject checkpoint = checkpoints[checkpoint_id];
-
-                // do smth with it (e.g. load all objects of the respective checkpoint)
-                checkpoint.SetActive(true);
-
-                Vector3 position = checkpoint.GetComponent<CheckpointStartPosition>().position;
+                Vector3 position = start.position;
                 olaf_player.transform.position = position;
-
 
                 // access stored player specific informations (e.g. health) if necessary
                 PlayerData player_data = SaveSystem.loadPlayerData();
+                Debug.Log($"Load data: {player_data.current_health}");
 
                 // assign attributes to the player
                 olaf_player.setCurrentHealth(player_data.current_health);
+                olaf_player.InitCollectedKeys(player_data.collected_keyIDs);
             }
-            else{
+            else
+            {
                 // i think there is nothing else to do? No checkpoints -> only 1 room -> everything will be loaded anyway and player data are set to their desired values as well
             }
 
             // set load game back to false, else it would act wrong in the next scene
             Universal.load_game = false;
         }
-        else{
-            if(has_checkpoints){
+        else
+        {
+            if (has_checkpoints)
+            {
                 save(0); // assume 0 as first checkpoint
             }
-            else{
+            else
+            {
                 save();
             }
         }
@@ -72,7 +110,7 @@ public class GameSaveController : MonoBehaviour
         SaveSystem.saveSceneName(SceneManager.GetActiveScene().name);
 
         // overwrite currently stored player data
-        // SaveSystem.savePlayerData(olaf_player);
+        SaveSystem.savePlayerData(olaf_player);
     }
 
 

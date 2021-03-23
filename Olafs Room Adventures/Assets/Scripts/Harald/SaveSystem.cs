@@ -6,7 +6,6 @@ public static class SaveSystem
 {
     
     public static void saveSceneName(string name){
-        Debug.Log(Application.persistentDataPath);
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/savedscenename.lol";
         FileStream stream = new FileStream(path, FileMode.Create);
@@ -130,8 +129,10 @@ public static class SaveSystem
 public class PlayerData
 {
     public int current_health;
+    public int[] collected_keyIDs;
 
     public PlayerData(Player player){
         current_health = player.getCurrentHealth();
+        collected_keyIDs = player.collectedKeys.ToArray();
     }
 }

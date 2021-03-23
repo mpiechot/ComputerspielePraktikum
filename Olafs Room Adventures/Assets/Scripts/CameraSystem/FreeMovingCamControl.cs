@@ -19,7 +19,7 @@ public class FreeMovingCamControl : MonoBehaviour
 
     [Header("UI")]
     public bool cameraLocked = true;
-    public TextMeshProUGUI btText;
+    //public TextMeshProUGUI btText;
 
     [Header("Settings")]
     public bool invert;
@@ -209,7 +209,7 @@ public class FreeMovingCamControl : MonoBehaviour
     {
         cameraSwitch.SwitchCamerasBack();
         cameraLocked = false;
-        btText.text = "cam free";
+        //btText.text = "cam free";
         transform.position = cameraSwitch.newCam.transform.position;
         transform.rotation = Camera.main.transform.rotation;
         horizontal = Camera.main.transform.eulerAngles.y;
@@ -220,7 +220,7 @@ public class FreeMovingCamControl : MonoBehaviour
     {
         cameraSwitch.SwitchCameras();
         cameraLocked = true;
-        btText.text = "cam locked";
+        //btText.text = "cam locked";
     }
 
     public void OnButtonClick()

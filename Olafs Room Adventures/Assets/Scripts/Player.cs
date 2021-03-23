@@ -29,6 +29,9 @@ public class Player : MonoBehaviour
     private bool bIsOnFire = false;
     private bool CR_TakeDmgIsRunning = false;
 
+    [HideInInspector]
+    public List<int> collectedKeys = new List<int>();
+
     private GameObject FireFollowingOlaf;
     // Start is called before the first frame update
     void Start()
@@ -42,18 +45,20 @@ public class Player : MonoBehaviour
     public void TakeDamage(int dmg)
     {
         dmg = Mathf.Clamp(dmg, 0, maxDamage);
-        currentHealth -= dmg;
-        if (currentHealth <= 0)
-        {
-            Die();
-        }
-        healthBar?.setHealth(currentHealth);
+        int newHealth = currentHealth - dmg;
+
+        setCurrentHealth(newHealth);
+        
     }
     void Die()
     {
         Destroy(gameObject);
     }
 
+    public void OnCollectKey(Key key)
+    {
+        collectedKeys.Add(key.id);
+    }
 
 
     public void OnCollide(Collision collision)
@@ -88,6 +93,16 @@ public class Player : MonoBehaviour
         //}
     }
 
+    internal void InitCollectedKeys(int[] collected_keyIDs)
+    {
+        GameManager gm = GameManager.Instance;
+        for(int i = 0; i < collected_keyIDs.Length; i++)
+        {
+            int keyID = collected_keyIDs[i];
+            gm.keys[keyID].CollectKey();
+        }
+    }
+
     private IEnumerator Invincible()
     {
         invincible = true;
@@ -100,8 +115,13 @@ public class Player : MonoBehaviour
         return currentHealth;
     }
 
-    public void setCurrentHealth(int current_health) {
-        this.currentHealth = current_health;
+    public void setCurrentHealth(int newHealth) {
+        if (newHealth <= 0)
+        {
+            Die();
+        }
+        this.currentHealth = newHealth;
+        healthBar?.setHealth(currentHealth);
     }
     private IEnumerator TakeFireDmgEverySecond(int dmg)
     {
@@ -118,8 +138,7 @@ public class Player : MonoBehaviour
     public void resetHealth(){
         Debug.Log("HELLO WORLD");
         healingEffect.Play();
-        this.currentHealth = maxHealth;
-        healthBar?.setMaxHealth(this.currentHealth);
+        setCurrentHealth(maxHealth);
     }
 
     public void setOlafOnFire()
@@ -163,7 +182,7 @@ public class Player : MonoBehaviour
         while (Time.time - startTime < seconds)
         {
             if (currentHealth <= maxHealth)
-                setCurrentHealth(currentHealth + 2);
+                setCurrentHealth(Mathf.Min(currentHealth + 2,maxHealth));
 
             healthBar?.setHealth(currentHealth);
             Debug.Log("heealing " + getCurrentHealth());

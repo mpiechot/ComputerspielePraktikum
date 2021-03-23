@@ -7,6 +7,8 @@ public class AudioManager : MonoBehaviour
 
     public Sound[] sounds;
 
+    private float scale = 1f;
+
     void Awake()
     {
         foreach (Sound s in sounds)
@@ -26,6 +28,12 @@ public class AudioManager : MonoBehaviour
     public void PlayScream(){
         int id = (int)(UnityEngine.Random.Range(0f,1f) * 4);
         Sound s = Array.Find(sounds, sound => sound.name == "urgh" + id);
+        s.source.volume = s.volume * scale;
         s.source.Play();
+    }
+
+    public void setVolumeScale(float scale){
+        Debug.Log("CHANGE VOLUME SCALE");
+        this.scale = scale;
     }
 }

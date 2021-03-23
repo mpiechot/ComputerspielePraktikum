@@ -25,12 +25,12 @@ public class GravitySequenceRiddle : MonoBehaviour
         float gravityValue;
         if(currentIndex >= gravitySequence.Length)
         {
-            GetActivePairAndGravity(gravitySequence.Length-1,out activePair, out gravityValue);
-            if (activePair.value && gravityValue < 0 || !activePair.value && gravityValue > 0)
-            {
-                RiddleFailedEvent.Invoke();
-                currentIndex = 0;
-            }
+            //GetActivePairAndGravity(gravitySequence.Length-1,out activePair, out gravityValue);
+            //if (activePair.value && gravityValue < 0 || !activePair.value && gravityValue > 0)
+            //{
+            //    RiddleFailedEvent.Invoke();
+            //    currentIndex = 0;
+            //}
         }
         else
         {

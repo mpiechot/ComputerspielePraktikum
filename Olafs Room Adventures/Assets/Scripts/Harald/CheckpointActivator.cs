@@ -26,13 +26,17 @@ public class CheckpointActivator : MonoBehaviour
     private IEnumerator activeCheckpoint(float delay)
     {
         yield return new WaitForSeconds(delay);
+        ActivateCheckpoint();
+        ActivationDelayExpiredEvent.Invoke();
+        Debug.Log("checkpoint activates");
+    }
+    public void ActivateCheckpoint()
+    {
         Rigidbody[] rigidbodies = checkpoint_to_activate.GetComponentsInChildren<Rigidbody>();
         foreach (Rigidbody rb in rigidbodies)
         {
             rb.isKinematic = false;
             rb.useGravity = true;
         }
-        ActivationDelayExpiredEvent.Invoke();
-        Debug.Log("checkpoint activates");
     }
 }

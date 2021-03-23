@@ -9,12 +9,19 @@ public class Key : MonoBehaviour
     [SerializeField]
     private UnityEvent KeyCollectedEvent;
 
+    public int id;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            KeyCollectedEvent?.Invoke();
-            Destroy(gameObject);
+            CollectKey();
         }
+    }
+
+    public void CollectKey()
+    {
+        KeyCollectedEvent?.Invoke();
+        Destroy(gameObject);
     }
 }

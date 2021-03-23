@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI keysText;
 
+    public Key[] keys;
+
     private static GameManager gm;
     public static GameManager Instance { get { return gm;} }
     public bool PlayerHasKeys { get { return collectedKeys > 0; } }

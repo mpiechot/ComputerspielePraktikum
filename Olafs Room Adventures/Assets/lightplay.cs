@@ -99,7 +99,7 @@ public class lightplay : MonoBehaviour
                 //nighttop.SetActive(true);
        		}
 
-            if (Timer2 >= 600)
+            if (Timer2 >= 360)
             {
                 activateHelp();
             }

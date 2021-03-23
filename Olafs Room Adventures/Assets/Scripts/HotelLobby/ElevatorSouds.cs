@@ -37,7 +37,7 @@ public class ElevatorSouds : MonoBehaviour
     public void playSounds()
     {
         if (!elevatorSoundSource.isPlaying)
-            elevatorSoundSource?.Play();
+            elevatorSoundSource.Play();
     }
     public void playBellSound()
     {

@@ -43,6 +43,8 @@ public class StartBrianCutscene : MonoBehaviour
         
         yield return new WaitForSeconds(7);
         flames.startFlames();
+        Debug.Log("guitaaarr");
+        song.playGuitar();
         
        
     }

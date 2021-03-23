@@ -724,9 +724,9 @@ MonoBehaviour:
     sentences:
     - 'Howdy!<pause=0.5>
 
-      Welcome to my favorite room!<pause=0.5> I can''t
-      tell you exactly why it is my favorite room, but something about it appeals
-      to me...'
+      <shake>Welcome to my favorite room!<pause=0.5> I
+      can''t tell you exactly why it is my favorite room, but something about it
+      appeals to me...'
     - 'However,<pause=0.3> the door of this room is locked and without a key you
       won''t be able to open it. '
     - You would like to have the key?<pause=0.5> I'm really sorry, I lost it.<pause=0.4>

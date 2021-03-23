@@ -562,10 +562,14 @@ MonoBehaviour:
     - Anyway, <pause=0.5> to make it work, I disabled your ability to move on your
       own. Totally reversible, of course. <pause=1><size=50%>I hope.
     - <size=100%>In order to move, you need to shift gravity. Press <b>W</b> to move
-      north, <pause=0.5><b>S</b> to move south, <pause=0.5><b>A</b> to move east,
-      <pause=0.5>and <b>D</b> to move west.
+      forward, <pause=0.5><b>S</b> to move backward, <pause=0.5><b>A</b> to move
+      right, <pause=0.5>and <b>D</b> to move left.
     - With <b>Q</b> you can move down and with <b>E</b> you can move up. <pause=0.5>
       Easy enough, right?
+    - You can also move the camera around to get a better look at your surroundings.
+      Just press the space bar to activate or deactivate it.
+    - Rotate the camera by holding down the right mouse button. You can also move
+      it around by pressing the mouse wheel or scroll.
     - Why don't go give it a try and move through that loop over there.
   retroactive: 0
   emitOnce: 0

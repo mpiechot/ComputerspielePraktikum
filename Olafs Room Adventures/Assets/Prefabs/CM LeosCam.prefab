@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oldCam: {fileID: 8987176873540290165}
-  newCam: {fileID: 0}
+  newCam: {fileID: 6876013543629256597, guid: 3b9a6041bef03a64aa188aac0cdcfec9, type: 3}
 --- !u!65 &8987176873540290168
 BoxCollider:
   m_ObjectHideFlags: 0

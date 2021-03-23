@@ -722,16 +722,19 @@ MonoBehaviour:
   dialogueText:
     name: Brian
     sentences:
-    - 'Howdy!<pause=0.5>
+    - 'Olaf, you are finally here! I kinda missed hanging out with you.<pause=0.5>
+      Don''t look so desperate, I know you did, too!
 
-      <shake>Welcome to my favorite room!<pause=0.5> I
-      can''t tell you exactly why it is my favorite room, but something about it
-      appeals to me...'
-    - 'However,<pause=0.3> the door of this room is locked and without a key you
-      won''t be able to open it. '
-    - You would like to have the key?<pause=0.5> I'm really sorry, I lost it.<pause=0.4>
-      <size=50%>No, I haven't.
-    - Anyway, you better start looking! <size=120%>WAHA!
+'
+    - I redecorated this room for you, so you know I will always be with you.
+    - But while I was redecorating I accidently activated an old puzzle - now the
+      key is gone and the door is locked. And there is no other way out.
+    - You need to solve the puzzle to get the key.<pause=0.5> Sorry, I can't help
+      you, I'm busy <pause=0.5>. <pause=0.5>. <pause=0.5>. <pause=0.5><speed=100>
+      <size=150%> WATCHING YOU FAIL!!
+    - '<size=150%>Have fuuuuun!
+
+      <shake>WAHAHAHAHAHAHAHAHAHAHAHAHAHA'
   retroactive: 0
   emitOnce: 0
 --- !u!114 &-370334000673677571

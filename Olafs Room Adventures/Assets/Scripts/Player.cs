@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private Inventory inventory;
     [SerializeField]
     private float invincibleTime;
+    [SerializeField]
+    private ParticleSystem healingEffect;
     [SerializeField, Range(0, 300)]
     private float wallDamageThreshold;
 
@@ -31,6 +33,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        healingEffect.Stop();
         currentHealth = maxHealth;
         healthBar?.setMaxHealth(maxHealth);
         FireFollowingOlaf = GameObject.Find("FireFollowingOlaf");
@@ -114,6 +117,7 @@ public class Player : MonoBehaviour
 
     public void resetHealth(){
         Debug.Log("HELLO WORLD");
+        healingEffect.Play();
         this.currentHealth = maxHealth;
         healthBar?.setMaxHealth(this.currentHealth);
     }
@@ -153,6 +157,9 @@ public class Player : MonoBehaviour
     private IEnumerator healEveryHalfSecond(float seconds)
     {
         float startTime = Time.time;
+        ParticleSystem.MainModule main = healingEffect.main;
+        main.loop = true;
+        healingEffect.Play();
         while (Time.time - startTime < seconds)
         {
             if (currentHealth <= maxHealth)
@@ -163,5 +170,7 @@ public class Player : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
 
         }
+        main.loop = false;
+        healingEffect.Stop();
     }
 }

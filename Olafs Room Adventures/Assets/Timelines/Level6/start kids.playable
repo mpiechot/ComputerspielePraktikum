@@ -529,6 +529,7 @@ MonoBehaviour:
     - "Anyway ....\nAs you can see I the big almighty Brian have given \nmyself the
       liberty to recreate your old room\nwith some slight modifications!"
     - Don't you think it's much better now?
+    - "You can move the pieces of the \nSHIFTPUZZLE by using A,D,Q and E!"
     - 'Well....
 
       Your task should be obvious, so I''m leaving.
@@ -538,7 +539,7 @@ MonoBehaviour:
 
       (on my 99" Flatscreen OLED Suppertv)'
   retroactive: 0
-  emitOnce: 1
+  emitOnce: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

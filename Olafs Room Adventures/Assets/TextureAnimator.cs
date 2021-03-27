@@ -10,12 +10,31 @@ public class TextureAnimator : MonoBehaviour
     private Texture[] textures;
     private float animationDelay = 0.1f;
 
+    [SerializeField] 
+    private bool SwitchAtRandom = false;
+    [SerializeField]
+    private bool PlayOnAwake = false;
+    private float randomRange = 20f;
+
     private bool CR_Running = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        m_Material.mainTexture = textures[0]; 
+        m_Material.mainTexture = textures[0];
+        if (PlayOnAwake)
+        {
+            if (SwitchAtRandom)
+            {
+                StartCoroutine(SwitchtexturesRandom());
+            }
+            else 
+            {
+                StartCoroutine(SwitchtexturesInOrder());
+            }
+
+            
+        }
     }
 
     // Update is called once per frame
@@ -23,7 +42,14 @@ public class TextureAnimator : MonoBehaviour
     {
         if (!CR_Running)
         {
-            StartCoroutine(SwitchtexturesInOrder());
+            if (SwitchAtRandom)
+            {
+                StartCoroutine(SwitchtexturesRandom());
+            }
+            else
+            {
+                StartCoroutine(SwitchtexturesInOrder());
+            }
         }
     }
 
@@ -33,10 +59,27 @@ public class TextureAnimator : MonoBehaviour
         for (int i = 0; i < textures.Length; i++)
         {
             m_Material.mainTexture = textures[i];
+            if (SwitchAtRandom)
+                animationDelay = Random.Range(5, randomRange);
             yield return new WaitForSeconds(animationDelay);
         }
         CR_Running = false;
     }
+
+    private IEnumerator SwitchtexturesRandom()
+    {
+        CR_Running = true;
+
+        animationDelay = Random.Range(5, randomRange);
+        yield return new WaitForSeconds(animationDelay);
+        
+        int i = Random.Range(0, textures.Length);
+        m_Material.mainTexture = textures[i];
+        
+        CR_Running = false;
+    }
+
+
 
     private void OnDestroy()
     {

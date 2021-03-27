@@ -14,7 +14,9 @@ public class TextureAnimator : MonoBehaviour
     private bool SwitchAtRandom = false;
     [SerializeField]
     private bool PlayOnAwake = false;
-    private float randomRange = 20f;
+    [SerializeField]
+    private bool PlayOnRepeat = false;
+    private float randomRange = 3f;
 
     private bool CR_Running = false;
 
@@ -37,6 +39,11 @@ public class TextureAnimator : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(PlayOnRepeat)
+            PlayAnimation();
+    }
     // Update is called once per frame
     public void PlayAnimation()
     {
@@ -60,7 +67,7 @@ public class TextureAnimator : MonoBehaviour
         {
             m_Material.mainTexture = textures[i];
             if (SwitchAtRandom)
-                animationDelay = Random.Range(5, randomRange);
+                animationDelay = Random.Range(3, randomRange);
             yield return new WaitForSeconds(animationDelay);
         }
         CR_Running = false;

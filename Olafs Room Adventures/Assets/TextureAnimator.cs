@@ -77,7 +77,7 @@ public class TextureAnimator : MonoBehaviour
     {
         CR_Running = true;
 
-        animationDelay = Random.Range(5, randomRange);
+        animationDelay = Random.Range(8, randomRange);
         yield return new WaitForSeconds(animationDelay);
         
         int i = Random.Range(0, textures.Length);

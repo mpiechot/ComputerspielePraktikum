@@ -83,7 +83,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_4A98FAF: {r: 0.383, g: 0.32840866, b: 0.272, a: 0}
-    - _BaseColor: {r: 0.30588236, g: 0.21568629, b: 0.18039216, a: 1}
+    - _BaseColor: {r: 0.2264151, g: 0.16359293, b: 0.10359559, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Position: {r: 0.5, g: 0.44999954, b: 4.2789087, a: 0}

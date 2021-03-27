@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 71683770}
   m_Layer: 0
   m_Name: InvincibleLeftWall
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5640,7 +5640,7 @@ GameObject:
   - component: {fileID: 709611787}
   m_Layer: 0
   m_Name: InvincibleCeiling
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7230,7 +7230,7 @@ GameObject:
   - component: {fileID: 955887685}
   m_Layer: 0
   m_Name: InvincibleRightWall
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7749,6 +7749,50 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &968455566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 968455568}
+  - component: {fileID: 968455567}
+  m_Layer: 0
+  m_Name: Invis
+  m_TagString: NoCollisionDmg
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &968455567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968455566}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 35.08, y: 18.29, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &968455568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 968455566}
+  m_LocalRotation: {x: -0.009666841, y: -0.96494305, z: 0.0003665969, w: 0.26228103}
+  m_LocalPosition: {x: 37.898136, y: 10.173724, z: -23.999985}
+  m_LocalScale: {x: 0.34979936, y: 0.6663712, z: 0.60955024}
+  m_Children: []
+  m_Father: {fileID: 543450652502725820}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: -0.25, y: -59.59, z: 1.08}
 --- !u!850595691 &971754269
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -8440,7 +8484,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh170444
+  m_Name: pb_Mesh126524
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9753,7 +9797,7 @@ GameObject:
   - component: {fileID: 1258830335}
   m_Layer: 0
   m_Name: InvincibleCeiling (1)
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9880,6 +9924,50 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261268758}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1267644114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1267644116}
+  - component: {fileID: 1267644115}
+  m_Layer: 0
+  m_Name: Invis
+  m_TagString: NoCollisionDmg
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1267644115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267644114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 35.08, y: 18.29, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1267644116
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1267644114}
+  m_LocalRotation: {x: -0.0087033715, y: -0.97491467, z: -0.0042229774, w: -0.22236884}
+  m_LocalPosition: {x: 38.755276, y: 10.173724, z: 10.000015}
+  m_LocalScale: {x: 0.33009097, y: 0.6664969, z: 0.68020225}
+  m_Children: []
+  m_Father: {fileID: 543450652502725820}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: -0.25, y: -115.7, z: 1.08}
 --- !u!43 &1336001986
 Mesh:
   m_ObjectHideFlags: 0
@@ -13717,7 +13805,7 @@ GameObject:
   - component: {fileID: 1932050007}
   m_Layer: 0
   m_Name: CaveWater
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16949,6 +17037,8 @@ Transform:
   - {fileID: 71683769}
   - {fileID: 955887684}
   - {fileID: 1258830334}
+  - {fileID: 968455568}
+  - {fileID: 1267644116}
   m_Father: {fileID: 784158503}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -16965,7 +17055,7 @@ GameObject:
   - component: {fileID: 4539702729313691032}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16981,7 +17071,7 @@ GameObject:
   - component: {fileID: 543450652502725820}
   m_Layer: 0
   m_Name: cave2
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17054,7 +17144,7 @@ GameObject:
   - component: {fileID: 8247994413001706931}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17225,7 +17315,7 @@ GameObject:
   - component: {fileID: 5320856373459152844}
   m_Layer: 0
   m_Name: Zange
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17323,7 +17413,7 @@ GameObject:
   - component: {fileID: 3853385374199702698}
   m_Layer: 0
   m_Name: Wall1
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17341,7 +17431,7 @@ GameObject:
   - component: {fileID: 3326203830186507697}
   m_Layer: 0
   m_Name: Wall1.001
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17425,7 +17515,7 @@ GameObject:
   - component: {fileID: 8626888538336251981}
   m_Layer: 0
   m_Name: Zange.001
-  m_TagString: Untagged
+  m_TagString: NoCollisionDmg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

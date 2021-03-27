@@ -20,6 +20,8 @@ public class Pengu : MonoBehaviour
     private bool bBlinzeln = true;
     [SerializeField]
     private bool bPlayScreamSounds = true;
+    [SerializeField]
+    private Transform lookAt;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +41,13 @@ public class Pengu : MonoBehaviour
         
         if(bPlayScreamSounds)
             Sounds.playSounds("PenguScreamSoundClip" , 100);//play Scream
+
+        if (lookAt != null)
+        {
+            //float xRotation = transform.rotation.x;
+            //float zRotation = transform.rotation.z;
+            transform.LookAt(lookAt);
+        }
     }
 
     IEnumerator blinzeln()
@@ -56,5 +65,8 @@ public class Pengu : MonoBehaviour
         m_Material.mainTexture = penguTex;
     }
 
-    
+    public void LookAtObject()
+    {
+        
+    }
     }

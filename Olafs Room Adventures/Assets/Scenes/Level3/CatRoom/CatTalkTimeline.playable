@@ -25,6 +25,28 @@ MonoBehaviour:
     m_Objects:
     - {fileID: 39212437532963935}
     - {fileID: 6516285019604421895}
+    - {fileID: 2913406262179899517}
+    - {fileID: 2719374453086485027}
+    - {fileID: -6779040207193418462}
+--- !u!114 &-6779040207193418462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94dd5e1107c8e9e4482ba209af035f56, type: 3}
+  m_Name: Dialogue Marker
+  m_EditorClassIdentifier: 
+  m_Time: 15.05
+  dialogueText:
+    name: Cat Genie
+    sentences:
+    - <size=150%>Alright! I will grant your wish!
+  retroactive: 0
+  emitOnce: 0
 --- !u!114 &-1482587628863445122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +103,41 @@ MonoBehaviour:
 
       <pause=1>
       What do you desire the most?'
+  retroactive: 0
+  emitOnce: 0
+--- !u!114 &2719374453086485027
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
+  m_Name: Signal Emitter
+  m_EditorClassIdentifier: 
+  m_Time: 12.983333333333333
+  m_Retroactive: 0
+  m_EmitOnce: 0
+  m_Asset: {fileID: 11400000, guid: d65fa5a94eabf9841949913a68399093, type: 2}
+--- !u!114 &2913406262179899517
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94dd5e1107c8e9e4482ba209af035f56, type: 3}
+  m_Name: Dialogue Marker
+  m_EditorClassIdentifier: 
+  m_Time: 9.933333333333334
+  dialogueText:
+    name: Cat Genie
+    sentences:
+    - What you just want to get to the next Level?
   retroactive: 0
   emitOnce: 0
 --- !u!114 &5762486265687015680
@@ -175,7 +232,7 @@ MonoBehaviour:
     m_Start: 2.55
     m_ClipIn: 0
     m_Asset: {fileID: 5762486265687015680}
-    m_Duration: 23.583333333333336
+    m_Duration: 33.88333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: 5974610703514365402}
     m_EaseInDuration: 0
@@ -236,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 12.583333333333334
+  m_Time: 9.6
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: d65fa5a94eabf9841949913a68399093, type: 2}

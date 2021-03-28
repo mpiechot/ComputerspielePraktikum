@@ -23,7 +23,7 @@ public class ReneTeaser : MonoBehaviour
 
     private IEnumerator teaser()
     {
-        yield return new WaitForSeconds(22);
+        yield return new WaitForSeconds(30);
         float startTime = Time.time;
         //cineCam.LookAt = transform;
         while (Time.time - startTime <= 1)

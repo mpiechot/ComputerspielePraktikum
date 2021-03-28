@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class OptionsStart : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class OptionsStart : MonoBehaviour
     public Dropdown resolutionsDropdown;
 
     public GameObject qualitymenu, soundmenu, self, main;
+
+    private float currentVolume = 0;
+
+    private bool mute = false;
 
     void Start()
     {
@@ -34,6 +39,33 @@ public class OptionsStart : MonoBehaviour
         resolutionsDropdown.AddOptions(options);
         resolutionsDropdown.value = currentResolutionsIndex;
         resolutionsDropdown.RefreshShownValue();
+    }
+
+    void Update()
+    {
+        Debug.Log(AudioListener.volume);   
+    }
+
+    public void SetVolume(float volume)
+    {
+        if (!mute)
+        {
+            AudioListener.volume = volume;
+        }
+    }
+
+    public void toggleMute(bool muted)
+    {
+        if (muted)
+        {
+            currentVolume = AudioListener.volume;
+            AudioListener.volume = 0;
+        }
+        if (!muted)
+        {
+            AudioListener.volume = currentVolume;
+        }
+        mute = muted;
     }
 
     public void SetQuality(int qualityIndex)

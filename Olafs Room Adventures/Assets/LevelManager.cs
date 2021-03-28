@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     private int currentCheckpoint = 0;
     private void Start()
     {
+        //PlayerPrefs.SetInt("CurrentCheckpoint", 0);
         currentCheckpoint = PlayerPrefs.GetInt("CurrentCheckpoint");
         if(currentCheckpoint > 0)
         {

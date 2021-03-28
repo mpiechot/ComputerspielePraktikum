@@ -28,7 +28,7 @@ public class PassCodeQuestioning : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enteredCode.color = Color.white;
+        enteredCode.color = Color.black;
         enteredCode.text = "";
         if (codeNR)
         {
@@ -181,7 +181,7 @@ public class PassCodeQuestioning : MonoBehaviour
             }
             else
             {
-                enteredCode.text = "Entered Code is to short!";
+                enteredCode.text = "Entered Code is wrong!";
                 yield return new WaitForSeconds(3);
                 enteredCode.text = "";
             }

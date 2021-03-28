@@ -6,69 +6,48 @@ using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public bool pause_menu_open = false;
-    public bool options_menu_open = false;
-
     public GameObject pause_menu_panel;
     public GameObject options_menu_panel;
-    public Slider slider;
+    public GameObject buttons;
 
+    bool paused = false;
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            if(pause_menu_open){
-                Resume();
-            }
-            else if(options_menu_open){
-                SetActivePauseMenu(true);
-                SetActiveOptionsMenu(false);
-            }
-            else{
+        if (Input.GetKeyDown(KeyCode.Escape))
+        { 
+            if (!paused)
+            {
                 showPause();
             }
         }
     }
 
     public void Resume(){
-        SetActivePauseMenu(false);
+        pause_menu_panel.SetActive(false);
+        options_menu_panel.SetActive(false);
         Time.timeScale = 1f;
     }
 
     public void showPause(){
-        SetActivePauseMenu(true);
-        SetActiveOptionsMenu(false);
         Time.timeScale = 0f;
+        pause_menu_panel.SetActive(true);
     }
 
-
-    public void LoadMenu(){
-        Debug.Log("Load Menu");
-        //Time.timeScale = 1f;
-        //SceneManager.LoadScene();
+    public void showOptions()
+    {
+        buttons.SetActive(false);
+        options_menu_panel.SetActive(true);
     }
 
-    public void QuitGame(){
-        Debug.Log("Quit Game");
-        Application.Quit();
+    public void backyopause()
+    {
+        buttons.SetActive(true);
+        options_menu_panel.SetActive(false);
     }
 
-    public void showOptions(){
-        SetActivePauseMenu(false);
-        SetActiveOptionsMenu(true);
-    }
-
-    public void SetActivePauseMenu(bool active){
-        pause_menu_open = active;
-        pause_menu_panel.SetActive(active);
-    }
-
-    public void SetActiveOptionsMenu(bool active){
-        options_menu_open = active;
-        options_menu_panel.SetActive(active);
-    }
-
-    public void ChangeVolume(){
-        GameObject.Find("AudioManager").transform.GetComponent<AudioManager>().setVolumeScale(slider.value);
+    public void backToMain()
+    {
+        SceneManager.LoadScene("StartMenu", LoadSceneMode.Single);
     }
 }

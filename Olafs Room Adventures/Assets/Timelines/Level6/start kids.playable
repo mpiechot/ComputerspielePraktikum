@@ -380,7 +380,7 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 3845950153251812363}
-    m_Duration: 20
+    m_Duration: 18.633333333333333
     m_TimeScale: 1
     m_ParentTrack: {fileID: -2055286526464461012}
     m_EaseInDuration: 0
@@ -446,10 +446,10 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: CM vcam1
   - m_Version: 1
-    m_Start: 18.766666666666666
+    m_Start: 17.4
     m_ClipIn: 0
     m_Asset: {fileID: -499638224622189209}
-    m_Duration: 1.6999999999999993
+    m_Duration: 3.0666666666666664
     m_TimeScale: 1
     m_ParentTrack: {fileID: -2055286526464461012}
     m_EaseInDuration: 0

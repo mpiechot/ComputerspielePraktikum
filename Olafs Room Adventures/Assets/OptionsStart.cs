@@ -43,7 +43,7 @@ public class OptionsStart : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(AudioListener.volume);   
+        //Debug.Log(AudioListener.volume);   
     }
 
     public void SetVolume(float volume)

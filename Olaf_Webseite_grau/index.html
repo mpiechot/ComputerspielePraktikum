@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Brian's Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="parallax__group hero-container">
+        <div class="parallax__layer sky"></div>
+        <div class="parallax__layer bushes"></div>
+        <div class="parallax__layer water"></div>
+        <div class="parallax__layer people1"></div>
+        <div class="parallax__layer people2"></div>
+        <div class="parallax__layer people3"></div>
+        <div class="parallax__layer hero-text">
+          <div class="logo-container">
+            <div class="logo2">
+              <p class="title">Olaf's</p>
+              <p class="title">Room Adventures</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="parallax__group content-container">
+        <div class="content">
+          <div class="teaser">
+            <h2>An adventure game about a guy and a penguin hanging out.<br> And gravity is weird.</h2>
+
+            <div class="container">
+              <div class="mySlides">
+                <div class="numbertext"></div>
+                <video controls>
+                  <source src="img/trailer.mp4" type="video/mp4">
+                </video>
+              </div>
+            
+              <div class="mySlides">
+                <div class="numbertext"></div>
+                <video controls>
+                  <source src="img/trailer.mp4" type="video/mp4">
+                </video>
+              </div>
+            
+              <div class="row">
+                <div class="column">
+                  <img class="demo cursor" src="img/test.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                </div>
+                <div class="column">
+                  <img class="demo cursor" src="img/test.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                </div>
+                  
+              </div>
+            </div>
+            
+            <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("demo");
+              var captionText = document.getElementById("caption");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+            </script>
+            
+            <h3>
+              Manipulate gravity to move around
+            </h3>
+            <h3>
+              Find keys or solve riddles
+            </h3>
+            <h3>
+              And try to get out alive
+            </h3>
+          </div>
+          
+          <div class="teaser_slogans">
+            
+          </div>
+          
+          <div class="steam">
+            <a href="#" class="btn">Buy on Steam</a>
+          </div>
+          
+
+          <div class="description">
+            <h2>About this game</h2>
+            <p>
+              Join Olaf on his journey through a strange world. A world in which you can only move if you 
+              manipulate gravity. So forget the traditional way of moving &mdash; because you can't do that anyway.<br>
+              This 3D puzzle tests not only your skill, but also your logical thinking.
+              A dangerous journey lies ahead of you and don't even bother, there is no one to help you. 
+              Solve puzzles or find keys and try to make it out alive! Because a penguin is out to get you and 
+              he knows no half measures &mdash; except maybe cutting you in half.
+            </p>
+          </div>
+
+          <div class="cool_images">
+            <img src="img/test.png" alt="">
+            <img src="img/test.png" alt="">
+            <img src="img/test.png" alt="">
+            <img src="img/test.png" alt="">
+          </div> 
+          
+          <div class="creators">
+            <p>created by</p>
+            <h2>Marco, Harald, Rene, Phillip and Leonie</h2>
+          </div>
+
+          <div class="reviews">
+            <h2>Reviews</h2>
+            <div class="review">
+              <img src="img/test.png" alt="">
+              <h3>Brian</h3>
+              <p>BEST. GAME. EVER.<br> CAN'T STOP PLAYING &mdash; SO AWESOME.</p>
+            </div>
+            <div class="review">
+              <img src="img/brian_glasses.png" alt="">
+              <h3>Mr Pengu</h3>
+              <p>
+                I thought this game sucked until I started to play. It was awesome. The world. The story. The
+                characters. It was like... I was IN the game!<br>
+                I can only recommend this game. It's awesome. 5/5 penguins.
+              </p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

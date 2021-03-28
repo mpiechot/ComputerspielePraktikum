@@ -36,5 +36,7 @@ public class ReneStartCatLevel : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         FindObjectOfType<TextureAnimator>().PlayAnimation();
+        yield return new WaitForSeconds(18);
+        Debug.Log("LoadNextScene ....");
     }
 }

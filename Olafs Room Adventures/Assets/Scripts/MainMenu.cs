@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject opmenu, self;
+
     public void PlayGame ()
     {
     	SceneManager.LoadScene("Philipp", LoadSceneMode.Single);
@@ -14,6 +16,12 @@ public class MainMenu : MonoBehaviour
     {
         Universal.load_game = true;
         SceneManager.LoadScene(SaveSystem.loadSceneName(), LoadSceneMode.Single);
+    }
+
+    public void Options()
+    {
+        self.SetActive(false);
+        opmenu.SetActive(true);
     }
 
     public void ExitGame ()

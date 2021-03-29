@@ -55,12 +55,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 12.75
   dialogueText:
-    name: 
+    name: Brian
     sentences:
     - <size=250%>Hi!
     - <speed=30> I am so glad that you are back to consciuosness and finally here
-      in my <pause=0.5> . <pause=0.5> .  <pause=0.5> .  <shake> <size=50>  DYNAMITE
-      LEVEL
+      in my <pause=0.5> . <pause=0.5> .  <pause=0.5> .  <size=50>  DYNAMITE LEVEL
     - <speed=30> When i was a baby, mama Brian has let me play with dynamite every
       day! <size=10> (She was so caring until i ate her, lol)
     - <speed=30>Anyway, I want to share my experiences with you! To do so, feel free

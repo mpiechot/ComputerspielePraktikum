@@ -36,7 +36,7 @@ public class lightplay : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-    	Debug.Log("triggerevent startet");
+    	//Debug.Log("triggerevent startet");
     	if(other.tag == "Player")
     	{
     		entered = true;
@@ -45,7 +45,7 @@ public class lightplay : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-    	Debug.Log("triggerevent endet");
+    	//Debug.Log("triggerevent endet");
     	if(other.tag == "Player")
     	{
     		entered = false;

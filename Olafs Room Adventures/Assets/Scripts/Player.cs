@@ -40,6 +40,7 @@ public class Player : MonoBehaviour
         currentHealth = maxHealth;
         healthBar?.setMaxHealth(maxHealth);
         FireFollowingOlaf = GameObject.Find("FireFollowingOlaf");
+        healOverTime(5);
     }
 
     public void TakeDamage(int dmg)
@@ -182,7 +183,7 @@ public class Player : MonoBehaviour
         while (Time.time - startTime < seconds)
         {
             if (currentHealth <= maxHealth)
-                setCurrentHealth(Mathf.Min(currentHealth + 2,maxHealth));
+                setCurrentHealth(Mathf.Min(currentHealth + 10,maxHealth));
 
             healthBar?.setHealth(currentHealth);
             Debug.Log("heealing " + getCurrentHealth());

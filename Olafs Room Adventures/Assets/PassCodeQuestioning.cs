@@ -170,8 +170,8 @@ public class PassCodeQuestioning : MonoBehaviour
         {
             if (Code == enteredCode.text)
             {
-                toDisableObject1.active = false;
-                toDisableObject2.active = false;
+                toDisableObject1.SetActive(false);
+                toDisableObject2.SetActive(false);
                 enteredCode.text = "Correct";
                 yield return new WaitForSeconds(3);
                 Keypad.gameObject.SetActive(false);

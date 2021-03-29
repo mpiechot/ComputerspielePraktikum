@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1050604410}
   - component: {fileID: 3859216785559948735}
   - component: {fileID: 1050604411}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: spine
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -4.6411155e-10, y: 0.020087963, z: -0.000000045169145}
+  m_ConnectedAnchor: {x: -4.6411158e-10, y: 0.020087963, z: 0.0000005653128}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -227,6 +227,7 @@ MonoBehaviour:
   invincibleTime: 1
   healingEffect: {fileID: 4949892725136045923}
   wallDamageThreshold: 10
+  collectedKeys: 
 --- !u!1 &2360474127206489701
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +241,7 @@ GameObject:
   - component: {fileID: 1550773061600732009}
   - component: {fileID: 1550773061600732011}
   - component: {fileID: 938121595}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterbein R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -304,7 +305,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.000117522635, y: 0.015267972, z: -0.00000007056748}
+  m_ConnectedAnchor: {x: -0.000117522286, y: 0.015267964, z: 0.0000006931171}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -360,7 +361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3385624160123486718}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterarm recht_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +393,7 @@ GameObject:
   - component: {fileID: 7598670769408134951}
   - component: {fileID: 6346074716507952008}
   - component: {fileID: 6091468974960938102}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oberschenkel R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -440,7 +441,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -475,7 +476,7 @@ GameObject:
   - component: {fileID: 1550773061720753611}
   - component: {fileID: 1550773061720753613}
   - component: {fileID: 821274677}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterarm link
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -539,7 +540,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000009190729, y: 0.011711213, z: -0.000000045975487}
+  m_ConnectedAnchor: {x: 0.000009187469, y: 0.011711232, z: 0.0000007170105}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -599,7 +600,7 @@ GameObject:
   - component: {fileID: 1550773063097869447}
   - component: {fileID: 1550773063097869560}
   - component: {fileID: 472121275}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oberarm link
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -663,7 +664,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.015533447, y: 0.005568233, z: -0.0000000026107865}
+  m_ConnectedAnchor: {x: -0.015533449, y: 0.005568231, z: 0.0000007601424}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -719,7 +720,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2888989737284336751}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: root
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -751,7 +752,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5451422590108481981}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: playerEffects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -782,7 +783,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7320001997914791564}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterbein L_end
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -814,7 +815,7 @@ GameObject:
   - component: {fileID: 4661985426187592252}
   - component: {fileID: 202979681036764606}
   - component: {fileID: 1788452488074957799}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterarm R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +863,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -895,7 +896,7 @@ GameObject:
   - component: {fileID: 1749112530618330311}
   - component: {fileID: 4354664015970368323}
   - component: {fileID: 7084299769631650753}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterschenkel L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -943,7 +944,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -976,7 +977,7 @@ GameObject:
   - component: {fileID: 7301780446737749735}
   - component: {fileID: 4949892725136045923}
   - component: {fileID: 8793941453302022112}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Healing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5853,7 +5854,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3272151452897037031}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterbein R_end
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5885,7 +5886,7 @@ GameObject:
   - component: {fileID: 8072742785911263337}
   - component: {fileID: 5314780294895711136}
   - component: {fileID: 7004248161199298577}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oberschenkel L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5933,7 +5934,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5964,7 +5965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7975058330219193781}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterarm link_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5996,7 +5997,7 @@ GameObject:
   - component: {fileID: 414008199879436574}
   - component: {fileID: 2916756600691751041}
   - component: {fileID: 5326656528970282411}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: kopf
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6044,7 +6045,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6075,7 +6076,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 32049125034238479}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: head_end
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6109,7 +6110,7 @@ GameObject:
   - component: {fileID: 1550773063084699785}
   - component: {fileID: 1550773063084699787}
   - component: {fileID: 1932380340}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterbein L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6173,7 +6174,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.00015148679, y: 0.015263939, z: 0.0000000012813932}
+  m_ConnectedAnchor: {x: 0.00015148625, y: 0.015263936, z: 0.00000076496593}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -6231,7 +6232,7 @@ GameObject:
   - component: {fileID: 7393238594099982992}
   - component: {fileID: 5537220926431874277}
   - component: {fileID: 3146283808269654204}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterschenkel R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6279,7 +6280,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6314,7 +6315,7 @@ GameObject:
   - component: {fileID: 1550773063170006334}
   - component: {fileID: 1550773063170006320}
   - component: {fileID: 1210676010}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: head
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6377,7 +6378,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 1.4895398e-14, y: 0.014120325, z: 0.00000006143274}
+  m_ConnectedAnchor: {x: 1.2403475e-13, y: 0.014120322, z: 0.0000005177808}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -6437,7 +6438,7 @@ GameObject:
   - component: {fileID: 1550773062582809432}
   - component: {fileID: 1550773062582809433}
   - component: {fileID: 115533707}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oberbein L
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6501,7 +6502,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.003752441, y: -0.003665165, z: 0.000000008345232}
+  m_ConnectedAnchor: {x: 0.0037524414, y: -0.0036651818, z: 0.00000061929285}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -6559,7 +6560,7 @@ GameObject:
   - component: {fileID: 2145392691175093181}
   - component: {fileID: 6379658196323242954}
   - component: {fileID: 2612357027775436269}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: brust
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6607,7 +6608,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6640,7 +6641,7 @@ GameObject:
   - component: {fileID: 6006807095542648674}
   - component: {fileID: 8611860130664351123}
   - component: {fileID: 5429099117489060116}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterarm L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6688,7 +6689,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6721,7 +6722,7 @@ GameObject:
   - component: {fileID: 7322845126144594338}
   - component: {fileID: 4636018772448780322}
   - component: {fileID: 2964528532372217650}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oberarm R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6769,7 +6770,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6804,7 +6805,7 @@ GameObject:
   - component: {fileID: 1550773062426515992}
   - component: {fileID: 1550773062426515994}
   - component: {fileID: 1892591092}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: unterarm recht
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6868,7 +6869,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000038569317, y: 0.011343497, z: -0.000000046005308}
+  m_ConnectedAnchor: {x: 0.000038567454, y: 0.011343498, z: 0.0000005643602}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -6928,7 +6929,7 @@ GameObject:
   - component: {fileID: 1550773062481935274}
   - component: {fileID: 1550773062481935275}
   - component: {fileID: 2086908876}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oberbein R
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -6992,7 +6993,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: -1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.004188843, y: -0.0034906426, z: -0.000000051290115}
+  m_ConnectedAnchor: {x: -0.0041888435, y: -0.003490639, z: 0.00000055779486}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -7051,7 +7052,7 @@ GameObject:
   - component: {fileID: 1550773061862165271}
   - component: {fileID: 1550773061862165270}
   - component: {fileID: 1730331057}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: butt
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7128,7 +7129,7 @@ GameObject:
   - component: {fileID: 1379186137514649878}
   - component: {fileID: 8395357063819819685}
   - component: {fileID: 6305760927691013876}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oberarm L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7176,7 +7177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 670224309865224971, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7209,7 +7210,7 @@ GameObject:
   - component: {fileID: 2370120176783663479}
   - component: {fileID: 6922707089261941566}
   - component: {fileID: 4294151033793397154}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: bauch
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7257,7 +7258,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: 002aabc14d6f8471289d9d041b2b7e01, type: 3}
+  - {fileID: 2100000, guid: c21ad3b550062ef49b7aaf6b812e3d2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7292,7 +7293,7 @@ GameObject:
   - component: {fileID: 1550773063339476302}
   - component: {fileID: 1550773063339476303}
   - component: {fileID: 1387838186}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oberarm recht
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7356,7 +7357,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.014835205, y: 0.0046955817, z: -0.000000010875441}
+  m_ConnectedAnchor: {x: 0.014835206, y: 0.00469558, z: 0.00000075187774}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:

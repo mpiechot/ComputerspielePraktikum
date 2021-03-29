@@ -5,13 +5,23 @@ using UnityEngine;
 public class MoveWithForce : MonoBehaviour
 {
     public Transform destination; // used to calculate the movement vector
+    public float Strength = 2.0f;
 
     public void ActivateConstantForce() 
     {
-        Vector3 direction = new Vector3(destination.position.x - this.transform.position.x, 
-                                        destination.position.y - this.transform.position.y, 
-                                        destination.position.z - this.transform.position.z);
-        this.GetComponent<Rigidbody>().AddForce(direction * 2.0f, ForceMode.Impulse);
-    } 
+        Vector3 direction = destination.position - transform.position;
 
+        this.GetComponentInChildren<Rigidbody>().AddForce(direction * Strength, ForceMode.Impulse);
+    }
+    public void ActivateConstantForceAway()
+    {
+        Vector3 direction = (destination.position - transform.position) * -1;
+
+        this.GetComponentInChildren<Rigidbody>().AddForce(direction * Strength, ForceMode.Impulse);
+    }
+
+    public void IncreaseStrength()
+    {
+        Strength *= 2;
+    }
 }

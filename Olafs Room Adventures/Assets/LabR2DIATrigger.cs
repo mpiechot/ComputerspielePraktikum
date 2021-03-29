@@ -10,7 +10,7 @@ public class LabR2DIATrigger : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        timeline = GetComponent<PlayableDirector>();
+        timeline = timeline.GetComponent<PlayableDirector>();
     }
 
     void OnTriggerEnter(Collider c)

@@ -8,4 +8,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2/Rooms-Trailer.unity
     guid: 924dc86053ad0cd4d928b69e88749a85
+  - enabled: 0
+    path: Assets/Scenes/Level3/ReneShit.unity
+    guid: 36523f463a6122f4a8add400bb66e34a
+  - enabled: 0
+    path: Assets/Scenes/Level3/Raum1.unity
+    guid: 8de6755e1b29afe40be13370ac8795fb
+  - enabled: 0
+    path: Assets/Scenes/Level3/Raum1_Aufzug.unity
+    guid: 4ef7e98e8e4367646a6f52a72053cb19
+  - enabled: 0
+    path: Assets/Scenes/Level3/Raum1_Part1.unity
+    guid: 09c9bfbe04d647c4e8c7a4b33b8b7976
+  - enabled: 0
+    path: Assets/Scenes/Level3/Raum1_part2.unity
+    guid: de43e8304cef57f44ab4ab9ed86ddc3c
+  - enabled: 0
+    path: Assets/Scenes/Level3/CatRoom.unity
+    guid: 5e40642a513cd9444bf6eb2d0ac5df79
   m_configObjects: {}

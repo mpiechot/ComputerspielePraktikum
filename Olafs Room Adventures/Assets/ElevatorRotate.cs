@@ -13,7 +13,7 @@ public class ElevatorRotate : MonoBehaviour
     private float delay = 7.0f;
     private float startTime = 0.0f;
     private float currTime = 0.0f;
-    private float speed = 0.5f;
+    private float speed = 0.4f;
     private GameObject olaf;
     private Vector3 moveWithElevator = new Vector3(0, 0, 0);
     private Player player;
@@ -24,7 +24,7 @@ public class ElevatorRotate : MonoBehaviour
         turnLeftAngle = initAngle + new Vector3(0, -90, 0);
         olaf = GameObject.FindGameObjectWithTag("Player");
         player = FindObjectOfType<Player>();
-
+        
 
     }
 
@@ -45,8 +45,13 @@ public class ElevatorRotate : MonoBehaviour
                 
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(turnLeftAngle), Time.deltaTime * speed);
                 
-                moveWithElevator = center.position - olaf.transform.position;
-                olaf.transform.position -= moveWithElevator * Time.deltaTime * 0.001f;
+                moveWithElevator = center.position + new Vector3(47,-3,-2) - olaf.transform.position;
+
+                Debug.LogWarning("Cenpos " + center.position);
+                Debug.LogWarning("Olafpos " + olaf.transform.position);
+                Debug.LogWarning("pushTo " + moveWithElevator);
+                olaf.transform.position += moveWithElevator.normalized * Time.deltaTime * 10.006f;
+                
                 //stop at 90
                 if (Mathf.Abs(transform.rotation.eulerAngles.y - turnLeftAngle.y) < 1)
                 {

@@ -85,6 +85,13 @@ https://www.youtube.com/watch?v=VJxrdrgbuTE
 
 - Olaf verliert Körperteile (Leo)
 
+
+if anyone wants to see the trailer made by brian you can watch it here:
+https://youtu.be/C39dJh8pOLE
+
+This isnt a public video because it contains music we do not own. So be aware of the fact, that this video isnt findable in youtube.
+
+
 ### Folgende Level:
 
 * Greifhaken
@@ -99,7 +106,10 @@ What is the motivation
 What is the gameplay
 
 - use sketches
-
+<details>
+<summary>
+<strong>Old ToDos</strong>
+</summary>
 ### Freitag, 23.10.2020 16Uhr
 * Viereckigen Raum erstellen (<font color="lightgreen">**✓**</font>)
 * Gegenstand im Raum (<font color="lightgreen">**✓**</font>)
@@ -287,3 +297,12 @@ What is the gameplay
 
 ### Sonntag 21.03.2021 10Uhr bis open end
 * Weekly Meeting Catch-up
+</details>
+
+### Samstag 08.05.2021 ??Uhr
+* Intro überarbeiten (Leo)
+* LeosKamera einbauen (Marco)
+* Explosionen machen Schaden. Leertasten UI einbauen (Harald)
+* Macht das Spiel fertig (Rene)
+* LeosKamera einbauen (Philipp)
+* Aufräumen (alle)

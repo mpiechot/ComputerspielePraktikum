@@ -4,12 +4,10 @@ Das ist eine Liste an Objekten, für die noch ein 3D Modell in Blender erstellt 
 
 # Liste
 
-- Key
-- Key - Gefäß
-- Tree (2-3 Varianten)
+- Key ✓
+- Schloss
+- Tree (2-3 Varianten) ✓
 - Bush (2-3 Varianten)
-- LaserKanone
-- Kompass
 - Explosionsfass
 - Bücher
 - Bücherregal
